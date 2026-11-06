@@ -1,6 +1,11 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.0.5（2026-11-06）
+  - 模拟配装选神器时更好找：100 件神器的物品等级都是 5，以前按物品等级排序等于没排，又按汉字编码排名字，看起来是乱的。现在默认按档次分三组（天赐的、伟大的、较小的上古神器，各有小标题和件数），组内按合成需求等级从高到低；「全部品质」换成「全部档次」可以只看一档；排序可选「档次 + 等级」「需求等级 高→低 / 低→高」「名称」。用不到的词缀搜索框和特绿难度勾选在选神器时不再显示。
+  - 选装备列表的「名称」排序改成按页面语言的规则：中文按拼音，其他语言按各自的字母顺序（德文的 Ä、Ö 跟在 A、O 附近，日文按五十音，俄文、乌克兰文按西里尔字母）。中文、英文以外的页面里，词缀和镶嵌物下拉框的顺序也改成该语言的字母顺序（以前一律按英文规则排）。
+  - 普通装备里带材质 / 款式的名字（铜制珠链、羟钒铜板状臂章这类，共 3,078 件）改成和游戏里一样的拼法：游戏按各语言自己的格式拼「名称 + 材质 + 款式」，俄文、波兰文等还会让形容词跟名词的性和数一致。以前是简单拼接：英文页没有空格（「SolidTuraniteArmbands」），中文页把款式放在材质前面（「板状羟钒铜臂章」，游戏里是「羟钒铜板状臂章」，改了 1,243 件），其他语言页有的丢了名词（俄文只剩「адамантиновый」）。
+
 版本 2.0.4（2026-11-06）
   - 修正 iPhone / iPad 上（包括添加到主屏幕后）模拟配装的下拉选单：选完前缀、后缀、镶嵌物等选项后，选单收起又马上自动弹出，停在刚选的那一项，要再点一次别处才关掉。原因是选完后这一栏会重画，以前会把焦点放回新的选单上，iOS 一拿到焦点就重新打开选单。现在手机和平板上不再自动把焦点放回选单；电脑上用键盘操作时焦点照样回到原处。
 
@@ -229,6 +234,11 @@
 
 ----
 Change log
+
+Version 2.0.5 (2026-11-06)
+  - Artifacts are easier to find in the build simulator: all 100 have item level 5, so sorting by item level did nothing, and their names were in code-point order. They are now grouped by tier (Divine, Greater, Lesser, each with a heading and a count) and sorted by the formula’s required level within a tier; the quality filter becomes a tier filter, and the sort offers tier + level, required level high → low / low → high, and name. The affix search box and the rare-item difficulty tick, which do not apply to artifacts, are hidden there.
+  - Sorting the item picker by name follows the page language: pinyin on the Chinese page, each other language’s own alphabet elsewhere (German Ä, Ö next to A, O; Japanese in kana order; Russian and Ukrainian in Cyrillic order). On pages other than Chinese and English the affix and relic lists also follow that language’s order (they used English order before).
+  - Names of common items with a material / style part (Copper Beads, Turanite Solid Armbands …; 3,078 items) are now put together the way the game does it: each language’s own name format, with adjectives agreeing with the noun in Russian, Polish and the like. They used to be simply joined: no spaces on the English page (“SolidTuraniteArmbands”), the style before the material on the Chinese page (1,243 names), and on some other language pages the noun was lost (Russian showed only “адамантиновый”).
 
 Version 2.0.4 (2026-11-06)
   - Fixed the drop-down lists of the build simulator on iPhone / iPad (also when added to the home screen): after picking a prefix, suffix, relic and so on, the list closed and popped up again on the choice just made, and needed another tap elsewhere to close. The panel is redrawn after a choice and the focus used to go back to the new list, which iOS opens as soon as it gets the focus. Phones and tablets no longer get the focus put back on the list; with a mouse and keyboard on a computer it still returns to where it was.
