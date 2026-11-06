@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.0.3（2026-11-06）
+  - 网站新增 11 种语言的页面：德语、法语、西班牙语、意大利语、巴西葡萄牙语、波兰语、捷克语、俄语、乌克兰语、日语、韩语。物品、词缀、技能、属性等文字取自游戏自带的该语言文字，界面和整理者说明暂用英文；数据、几率和计算结果与中文、英文页完全相同。每种语言单独一页，只有选了这种语言才会下载那一页。
+  - 右上角的语言选单在网站上列出全部 13 种语言；网盘 zip、安卓应用和在电脑上直接打开的文件只有中文、英文两页（控制体积），选单里也只列这两种。
+
 版本 2.0.2（2026-11-06）
   - 打开时不再等 Google 字体：页面用到的网页字体来自 Google，以前浏览器要等字体请求有了结果才开始显示页面。在中国大陆等连不上 Google 的网络里，这个请求常常一直没有回应，页面会白屏十几秒甚至更久，网页版和安卓应用都会这样。现在页面先用系统字体立即显示，能连上 Google 时字体到达后自动换成原来的网页字体（第一次打开时文字可能轻微闪一下），连不上就一直用系统字体，不再等待。外观和以前一样。
   - 网页文件变小：中文页 16.4 MB → 12.7 MB，英文页 16.5 MB → 12.8 MB，读入更快、更省内存。做法是把装备数据里重复几千次的内容（来源、部位、品质、掉落表编号、组合几率等）只存一份、装备里改记编号，记录路径的文件夹部分也只存一份；页面打开时先原样还原，再做其他事情。发布前逐条核对：还原出的数据和 2.0.1 完全一致（中英文两页、9,249 件装备的每个字段，连字段顺序都一样）；全部装备详情页、词缀、镶嵌物、套装、卷轴 / 药剂 / 钥匙页、检索结果和模拟配装的显示，和 2.0.1 逐页对比完全相同。收藏、配装码、各页设置照常可用。
@@ -222,6 +226,10 @@
 
 ----
 Change log
+
+Version 2.0.3 (2026-11-06)
+  - The website has pages in 11 more game languages: German, French, Spanish, Italian, Brazilian Portuguese, Polish, Czech, Russian, Ukrainian, Japanese and Korean. Item, affix, skill and attribute texts are the game’s own text in that language; the interface and the compiler’s notes are in English for now. Data, chances and results are exactly the same as on the Chinese and English pages. Each language is its own page and is only downloaded when chosen.
+  - The language menu lists all 13 languages on the website; the zip download, the Android app and copies opened as local files keep only the Chinese and English pages (size), and their menu lists just those two.
 
 Version 2.0.2 (2026-11-06)
   - No more waiting for Google fonts on open: the page's web fonts come from Google, and the browser used to wait for that request before showing anything. On networks that cannot reach Google (mainland China, for example) the request often just hangs, leaving a blank page for ten seconds or more, in both the web version and the Android app. Now the page shows at once in the system font and switches to the original web font when it arrives (the text may flicker slightly on the first visit); if Google cannot be reached it simply stays on the system font. The look is otherwise unchanged.
