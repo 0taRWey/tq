@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.1.1（2026-11-07）
+  - 修正「任务」类怪物掉落的词缀组合：游戏读取掉落词缀加成时，把首领（Boss）那组数值同时给了首领和任务怪——双词缀权重 +3000%，只有前缀、只有后缀各 +500%；以前按任务怪没有加成算，所以任务怪身上的词缀组合算错了。按正确规则重新逐种子模拟后，装备和模拟配装里的组合可得性有 2,074 件底材、约 16.9 万格改变：特绿新增 4,393 种原来以为拿不到的组合、另有 737 种改为拿不到；普通 / 魔法底材新增 9,791 种、改为拿不到 333 种（其余改动只是「刷怪能掉」和其他途径之间互换）。游戏里实测两只任务怪（永恒余烬东方支线任务里的强盗，传奇难度）各 32,767 个怪物种子，身上的特绿和新规则逐件一致，旧规则分别有 18 / 58、37 / 106 件对不上。
+  - 掉落来源加上「Anthony The Drunken Warrior」（英雄，永恒余烬东方稻田一带，只出现在传奇难度）：它的记录放在开发者目录里，以前和测试怪一起被排除，但它确实放在正式地图里、死后掉装备。涉及 138 件装备的来源列表（42 件进了前 20 名）。
+
 版本 2.1.0（2026-11-07）
   - 模拟配装：自然「团队之力」和风暴「风暴之眼」现在可以在「专精技能的增益」里勾选，计入人物面板和伤害。这两个是召唤物施放的增益：精灵狼 / 风暴精灵在身边时会自己施放，范围内的你和队友都会得到——团队之力（10 米内，15 秒）给 +物理伤害 %、护甲、每秒法力恢复和 +15% 全部速度；风暴之眼（14 米内，30–56 秒）给 +元素伤害 %、冰冷和闪电抗性。以前这两个只显示「附带：…」，不计入面板。
   - 要给对应的召唤技能（召唤精灵狼 / 召唤风暴精灵）和这个进阶都加了点才计入；增益等级按进阶的实际等级（含装备 +技能）算，技能说明里也改成显示每级的具体加成。召唤物施放的其他进阶没有加进来：战旗的「胜利之光」是给敌人的减益，梦魔的「控制心神」只加给召唤物，仙女的「繁茂之盾」是吸收伤害的护盾。
@@ -255,6 +259,10 @@
 
 ----
 Change log
+
+Version 2.1.1 (2026-11-07)
+  - Fixed the affix combinations dropped by Quest-class monsters: when the game loads the loot affix modifiers it gives the Boss values to both Boss and Quest monsters (+3000% to the both-affix weight, +500% each to prefix-only and suffix-only); Quest monsters used to be treated as having no modifier, so their combinations were wrong. Re-simulating every seed with the right rule changes the combination availability in the gear list and the build simulator for 2,074 bases, about 169,000 cells: rares gain 4,393 combinations that were thought unobtainable and lose 737; common / magic bases gain 9,791 and lose 333 (the rest only move between “monsters drop it” and the other routes). In-game tests on two Quest monsters (the Eternal Embers East side-quest bandits, Legendary), 32,767 monster seeds each: the rare items they wear match the new rule one by one, while the old rule was off for 18 of 58 and 37 of 106.
+  - Added Anthony The Drunken Warrior (Hero, around the East rice fields of Eternal Embers, Legendary only) to the drop sources: his record sits in a developer folder and used to be excluded with the test monsters, but he is placed in a live map and drops his gear. 138 items’ source lists change (42 of them get him in the top 20).
 
 Version 2.1.0 (2026-11-07)
   - Build simulator: Nature’s Strength of the Pack and Storm’s Eye of the Storm can now be ticked under Mastery buffs and count on the character sheet and in the damage. Both are buffs cast by summons: the wolves / the Storm Wisp cast them on their own while nearby, and you and allies in range get them — Strength of the Pack (10 m, 15 s): +% Physical Damage, armor, energy regeneration per second and +15% Total Speed; Eye of the Storm (14 m, 30–56 s): +% Elemental Damage, Cold and Lightning Resistance. Before, they showed only “linked: …” and were not counted.
