@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.1.2（2026-11-07）
+  - 商人的几率改为按商店种子逐一模拟：每次刷新货物由一个 1–32,767 的商店种子决定，现在按游戏自己的进货流程（含同一栏去重重抽）把全部 32,767 个种子都模拟一遍，显示至少进一件的种子所占比例（取各等级档位里最高的那档），括号里保留以前按掉落表权重、假设每次抽取独立的估算。共 23,540 条商人来源（装备 2,435 件、23,450 条，圣物 / 护符 90 条）；多数比估算高，5,127 条高 5 个百分点以上，最多高 19 个百分点，例如小包的游牧民全盔从 63.2% 变为 72.5%。小包两个等级档位的进货游戏里实测过，32,767 个种子逐个一致。
+  - 说明里补上：刷新时游戏不会选到和上一次相同的商店种子，所以这个比例是每个种子机会相同时的数，不是连续刷新的精确几率；只有一个商店种子能出的组合不可能连着两次刷出来。卷轴、药水等杂项的商人几率仍是按权重的估算。
+
 版本 2.1.1（2026-11-07）
   - 修正「任务」类怪物掉落的词缀组合：游戏读取掉落词缀加成时，把首领（Boss）那组数值同时给了首领和任务怪——双词缀权重 +3000%，只有前缀、只有后缀各 +500%；以前按任务怪没有加成算，所以任务怪身上的词缀组合算错了。按正确规则重新逐种子模拟后，装备和模拟配装里的组合可得性有 2,074 件底材、约 16.9 万格改变：特绿新增 4,393 种原来以为拿不到的组合、另有 737 种改为拿不到；普通 / 魔法底材新增 9,791 种、改为拿不到 333 种（其余改动只是「刷怪能掉」和其他途径之间互换）。游戏里实测两只任务怪（永恒余烬东方支线任务里的强盗，传奇难度）各 32,767 个怪物种子，身上的特绿和新规则逐件一致，旧规则分别有 18 / 58、37 / 106 件对不上。
   - 掉落来源加上「Anthony The Drunken Warrior」（英雄，永恒余烬东方稻田一带，只出现在传奇难度）：它的记录放在开发者目录里，以前和测试怪一起被排除，但它确实放在正式地图里、死后掉装备。涉及 138 件装备的来源列表（42 件进了前 20 名）。
@@ -259,6 +263,10 @@
 
 ----
 Change log
+
+Version 2.1.2 (2026-11-07)
+  - Merchant chances now come from a seed-by-seed shop simulation: every restock is decided by a shop seed from 1 to 32,767, and all 32,767 are now simulated with the game's own restock (duplicate re-rolls in the same slot included). The list shows the share of seeds whose restock has at least one (best player-level tier), with the old loot-table weight estimate (independent draws) kept in brackets. 23,540 merchant entries (23,450 for 2,435 items, 90 for relics / charms); most are higher than the estimate, 5,127 by 5 points or more and at most by 19 points, e.g. Bao's Nomad Helm goes from 63.2% to 72.5%. Bao's restocks at both level tiers were tested in game: all 32,767 seeds match.
+  - The notes now say that a restock never reuses the previous shop seed, so the share assumes every seed is equally likely and is not an exact chance for consecutive restocks; a combination only one shop seed can give can never appear in two restocks in a row. Merchant chances for scrolls, potions and other misc items are still weight estimates.
 
 Version 2.1.1 (2026-11-07)
   - Fixed the affix combinations dropped by Quest-class monsters: when the game loads the loot affix modifiers it gives the Boss values to both Boss and Quest monsters (+3000% to the both-affix weight, +500% each to prefix-only and suffix-only); Quest monsters used to be treated as having no modifier, so their combinations were wrong. Re-simulating every seed with the right rule changes the combination availability in the gear list and the build simulator for 2,074 bases, about 169,000 cells: rares gain 4,393 combinations that were thought unobtainable and lose 737; common / magic bases gain 9,791 and lose 333 (the rest only move between “monsters drop it” and the other routes). In-game tests on two Quest monsters (the Eternal Embers East side-quest bandits, Legendary), 32,767 monster seeds each: the rare items they wear match the new rule one by one, while the old rule was off for 18 of 58 and 37 of 106.
