@@ -1,5 +1,5 @@
-// 泰坦之旅装备资料库 2.0.9 — offline copy for "Add to Home Screen"
-const CACHE = 'tq-search-2.0.9-95b934de';
+// 泰坦之旅装备资料库 2.1.0 — offline copy for "Add to Home Screen"
+const CACHE = 'tq-search-2.1.0-ff8f9aae';
 // 2.0.3: the page that registers this worker passes its own file name (sw.js?p=de.html); only that page is stored up front,
 // other language pages are stored the first time they are opened
 const PAGES = ["index.html", "en.html", "de.html", "fr.html", "es.html", "it.html", "br.html", "pl.html", "cz.html", "ru.html", "uk.html", "ja.html", "ko.html"];

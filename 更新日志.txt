@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.1.0（2026-11-07）
+  - 模拟配装：自然「团队之力」和风暴「风暴之眼」现在可以在「专精技能的增益」里勾选，计入人物面板和伤害。这两个是召唤物施放的增益：精灵狼 / 风暴精灵在身边时会自己施放，范围内的你和队友都会得到——团队之力（10 米内，15 秒）给 +物理伤害 %、护甲、每秒法力恢复和 +15% 全部速度；风暴之眼（14 米内，30–56 秒）给 +元素伤害 %、冰冷和闪电抗性。以前这两个只显示「附带：…」，不计入面板。
+  - 要给对应的召唤技能（召唤精灵狼 / 召唤风暴精灵）和这个进阶都加了点才计入；增益等级按进阶的实际等级（含装备 +技能）算，技能说明里也改成显示每级的具体加成。召唤物施放的其他进阶没有加进来：战旗的「胜利之光」是给敌人的减益，梦魔的「控制心神」只加给召唤物，仙女的「繁茂之盾」是吸收伤害的护盾。
+
 版本 2.0.9（2026-11-07）
   - 召唤物能力里的「1 个投射物」也去掉了（地心守卫的普通攻击等）：和 2.0.8 同一条规则，游戏只在数量大于 1 时显示，近战攻击也用不到这个数。
   - 地心守卫的「震荡打击」注明「要锤；地心守卫没有武器，这项不生效」：技能每次更新都会对照手上的武器检查可不可用，召唤物也一样；地心守卫两手空空，永远不符合「锤」，所以这份 4–8% 机率眩晕从来不会生效。全部玩家召唤物里只有这一例。
@@ -250,6 +254,10 @@
 
 ----
 Change log
+
+Version 2.1.0 (2026-11-07)
+  - Build simulator: Nature’s Strength of the Pack and Storm’s Eye of the Storm can now be ticked under Mastery buffs and count on the character sheet and in the damage. Both are buffs cast by summons: the wolves / the Storm Wisp cast them on their own while nearby, and you and allies in range get them — Strength of the Pack (10 m, 15 s): +% Physical Damage, armor, energy regeneration per second and +15% Total Speed; Eye of the Storm (14 m, 30–56 s): +% Elemental Damage, Cold and Lightning Resistance. Before, they showed only “linked: …” and were not counted.
+  - They count only when both the summon skill (Call of the Wild / Summon Storm Wisp) and this upgrade have points; the buff level is the upgrade’s effective level (with +skill items), and the skill details now show the bonuses at each level. Other summon upgrades were left out: Battle Standard’s Triumph is a debuff on enemies, the Nightmare’s Mastermind buffs only summons, and the Nymph’s Overgrowth is a damage-absorbing shield.
 
 Version 2.0.9 (2026-11-07)
   - “1 projectiles” is also gone from the abilities of summons (the Core Dweller’s basic attack and others): same rule as in 2.0.8, the game shows the count only when it is more than 1, and melee attacks never use it.
