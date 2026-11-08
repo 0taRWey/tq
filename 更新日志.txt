@@ -3,6 +3,9 @@
 
 版本 2.1.8（2026-11-08）
   - 模拟配装：带护甲的项链和戒指（共 11 件，例如透特护身符、圣甲虫戒指、德罗普尼尔），首饰本身的护甲现在加到头、身、手、腿每个部位，和游戏人物面板一致（游戏里实测）；以前没有算进去。
+  - 模拟配装：可以给配装起名字。模拟配装页上方新增「配装名」输入框（最多 20 个字，随时可改），收藏、快照图片和配装码都用这个名字；不填就照旧用「职业名 + 编号」。「收藏的配装」里每条新增「改名」按钮，清空名字就回到自动编号。
+  - 模拟配装：配装名会跟着配装码分享出去；导入或收藏时如果和列表里已有的名字重复，自动在后面加（2）、（3）区分，不会覆盖原来的收藏。「每个职业最多 99 个、第 100 个覆盖 01」只管没起名的配装。
+  - Android 版同步到 2.1.8。
 
 版本 2.1.7（2026-11-08）
   - 模拟配装：风暴专精「风暴汹涌」改为开关技能（游戏里要先开启，开启后一直预留 150 法力，开着时被敌人攻击才有几率放出暴风；游戏里实测），开启后预留的 150 法力从可用法力里扣掉；以前被当成手动施放的主动技能，开不了，预留也没算。
@@ -170,6 +173,9 @@ Change log
 
 Version 2.1.8 (2026-11-08)
   - Build simulator: rings and amulets with their own armor (11 items, e.g. Amulet of Thoth, Scarab Ring, Draupner) now add that armor to head, torso, arms and legs, as the game’s character sheet does (tested in game); it was left out before.
+  - Build simulator: builds can be named. A new "Build name" box at the top of the build simulator (up to 20 characters, change it any time) is used for saved builds, snapshot images and build codes; left empty, the class name plus a number is used as before. Each saved build has a new Rename button; clearing the name goes back to the automatic number.
+  - Build simulator: the name travels with the build code; when an imported or saved build has a name already in the list, (2), (3) … is added, so nothing is overwritten. The "99 per class, the 100th replaces 01" rule only applies to unnamed builds.
+  - Android app updated to 2.1.8.
 
 Version 2.1.7 (2026-11-08)
   - Build simulator: Storm Surge (Storm) is now a toggle (in game it has to be switched on and keeps 150 energy reserved while on; enemy hits may then set off the storm; tested in game); switched on, the 150 reserved energy comes off usable energy. It used to be treated as a hotbar attack that could not be switched on, so the reserve was never counted.
