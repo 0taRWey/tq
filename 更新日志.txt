@@ -7,6 +7,7 @@
   - 掉落来源：首领身边的宝箱都写上首领的名字。以前有二十多位首领的宝箱只写箱子本身的名字（「高贵的箱子」等），其中一些还和别处同类的箱子并成一行，看不出是谁的；现在单独成行，写作「某某的宝箱（箱子名）」，几率不变。涉及沙地女王马西卡、阿拉克尼、戈耳贡族女王、阿莱斯特、波吕斐摩斯、尼亥泊克、奇美拉、巴布伦、班德瑞、妖怪、灰暗三姐妹、瑟博勒斯、赛丰、克托斯野猪、斯喀戎、金牙王、奥斯特里和纳尔、索列姆、米梅尔、辛玛拉、洛基、瓦尔哈拉殿堂的诸神、阿甘托尼奥斯国王、古之长者、提雅玛。沙地女王马西卡自己不掉遗物，遗物出自她的宝箱。
   - 德、法、西、意、葡、波、捷、俄、乌、日、韩文页面：首领宝箱的名字以前是英文和本语言拼在一起，有的还夹着格式符号；现在写作「首领名 — 箱子名」，首领名用游戏里该语言的原文。
   - 德、法、西、意、葡、波、捷、俄、乌文页面：游戏文字里按词性变化的形容词（例如「巨大的」蝎子）以前有时几种词形连在一起显示、或把后面的名词吞掉，现在按后面名词的词性只显示一种。
+  - 掉落来源：有两种宝箱的首领（第一次击杀出一种、之后再杀换成「再次击杀」那种），第一种现在标为「首次击杀」，例如「阿拉克尼的宝箱（首次击杀 · 高贵的箱子）」，共 38 位首领；列表下方说明首次击杀的宝箱每个角色每个难度只出一次。只有一种宝箱、每次都一样的首领不加标记。
   - Android 版同步到 2.1.7。
 
 版本 2.1.6（2026-11-08）
@@ -168,6 +169,7 @@ Version 2.1.7 (2026-11-08)
   - Drop sources: chests next to a boss are named after the boss. The chests of more than twenty bosses showed only the container's name ("Majestic Chest" etc.), some merged into one line with chests of the same kind elsewhere; each now has its own line as "<boss>'s chest (<container>)", with the same chances. They include Sandqueen Masika, Arachne, the Gorgon Queens, Alastor, Polyphemus, Nehebkau, Chimera, Barmanu, Bandari, Yaoguai, the Gray Sisters, Cerberus, the Skeletal Typhon, Porcus, Sciron, the Troll King, Austri and Nar, Thrym, Mimir, Sinmara, Loki, the gods of Valhöll, King Arganthonios, the Ancient One and Tiamat. Sandqueen Masika drops no relics herself; they come from her chest.
   - German, French, Spanish, Italian, Portuguese, Polish, Czech, Russian, Ukrainian, Japanese and Korean pages: boss chest names used to mix English with the page language (some with grammar codes); they now read "<boss> — <container>", the boss name in the game's own text for that language.
   - German, French, Spanish, Italian, Portuguese, Polish, Czech, Russian and Ukrainian pages: adjectives that change with grammatical gender (e.g. "Colossal" Scorpion) sometimes showed all their forms run together or swallowed the noun after them; they now show the one form that fits the noun.
+  - Drop sources: bosses with two chests (one for the first kill, then the "repeat kill" chest on later kills) now mark the first one "first kill", e.g. "Arachne's chest (first kill · Majestic Chest)" (38 bosses); a note under the list says the first-kill chest appears once per character and difficulty. Bosses with a single chest, the same every kill, stay unmarked.
   - Android app updated to 2.1.7.
 
 Version 2.1.6 (2026-11-08)
