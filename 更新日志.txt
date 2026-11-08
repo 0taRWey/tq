@@ -10,6 +10,9 @@
   - 模拟配装：法力预留减免超过 100% 时预留为负，可用法力高于上限，现在按这样计算（以前按 0 算；游戏里实测）。
   - 模拟配装：内丹专精「潜力万能药」补上喝药后的增益（生命 / 法力恢复，毒素、流血、生命吸取抗性），以前勾上什么都不加（游戏里实测）；「苦果」改标为攻击命中时触发的被动；「互相折磨」的说明里列出它传播给周围敌人的减益；已经用不到的旧版金蟾祝福增益不再能加点。
   - 模拟配装新增选项「几率抗性 / 护甲按游戏面板折算」：勾上后「X% 机会」的抗性和护甲按 值 × X% 计入，和游戏人物面板显示一致；不勾时照旧只算一定生效的部分。
+  - 新增选项「按手机版（安卓 / iOS）的需求公式」：安卓 / iOS 的装备需求公式和 PC 不同（例如护甲力量每级 7.5，PC 是 7.75；史诗冰鳞 PC 492、手机 478），勾上后装备页、筛选条件和模拟配装都按手机版算需求。
+  - 修正：装备本身写死的智力需求，在选了词缀以后会被公式值顶替，现在照用写死的值。
+  - Android 版同步到 2.1.6。
 
 版本 2.1.5（2026-11-08）
   - 召唤物能力的等级超过这个技能的上限时，按上限算并注明（例如守护之石的「毁灭」、地心守卫的「震荡打击」；游戏里实测）。
@@ -160,6 +163,9 @@ Version 2.1.6 (2026-11-08)
   - Build simulator: with more than 100% energy reserve reduction the reserve goes negative and usable energy exceeds the maximum; now counted that way (it was floored at 0; tested in game).
   - Build simulator: Neidan "Potion Buff" now adds its buff after drinking (health / energy regeneration, poison, bleeding and life leech resistance; it added nothing before; tested in game); "Consequences" is labelled a passive that fires on hit; "Spreading Rot" lists the debuff it spreads to nearby enemies; the unused old Golden Toad buff can no longer take points.
   - New build simulator option "Chance resistances / armor as the game sheet shows them": ticked, "X% chance" resistances and armor count as value × X%, matching the game's character sheet; unticked, only guaranteed values count as before.
+  - New option "Use the mobile (Android / iOS) requirement formulas": Android / iOS use different item requirement formulas from PC (e.g. armor strength 7.5 per item level, PC 7.75; epic Fjord armor: PC 492, mobile 478); ticked, the equipment page, filters and build simulator use the mobile requirements.
+  - Fix: an item's fixed Intelligence requirement was replaced by the formula value once affixes were chosen; the fixed value is used now.
+  - Android app updated to 2.1.6.
 
 Version 2.1.5 (2026-11-08)
   - A summon ability above that skill's top level now counts as the top level, with a note (e.g. the Guardian Stones' Destruction, the Core Dweller's Concussive Blow; tested in game).
