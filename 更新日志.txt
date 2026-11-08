@@ -3,8 +3,8 @@
 
 版本 2.1.6（2026-11-08）
   - 模拟配装：双持投掷时两把武器的攻速改为相加（以前取平均，攻击速度和每秒出手算少了），双持近战仍取平均；两种都和游戏里人物面板实测一致。
-  - 模拟配装：面板攻击速度的持握系数改用精确值（例如单手 19/30），以前四舍五入到三位小数，个别配置会和游戏差 1%。
-  - 模拟配装：平均伤害值按游戏面板的算法分两组（人物和装备本身的伤害、技能和增益加上的伤害）各自去掉小数再相加，以前合在一起取整，有时多 1；DPS 跟着变（游戏里实测）。
+  - 模拟配装：面板攻击速度的持握系数改用精确值（例如单手 19/30、法杖 209/320），以前四舍五入到三位小数，个别配置会和游戏差 1%。
+  - 模拟配装：平均伤害值按游戏面板的算法分两组（这把武器本身的伤害、其他来源加上的伤害，例如首饰上的固定附伤和技能、增益）各自去掉小数再相加，以前合在一起取整，有时多 1；DPS 跟着变（游戏里实测）。
   - 模拟配装：武器和盾牌底材自带的护甲不再加到各部位，游戏里不计（游戏里实测）；镶在上面的镶嵌物照算。
   - 模拟配装：判断穿不穿得上时，补上护甲、盾牌、杖类、所有武器这些分类的属性需求降低和「物品等级要求降低」，减免后的需求四舍五入为整数再比较；装备详情里显示减免后的需求（游戏里实测）。
   - 模拟配装：法力预留减免超过 100% 时预留为负，可用法力高于上限，现在按这样计算（以前按 0 算；游戏里实测）。
@@ -153,8 +153,8 @@ Change log
 
 Version 2.1.6 (2026-11-08)
   - Build simulator: dual thrown weapons now add both weapons' speed (it used the average, under-reading attack speed and attacks per second); dual melee still uses the average. Both match the character sheet in game.
-  - Build simulator: the grip factors of the sheet attack speed use exact values (e.g. 19/30 for one hand); the old 3-decimal values could put some builds 1% off the game.
-  - Build simulator: average damage follows the game sheet: character / gear damage and damage added by skills and buffs drop their decimals separately before being added (it used one rounding and could show 1 more); DPS follows (tested in game).
+  - Build simulator: the grip factors of the sheet attack speed use exact values (e.g. 19/30 for one hand, 209/320 for a staff); the old 3-decimal values could put some builds 1% off the game.
+  - Build simulator: average damage follows the game sheet: the weapon's own damage and damage added by everything else (flat damage on jewelry, skills, buffs) drop their decimals separately before being added (it used one rounding and could show 1 more); DPS follows (tested in game).
   - Build simulator: the flat armor on a weapon or shield base no longer adds to every body part; the game does not count it (tested in game). Relics in them still count.
   - Build simulator: requirement checks now include the category reductions (armor, shield, staff, all weapons) and "item level requirement" reduction, and round the reduced requirement to a whole number before comparing; item details show the reduced requirement (tested in game).
   - Build simulator: with more than 100% energy reserve reduction the reserve goes negative and usable energy exceeds the maximum; now counted that way (it was floored at 0; tested in game).
