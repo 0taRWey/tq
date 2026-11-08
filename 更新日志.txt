@@ -1,0 +1,277 @@
+泰坦之旅装备资料库 · 更新日志
+整理：贴吧用户_0taRWey
+
+版本 2.1.5（2026-11-08）
+  - 召唤物能力的等级超过这个技能的上限时，按上限算并注明（例如守护之石的「毁灭」、地心守卫的「震荡打击」；游戏里实测）。
+  - 匕首之齿：它赋予的技能会发动，但不射出投射物、不造成伤害，详情里已注明（游戏里实测）。
+  - 模拟配装：烈鬃头盔、奥瓦尔奥德布衫、何露斯之意志、布迪国王之斧、尼米多娜的长矛、赫伦汀攻击时给自己的增益，可以在「装备赋予的增益」里勾选，计入人物面板（烈鬃头盔游戏里实测）。
+
+版本 2.1.4（2026-11-08）
+  - 装备赋予的技能、「+N 到」加成和召唤类技能都显示游戏里的名字（例如阿帕普的力量、注魔的阿佩普的力量的「+2 / +5 到 自然之怒」）；游戏里本来就没有名字的技能显示为「未命名被动」「未命名技能」；没有游戏内名字的物品显示为「无名称头盔 #1」这样的名称。
+
+版本 2.1.3（2026-11-08）
+  - 装备详情「双词缀比例」一行改正：任务怪和首领用同一组加成（数值不变）。
+  - 更正分散射击等投射物进阶：用弓时射术的主箭另加一份分散射击的伤害，投掷武器不加，碎片两者一样（游戏里实测）。
+  - 改正装备赋予的蓄能普攻（冲击、预谋打击、心灵接触、符文武器，12 件）：以前误写成「普通攻击时 0% 机率」，实际是设为鼠标左键使用、命中蓄能（游戏里实测）。
+  - 金刚合金克隆那斯的镰刀：游戏里实测正常打完堤丰监牢剧情后不会掉，来源标签改为「正常获取未证实」。
+  - 技能树里，进阶技能只是部分不生效时（例如拿投掷武器时的「穿刺射击」）图标改为生效样式（绿圈），不生效的部分仍在说明里标红。
+  - 模拟配装：按住数字框右侧的上下箭头（专精条、属性点、技能点）又能连续快速加减了。
+  - 「人物」属性点新增「刚好够穿」按钮：按装备栏里的装备，把力量、敏捷、智力改成刚好能穿上全部装备的最少点数；装备、套装、专精给的属性和需求降低都算在内，穿上后这些加成够用的部分退回成未使用，生命、法力不动。
+  - 更正任务奖励的难度：有些任务按难度给不同的奖励表（主要是诸神黄昏的支线任务，例如武士公主、白色黄金、唇枪舌战的商人们、不宁之王），以前把史诗、传奇难度的奖励表也算到了普通难度，所以野外狩猎、圣境之匙、奥德修斯铠等会显示普通难度任务能得到。现在按任务实际在各难度给的奖励表计算，672 个来源列表已改。
+
+版本 2.1.2（2026-11-07）
+  - 商人的出售几率改为更准确的数值（括号里保留以前的估算）；小包的进货已在游戏里核对，完全一致。
+  - 说明里补上：商人连续两次刷新不会进完全相同的一批货。
+
+版本 2.1.1（2026-11-07）
+  - 修正任务怪掉落的前后缀组合（任务怪的词缀加成和首领相同），组合可得性随之更新。
+  - 掉落来源加上永恒余烬东方的英雄怪「Anthony The Drunken Warrior」（只在传奇难度）。
+
+版本 2.1.0（2026-11-07）
+  - 模拟配装：「团队之力」「风暴之眼」可以在「专精技能的增益」里勾选，计入人物面板。
+  - 修正网站离线缓存有时一直停在旧版本的问题。
+
+版本 2.0.9（2026-11-07）
+  - 召唤物能力去掉多余的「1 个投射物」；地心守卫的「震荡打击」注明不生效（它没有武器）。
+
+版本 2.0.8（2026-11-06）
+  - 技能数值去掉多余的「1 个投射物」；技能自带的嘲弄注明「游戏说明里不显示，实际生效」。
+
+版本 2.0.7（2026-11-06）
+  - 扇形范围的近战技能补上实际覆盖角度。
+
+版本 2.0.6（2026-11-06）
+  - 进阶技能的效果改为写在「加在主技能上的效果」下，不再像人物属性；进阶不再写「放进快捷栏手动施放」。
+  - 分散射击不再显示「需要武器：弓」，投掷武器配射术同样会散出碎片（游戏里实测）。
+
+版本 2.0.5（2026-11-06）
+  - 选神器更好找；名称排序按页面语言的规则；普通装备的材质 / 款式名字改成和游戏里一样。
+
+版本 2.0.4（2026-11-06）
+  - 修正 iPhone / iPad 上模拟配装的下拉选单。
+
+版本 2.0.3（2026-11-06）
+  - 网站新增 11 种游戏语言的页面（德、法、西、意、巴西葡语、波兰、捷克、俄、乌克兰、日、韩）。
+
+版本 2.0.2（2026-11-06）
+  - 打开更快、网页文件更小；规则说明精简。
+
+版本 2.0.1（2026-11-06）
+  - 更新日志单独成页；底材拿不到的词缀单独标出；低配手机打开更快。
+
+版本 2.0.0（2026-11-06）
+  - 改名为「泰坦之旅装备资料库」，加上致谢名单。
+  - 全部装备的词缀表、几率和前后缀组合按 PC 正版数据重新核对；来源改为彩色标签，同名底材 / 词缀标出区别。
+  - 复核技能的武器要求（弱点攻击、光环、自身增益等，游戏里实测），修正双持资格的误判。
+  - 加上「金刚合金克隆那斯的镰刀」；修正商店专有组合的显示；补上漏写的「+X 护甲」。
+
+版本 1.3.6.6（2026-11-05）
+  - 技能的武器要求、「只限近战」「要双持」按 PC 和 Android 核对；平台不同的地方注明另一个平台。
+
+版本 1.3.6.5（2026-11-05）
+  - 改正 30 件永恒余烬特绿的组合可得性；竞技场才有的组合不再标成掉落；装备编辑面板改进。
+
+版本 1.3.6.4（2026-11-05）
+  - 改正「浮动上限」把不浮动的数值也放大的错误。
+
+版本 1.3.6.3（2026-11-05）
+  - 标出技能类型；补全混沌地牢钥匙的掉落；首领宝箱写出首领名字。
+
+版本 1.3.6.2（2026-11-05）
+  - 详情面板重绘时不再跳回顶部；筛选条件说明改进。
+
+版本 1.3.6.1（2026-11-05）
+  - 核对杜林强化、遗物 / 符咒的可镶部位（PC、安卓、iOS）和等级需求的属性数；人物面板三处改正；去掉 16 件拿不到的装备。
+
+版本 1.3.6（2026-11-04）
+  - 人物面板重新排版，伤害和取整与游戏面板一致；装备详情的前缀 / 后缀分成两张表，可以点。
+
+版本 1.3.5（2026-11-04）
+  - 修正几率发动属性和反击属性的单位；任务奖励标出难度；模拟配装各栏可以收起。
+
+版本 1.3.4（2026-11-04）
+  - 模拟配装重新排版，新增全局搜索和剩余点数提示；修正吞噬者之靴和迦南法杖被误标为拿不到。
+
+版本 1.3.3（2026-11-04）
+  - 任务奖励和混沌地牢奖励改为单选；逐个核对任务奖励和掉落来源的区域名。
+
+版本 1.3.2（2026-11-04）
+  - 新增全局搜索、「掉落 / 获得方式」、掉落来源的地图位置和「按手机 5 倍难度算」选项；卷轴和药剂有详情页。
+
+版本 1.3.1（2026-11-04）
+  - 人物面板改为游戏面板的排列，新增种族加成、生命转化和专精技能的增益；修正生命吸取计算。
+
+版本 1.3.0（2026-11-04）
+  - 新增快照、收藏的配装、配装码和各分类收藏。
+
+版本 1.2.3（2026-11-04）
+  - 技能冷却时间按游戏规则计算。
+
+版本 1.2.2（2026-11-04）
+  - 新增永恒余烬神庙诅咒；装备赋予的增益计入人物面板；任务奖励按难度分栏。
+
+版本 1.2.0（2026-11-03）
+  - 改名为「泰坦之旅装备模拟器」；新增镶嵌物、卷轴、药剂、钥匙标签页；套装和神器配方并入装备。
+
+版本 1.1.1（2026-11-03）
+  - 矛改为单手武器；属性点加「加满」按钮。
+
+版本 1.1.0（2026-11-03）
+  - 专精技能改为游戏技能窗口的布局；任务奖励补上技能点和属性点；安卓版可以直接覆盖安装。
+
+版本 1.0.5（2026-11-03）
+  - 手机排版改进；安卓版不再跟随系统字体放大；加上任务奖励和混沌地牢奖励。
+
+版本 1.0.4（2026-11-03）
+  - iPhone / iPad 可以离线使用；新增更新日志。
+
+版本 1.0.3（2026-11-03）
+  - 「工匠之」第二个镶嵌槽按游戏规则；遗物 / 符咒选单标出需求等级。
+
+版本 1.0.2（2026-11-03）
+  - 修正同名首饰的分档；选装备可以按词缀找；装备格子显示需求等级。
+
+版本 1.0.1（2026-11-03）
+  - 特绿跟随所选难度；发布文件名改用版本号。
+
+版本 1.0.0（2026-11-03）
+  - 第一个 Android 离线安装包；手机网页适配；模拟配装可以选前后缀和杜林强化。
+
+----
+Change log
+
+Version 2.1.5 (2026-11-08)
+  - A summon ability above that skill's top level now counts as the top level, with a note (e.g. the Guardian Stones' Destruction, the Core Dweller's Concussive Blow; tested in game).
+  - Daggertooth: its granted skill fires but launches no projectile and deals no damage; noted in its details (tested in game).
+  - Build simulator: the self buffs that Bristleback Helm, Skyrta of Orvar-Oddr, Will of Horus, Axe of King Budli, Spear of Nemetona and Hrunting cast when attacking can be ticked under item-granted buffs and count in the character sheet (Bristleback Helm tested in game).
+
+Version 2.1.4 (2026-11-08)
+  - Skills granted by items, "+N to" bonuses and summon skills show their in-game names (e.g. "+2 / +5 to Nature's Wrath" on Might of Apep and Infused Might of Apep); skills that have no name in the game read "unnamed passive" / "unnamed skill"; items with no in-game name are listed as "Unnamed helm #1" and so on.
+
+Version 2.1.3 (2026-11-08)
+  - Item details' double-affix share line: quest monsters use the same bonus as bosses (numbers unchanged).
+  - Corrected Scatter Shot and other projectile upgrades: with a bow the Marksmanship arrow also gets Scatter Shot's damage, a thrown weapon does not; the fragments are the same for both (tested in game).
+  - Fixed item-granted charged attacks (Onslaught, Calculated Strike, Psionic Touch, Rune Weapon; 12 items): they used to say "0% chance on a normal attack"; you actually set them to the left mouse button and hits build charge (tested in game).
+  - Adamantine Sickle of Kronos: tested in game, it does not drop after the normal Typhon's Prison scene; the source tag now reads "unconfirmed".
+  - Skill tree: an upgrade that still partly works with the current weapon (e.g. Puncture Shot with a thrown weapon) now shows the working (green) ring; the parts that do not work are still marked red in its details.
+  - Build simulator: holding the up / down arrow of a number box (mastery bar, attribute points, skill points) repeats again.
+  - Character: new "Just enough for gear" button next to Reset points. It sets Str / Dex / Int to the fewest points that keep every equipped piece on; attributes and requirement reduction from gear, set bonuses and masteries count, so what they cover is returned as unused. Health and Energy stay as they are.
+  - Corrected quest reward difficulties: some quests give a different reward table on each difficulty (mostly Ragnarök side quests such as The Warrior Princess, White Gold, Squabbling Merchants, The Restless King). The Epic and Legendary tables were also counted on Normal, so items such as Wild Hunt, Key of Elysium and Odysseus' Armor showed Normal quest rewards. Quests now count only the table they give on each difficulty; 672 source lists changed.
+
+Version 2.1.2 (2026-11-07)
+  - Merchant chances are now more accurate (the old estimate is kept in brackets); Bao's stock was checked in game and matches.
+  - The notes now say two restocks in a row never bring exactly the same stock.
+
+Version 2.1.1 (2026-11-07)
+  - Fixed the affix combinations dropped by quest monsters (they get the same affix bonus as bosses); combo availability updated.
+  - Added the Eternal Embers hero “Anthony The Drunken Warrior” (Orient, Legendary only) to the drop sources.
+
+Version 2.1.0 (2026-11-07)
+  - Build simulator: Strength of the Pack and Eye of the Storm can be ticked under mastery buffs and count in the character sheet.
+  - Fixed the website's offline copy sometimes staying on an old version.
+
+Version 2.0.9 (2026-11-07)
+  - Removed the redundant “1 projectile” from pet abilities; the Core Dweller's Concussive Blow is marked as never working (it has no weapon).
+
+Version 2.0.8 (2026-11-06)
+  - Removed the redundant “1 projectile” from skill values; built-in taunts are noted as working though the game's tooltips do not show them.
+
+Version 2.0.7 (2026-11-06)
+  - Cone-shaped melee skills now show the angle they really cover.
+
+Version 2.0.6 (2026-11-06)
+  - Upgrade effects are listed as added to the parent skill rather than as character attributes, and upgrades no longer say they go on the hotbar.
+  - Scatter Shot no longer shows “Requires: bow”; thrown weapons with Marksmanship also scatter (tested in game).
+
+Version 2.0.5 (2026-11-06)
+  - Artifacts are easier to find, name sorting follows the page language, and common items' material / style names match the game.
+
+Version 2.0.4 (2026-11-06)
+  - Fixed the build simulator's drop-down lists on iPhone / iPad.
+
+Version 2.0.3 (2026-11-06)
+  - The website has pages in 11 more game languages (German, French, Spanish, Italian, Brazilian Portuguese, Polish, Czech, Russian, Ukrainian, Japanese, Korean).
+
+Version 2.0.2 (2026-11-06)
+  - Faster opening and smaller pages; shorter rule notes.
+
+Version 2.0.1 (2026-11-06)
+  - The change log has its own page; affixes a base can never get are marked; faster on low-end phones.
+
+Version 2.0.0 (2026-11-06)
+  - Renamed to “Titan Quest Gear Database”, with acknowledgements.
+  - All affix tables, chances and prefix / suffix combinations re-checked against the PC data; sources are coloured tags and same-name bases / affixes are told apart.
+  - Weapon requirements of skills re-checked (Exploit Weakness, auras, self buffs …, tested in game); dual-wield eligibility fixed.
+  - Added the Adamantine Sickle of Kronos; fixed how shop-only combinations are shown; added missing “+X Armor”.
+
+Version 1.3.6.6 (2026-11-05)
+  - Skill weapon requirements, melee-only and dual-wield flags checked on PC and Android; platform differences are noted.
+
+Version 1.3.6.5 (2026-11-05)
+  - Fixed combo availability of 30 Eternal Embers rares; arena-only combinations no longer count as drops; better item editor.
+
+Version 1.3.6.4 (2026-11-05)
+  - “Upper end of the roll” no longer scales values that do not roll.
+
+Version 1.3.6.3 (2026-11-05)
+  - Skill types are shown; Chaos key drops completed; boss chests name their boss.
+
+Version 1.3.6.2 (2026-11-05)
+  - The details panel keeps its place when redrawn; clearer filter notes.
+
+Version 1.3.6.1 (2026-11-05)
+  - Checked Durin's upgrade, relic / charm slots (PC, Android, iOS) and the attribute count for requirements; three character-sheet fixes; removed 16 items that cannot be obtained.
+
+Version 1.3.6 (2026-11-04)
+  - Character sheet re-laid out, with damage and rounding as in the game; item details list prefixes and suffixes in two clickable tables.
+
+Version 1.3.5 (2026-11-04)
+  - Fixed units of chance-based and retaliation attributes; quest rewards show their difficulty; simulator sections can be collapsed.
+
+Version 1.3.4 (2026-11-04)
+  - Simulator re-laid out, with global search and remaining-point hints; Devourer's Treads and the Canaanite staves are no longer marked unobtainable.
+
+Version 1.3.3 (2026-11-04)
+  - Quest and Chaos dungeon rewards are single choice; quest rewards and source region names checked one by one.
+
+Version 1.3.2 (2026-11-04)
+  - Added global search, “Where to get it”, map locations of sources and a mobile 5× difficulty option; scrolls and potions have detail pages.
+
+Version 1.3.1 (2026-11-04)
+  - Character sheet follows the game's layout, adding racial bonuses, damage converted to health and mastery buffs; life leech fixed.
+
+Version 1.3.0 (2026-11-04)
+  - Added snapshots, saved builds, build codes and favourites in every tab.
+
+Version 1.2.3 (2026-11-04)
+  - Skill cooldowns follow the game's rules.
+
+Version 1.2.2 (2026-11-04)
+  - Added the Eternal Embers shrine curses; item-granted buffs count in the sheet; quest rewards split by difficulty.
+
+Version 1.2.0 (2026-11-03)
+  - Renamed to “Titan Quest Gear Simulator”; new Relics, Scrolls, Potions and Keys tabs; sets and artifact formulas merged into Equipment.
+
+Version 1.1.1 (2026-11-03)
+  - Spears are one-handed; attribute points have a “max” button.
+
+Version 1.1.0 (2026-11-03)
+  - Mastery skills use the game's skill-window layout; quest rewards include skill and attribute points; the Android app installs over older versions.
+
+Version 1.0.5 (2026-11-03)
+  - Better phone layout; the Android app ignores the system font size; added quest and Chaos dungeon rewards.
+
+Version 1.0.4 (2026-11-03)
+  - Works offline on iPhone / iPad; change log added.
+
+Version 1.0.3 (2026-11-03)
+  - The second socket of “of the Artisan” follows the game's rule; relic / charm lists show the required level.
+
+Version 1.0.2 (2026-11-03)
+  - Same-name jewelry tiers fixed; items can be searched by affix; item slots show their required level.
+
+Version 1.0.1 (2026-11-03)
+  - Rares follow the selected difficulty; release files are named by version.
+
+Version 1.0.0 (2026-11-03)
+  - First offline Android package; phone layout; the simulator can pick affixes and Durin's upgrade.

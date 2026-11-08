@@ -1,0 +1,29 @@
+{
+ "name": "泰坦之旅装备资料库",
+ "short_name": "TQ 装备资料库",
+ "lang": "zh-CN",
+ "start_url": "./index.html",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#121615",
+ "theme_color": "#1a1f1d",
+ "description": "泰坦之旅装备资料库：装备、套装、词缀、镶嵌物、卷轴、药剂、钥匙检索与模拟配装（玩家自制，非官方）· 版本 2.1.5",
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
