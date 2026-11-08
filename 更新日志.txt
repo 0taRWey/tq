@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.1.7（2026-11-08）
+  - 模拟配装：风暴专精「风暴汹涌」改为开关技能（游戏里要先开启，开启后一直预留 150 法力，开着时被敌人攻击才有几率放出暴风；游戏里实测），开启后预留的 150 法力从可用法力里扣掉；以前被当成手动施放的主动技能，开不了，预留也没算。
+  - 模拟配装：死灵专精「死亡寒意」也可以开关了。它作用在敌人身上，开着不加人物面板；不预留法力，开着时每秒消耗 1 法力（时间创伤、骨疽各再加 0.5）。
+
 版本 2.1.6（2026-11-08）
   - 模拟配装：双持投掷时两把武器的攻速改为相加（以前取平均，攻击速度和每秒出手算少了），双持近战仍取平均；两种都和游戏里人物面板实测一致。
   - 模拟配装：面板攻击速度的持握系数改用精确值（例如单手 19/30、法杖 209/320），以前四舍五入到三位小数，个别配置会和游戏差 1%。
@@ -153,6 +157,10 @@
 
 ----
 Change log
+
+Version 2.1.7 (2026-11-08)
+  - Build simulator: Storm Surge (Storm) is now a toggle (in game it has to be switched on and keeps 150 energy reserved while on; enemy hits may then set off the storm; tested in game); switched on, the 150 reserved energy comes off usable energy. It used to be treated as a hotbar attack that could not be switched on, so the reserve was never counted.
+  - Build simulator: Death Chill Aura (Spirit) can be switched on too. It acts on enemies, so it adds nothing to the character panel; it reserves no energy and drains 1 energy a second while on (+0.5 each for Ravages of Time and Necrosis).
 
 Version 2.1.6 (2026-11-08)
   - Build simulator: dual thrown weapons now add both weapons' speed (it used the average, under-reading attack speed and attacks per second); dual melee still uses the average. Both match the character sheet in game.
