@@ -2,7 +2,7 @@
 整理：贴吧用户_0taRWey
 
 版本 2.1.10（2026-11-09）
-  - 装备属性：游戏不读取的几类装备属性不再显示，也不计入检索和模拟配装（游戏里实测，共 132 件装备）：只有上限、没有下限的伤害（例如亚特兰迪斯的节杖的「0 ~ 120 基本火焰伤害」、冰霜法杖的减慢速度）；只有最长时间、没有最短时间的持续伤害和持续反击（例如睡盾的冰冻、毒素反击，塔拉撒之怒的电击反击）；装备上的恐惧、僵硬、嘲弄、减少意识控制持续时间和燃烧法力比例抗性（例如福波斯护臂的恐惧、命令披肩的减少意识控制持续时间）。技能和宠物加成里的同类属性照常有效。
+  - 装备属性：游戏不读取的几类装备属性不再显示，也不计入检索和模拟配装（游戏里实测，共 130 件装备）：只有上限、没有下限的伤害（例如亚特兰迪斯的节杖的「0 ~ 120 基本火焰伤害」、冰霜法杖的减慢速度）；只有最长时间、没有最短时间的持续伤害和持续反击（例如睡盾的冰冻、毒素反击，塔拉撒之怒的电击反击）；装备上的恐惧、僵硬、嘲弄、减少意识控制持续时间和燃烧法力比例抗性（例如福波斯护臂的恐惧、命令披肩的减少意识控制持续时间）。神器、遗物、符咒、技能和宠物加成上的同类属性照常有效。
   - 模拟配装：任务奖励里三个难度的「+10 智力」（任务：燃烧的剑，米梅尔的智慧）游戏里实际不加智力，改为不能勾选、不计入人物面板。
   - 模拟配装：符文专精的「激怒挑衅」不在游戏的技能窗口里，不能正常加点，不再列在「不在技能窗口里的技能」里。
   - Android 版同步到 2.1.10。
@@ -184,7 +184,7 @@
 Change log
 
 Version 2.1.10 (2026-11-09)
-  - Item stats: a few kinds of item stats that the game never reads are no longer shown or counted in search and the build simulator (tested in game; 132 items): damage with a maximum but no minimum (e.g. the Scepter of Atlantis’s “0 ~ 120 Fire Damage”, the frost staves’ slow); damage over time and retaliation over time with a maximum duration but no minimum (e.g. The Sleeper’s cold and poison retaliation, Wrath of Thalassa’s electrical retaliation); and Fear, Trap, Taunt, reduced mind-control duration and mana-burn ratio resistance on items (e.g. Fear on Phobos, the mind-control reduction on the Harness of Command). The same stats on skills and pet bonuses still work.
+  - Item stats: a few kinds of item stats that the game never reads are no longer shown or counted in search and the build simulator (tested in game; 130 items): damage with a maximum but no minimum (e.g. the Scepter of Atlantis’s “0 ~ 120 Fire Damage”, the frost staves’ slow); damage over time and retaliation over time with a maximum duration but no minimum (e.g. The Sleeper’s cold and poison retaliation, Wrath of Thalassa’s electrical retaliation); and Fear, Trap, Taunt, reduced mind-control duration and mana-burn ratio resistance on items (e.g. Fear on Phobos, the mind-control reduction on the Harness of Command). The same stats on artifacts, relics, charms, skills and pet bonuses still work.
   - Build simulator: the three “+10 Intelligence” quest rewards (Quest: The Burning Sword, all difficulties) give no Intelligence in the game; they can no longer be ticked and are not counted.
   - Build simulator: the Rune Mastery helper skill “Taunt” is not in the game’s skill window and cannot normally get points, so it is no longer listed under “Not shown in the skill window”.
   - Android app updated to 2.1.10.
