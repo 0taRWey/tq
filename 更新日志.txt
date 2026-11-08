@@ -5,6 +5,7 @@
   - 召唤物能力的等级超过这个技能的上限时，按上限算并注明（例如守护之石的「毁灭」、地心守卫的「震荡打击」；游戏里实测）。
   - 匕首之齿：它赋予的技能会发动，但不射出投射物、不造成伤害，详情里已注明（游戏里实测）。
   - 模拟配装：烈鬃头盔、奥瓦尔奥德布衫、何露斯之意志、布迪国王之斧、尼米多娜的长矛、赫伦汀攻击时给自己的增益，可以在「装备赋予的增益」里勾选，计入人物面板（烈鬃头盔游戏里实测）。
+  - 模拟配装「装备赋予的增益」：补上 9 个技能图标（狂怒、阿耳忒弥斯之战舞、得墨忒耳之收成、狮吼、命运之盾、玉帝之保护、镜之墙、凯布利之针、考拉冲击）；游戏里本身没有图标的（野外狩猎的宠物魔法抗性、武僧之道、升腾）用装备自己的图标代替；折叠后，开着的增益带亮色边框，开没开一眼看得出来（专精技能的增益、神庙诅咒同样）。
 
 版本 2.1.4（2026-11-08）
   - 装备赋予的技能、「+N 到」加成和召唤类技能都显示游戏里的名字（例如阿帕普的力量、注魔的阿佩普的力量的「+2 / +5 到 自然之怒」）；游戏里本来就没有名字的技能显示为「未命名被动」「未命名技能」；没有游戏内名字的物品显示为「无名称头盔 #1」这样的名称。
@@ -144,6 +145,7 @@ Version 2.1.5 (2026-11-08)
   - A summon ability above that skill's top level now counts as the top level, with a note (e.g. the Guardian Stones' Destruction, the Core Dweller's Concussive Blow; tested in game).
   - Daggertooth: its granted skill fires but launches no projectile and deals no damage; noted in its details (tested in game).
   - Build simulator: the self buffs that Bristleback Helm, Skyrta of Orvar-Oddr, Will of Horus, Axe of King Budli, Spear of Nemetona and Hrunting cast when attacking can be ticked under item-granted buffs and count in the character sheet (Bristleback Helm tested in game).
+  - Build simulator, item-granted buffs: 9 skill icons added (Frenzy, Artemis' Battle Dance, Demeter's Bounty, Lion's Roar, Shield of Destiny, Jade Emperor's Mau-D'uyhn, Mirror Wall, Kheprer's Sting, Kwoll Blast); buffs that have no icon in the game (Wild Hunt's pet magic resistance, Way of the Monk, Ascension) show the item's icon; when folded, buffs that are on get an accent frame, so on / off is easy to see (mastery buffs and shrine curses too).
 
 Version 2.1.4 (2026-11-08)
   - Skills granted by items, "+N to" bonuses and summon skills show their in-game names (e.g. "+2 / +5 to Nature's Wrath" on Might of Apep and Infused Might of Apep); skills that have no name in the game read "unnamed passive" / "unnamed skill"; items with no in-game name are listed as "Unnamed helm #1" and so on.
