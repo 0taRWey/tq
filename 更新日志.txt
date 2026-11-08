@@ -1,6 +1,9 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.2.0（2026-11-08）
+  - 模拟配装：装备的需求被降低时，装备格子上直接写出降低前后的数和来源，例如「力量 3000 → 1230（符文之语：羽化 −59%）」；等级、力量、敏捷、智力需求都会显示，来源可以是专精技能、装备、词缀、镶嵌物、套装或任务奖励。
+
 版本 2.1.9（2026-11-08）
   - 装备需求：28 件装备的等级需求改正，大多降 1 级，皮盾和睡盾降 2 级（例如福波斯护臂 46 → 45、睡盾 50 → 48）。游戏计算属性条数时不算这几类：装备上的恐惧、陷阱、嘲弄、转换和法力燃烧比例，武器和盾牌本身的护甲，只有最长时间、没有最短时间的持续伤害，只有上限、没有下限的伤害；以前把它们算进去了。全部 6,602 件非神器装备的等级、力量、敏捷、智力需求已和游戏里的数值逐件核对一致（游戏里实测）。
 
@@ -173,6 +176,9 @@
 
 ----
 Change log
+
+Version 2.2.0 (2026-11-08)
+  - Build simulator: when a requirement of a piece is lowered, its equipment slot now shows the value before and after and where the reduction comes from, e.g. "Str 3000 → 1230 (Runeword: Feather −59%)"; level, Strength, Dexterity and Intelligence requirements are covered, from mastery skills, gear, affixes, relics, sets or quest rewards.
 
 Version 2.1.9 (2026-11-08)
   - Requirements: the level requirement of 28 items is corrected, mostly 1 lower, 2 lower for Leatherskin Shield and The Sleeper (e.g. Phobos 46 → 45, The Sleeper 50 → 48). The game does not count these in the attribute count: Fear, Trap, Taunt, Convert and mana burn ratio on items, a weapon’s or shield’s own armor, a damage over time with only a maximum duration, and a damage with only a maximum; they were counted before. The level, Strength, Dexterity and Intelligence requirements of all 6,602 non-artifact items now match the game’s own values item by item (tested in game).
