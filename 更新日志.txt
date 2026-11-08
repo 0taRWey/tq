@@ -6,6 +6,7 @@
   - 模拟配装：任务奖励里三个难度的「+10 智力」（任务：燃烧的剑，米梅尔的智慧）游戏里实际不加智力，改为不能勾选、不计入人物面板。
   - 模拟配装：符文专精的「激怒挑衅」不在游戏的技能窗口里，不能正常加点，不再列在「不在技能窗口里的技能」里。
   - 装备和技能说明的数字改为和游戏相同的取整：逢 5 进位（以前逢 5 取偶数，例如粉碎显示 4 ~ 8、游戏是 5 ~ 8；符文武器 +2%、游戏 +3%；宁静光环元素抗性 26%、游戏 27%），小数按游戏保存数值的精度取舍（召唤风暴精灵的眩晕 1.1 ~ 2.1 秒改为 1.0 ~ 2.1 秒）。共改了 229 行（技能 104 行、装备 125 行），游戏里实测对照的 51 处显示差异中，整数不同的都已一致；其余是网页多显示一位小数（例如每秒 0.9 法力消耗，游戏显示 1）。
+  - 配装码缩短到原来的约 1/5：一整套配装（两个专精的技能、10 件装备都带前后缀和镶嵌物、诅咒、名字）从约 1,400 个字符缩到约 300 个，只有装备和技能的约 110 个，方便贴到有字数限制的论坛。装备、词缀、镶嵌物仍按游戏记录识别，资料库更新后照样能读；以前的配装码和分享链接照样能导入。
   - Android 版同步到 2.1.10。
 
 版本 2.1.9（2026-11-08）
@@ -189,6 +190,7 @@ Version 2.1.10 (2026-11-09)
   - Build simulator: the three “+10 Intelligence” quest rewards (Quest: The Burning Sword, all difficulties) give no Intelligence in the game; they can no longer be ticked and are not counted.
   - Build simulator: the Rune Mastery helper skill “Taunt” is not in the game’s skill window and cannot normally get points, so it is no longer listed under “Not shown in the skill window”.
   - Numbers in item and skill texts are now rounded the way the game rounds them: halves round up (before, halves went to the even number, e.g. Pulverize showed 4 ~ 8 where the game shows 5 ~ 8, Rune Weapon +2% vs +3%, Aura of Tranquility elemental resistance 26% vs 27%), and decimals follow the precision the game stores the value with (Summon Wisp's stun 1.1 ~ 2.1 s is now 1.0 ~ 2.1 s). 229 lines changed (104 skill lines, 125 item lines); of the 51 display differences found by in-game comparison, all whole-number ones now match; the rest are places where the page shows one more decimal (e.g. 0.9 energy per second where the game shows 1).
+  - Build codes are about 1/5 as long: a full build (skills of both masteries, 10 items each with affixes and a relic, curses, a name) goes from about 1,400 characters to about 300, a build with just items and skills to about 110 — easier to post on forums with a length limit. Items, affixes and relics are still identified by their game records, so codes keep working after data updates; older codes and share links still import.
   - Android app updated to 2.1.10.
 
 Version 2.1.9 (2026-11-08)
