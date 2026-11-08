@@ -9,7 +9,7 @@
   - 德、法、西、意、葡、波、捷、俄、乌文页面：游戏文字里按词性变化的形容词（例如「巨大的」蝎子）以前有时几种词形连在一起显示、或把后面的名词吞掉，现在按后面名词的词性只显示一种。
   - 掉落来源：有两种宝箱的首领（第一次击杀出一种、之后再杀换成「再次击杀」那种），第一种现在标为「首次击杀」，例如「阿拉克尼的宝箱（首次击杀 · 高贵的箱子）」，共 38 位首领；列表下方说明首次击杀的宝箱每个角色每个难度只出一次。只有一种宝箱、每次都一样的首领不加标记。
   - 掉落来源：新增「隐藏只能拿一次的来源」选项：首领的「首次击杀」宝箱和任务奖励每个角色每个难度只有一次，勾上后不列，几率排名和来源数跟着变，方便看能反复刷的来源；选项会记住。
-  - 网站：打开首页时按浏览器的语言自动进入对应语言的页面（没有对应语言时进英文页）；在右上角手动选过语言后，以后打开首页都按你选的。
+  - 网站：首页改为英文页，中文页的地址是 zh.html；打开首页时按浏览器的语言自动进入对应语言的页面（中文浏览器进中文页，没有对应语言时留在英文页）；在右上角手动选过语言后，以后打开首页都按你选的。以前的 en.html 链接会自动转到首页。下载的离线包和 Android 版仍是 index.html 中文、en.html 英文。
   - Android 版同步到 2.1.7。
 
 版本 2.1.6（2026-11-08）
@@ -173,7 +173,7 @@ Version 2.1.7 (2026-11-08)
   - German, French, Spanish, Italian, Portuguese, Polish, Czech, Russian and Ukrainian pages: adjectives that change with grammatical gender (e.g. "Colossal" Scorpion) sometimes showed all their forms run together or swallowed the noun after them; they now show the one form that fits the noun.
   - Drop sources: bosses with two chests (one for the first kill, then the "repeat kill" chest on later kills) now mark the first one "first kill", e.g. "Arachne's chest (first kill · Majestic Chest)" (38 bosses); a note under the list says the first-kill chest appears once per character and difficulty. Bosses with a single chest, the same every kill, stay unmarked.
   - Drop sources: new option "Hide one-time sources": a boss’s “first kill” chest and quest rewards come once per character and difficulty; ticked, they are left out and the ranking and source count follow, so the list shows what can be farmed. The option is remembered.
-  - Website: the front page now opens the page in your browser’s language (English when there is none); once you pick a language at the top right, the front page keeps to your choice.
+  - Website: the front page is now English and the Chinese page moved to zh.html; the front page opens the page in your browser’s language (staying on English when there is none), and once you pick a language at the top right it keeps to your choice. Old en.html links forward to the front page. The offline zip and the Android app still use index.html for Chinese and en.html for English.
   - Android app updated to 2.1.7.
 
 Version 2.1.6 (2026-11-08)

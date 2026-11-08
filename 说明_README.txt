@@ -7,6 +7,7 @@
   以后点主屏幕上的「TQ 装备资料库」图标打开，全屏，第一次打开后没网也能用。Android：用同目录的 APK 安装包，或同样「添加到主屏幕」。
 更新内容见 更新日志.txt。
 英文版的物品、词缀、技能、属性文字取自游戏自带英文文字。
+网站版（https://0tarwey.github.io/tq/）首页是英文页、中文页是 zh.html，打开首页时按浏览器语言自动进入对应页面；
 网站版另有德、法、西、意、巴西葡语、波兰、捷克、俄、乌克兰、日、韩 11 种语言的页面（de.html … ko.html，文字取自游戏自带的该语言文字，界面暂用英文）；
   这个 zip 和安卓应用只带中文、英文两页。
 页面和 img 文件夹（图标）要放在同一个文件夹里，不要拆开。
@@ -31,6 +32,7 @@ Compiled by 贴吧用户_0taRWey
 
 Open index.html (Chinese) or en.html (English) in a browser (switch at the top right); no internet connection needed.
 On phones, file previews (iOS Files app, chat apps) do not run scripts. iPhone / iPad: host the folder on GitHub Pages, open it in Safari → Share → Add to Home Screen; it then opens full screen and works offline after the first visit. See 更新日志.txt for the change log.
+The website (https://0tarwey.github.io/tq/) has English at the root (index.html) and Chinese at zh.html, and opens the page in the browser's language.
 The website also has pages in 11 more game languages (de.html … ko.html: German, French, Spanish, Italian, Brazilian Portuguese, Polish,
 Czech, Russian, Ukrainian, Japanese, Korean; game texts in that language, interface in English); this zip and the Android app carry Chinese and English.
 Keep the pages and the img folder (icons) together in one folder.

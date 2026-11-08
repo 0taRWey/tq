@@ -6,7 +6,7 @@
 
 It runs in the browser. There's nothing to install and no account to make. The front page opens in your browser's language.
 
-**[English](https://0tarwey.github.io/tq/en.html)** · [Deutsch](https://0tarwey.github.io/tq/de.html) · [Français](https://0tarwey.github.io/tq/fr.html) · [Español](https://0tarwey.github.io/tq/es.html) · [Italiano](https://0tarwey.github.io/tq/it.html) · [Português (Brasil)](https://0tarwey.github.io/tq/br.html) · [Polski](https://0tarwey.github.io/tq/pl.html) · [Čeština](https://0tarwey.github.io/tq/cz.html) · [Русский](https://0tarwey.github.io/tq/ru.html) · [Українська](https://0tarwey.github.io/tq/uk.html) · [日本語](https://0tarwey.github.io/tq/ja.html) · [한국어](https://0tarwey.github.io/tq/ko.html) · [中文](https://0tarwey.github.io/tq/index.html)
+**[English](https://0tarwey.github.io/tq/)** · [Deutsch](https://0tarwey.github.io/tq/de.html) · [Français](https://0tarwey.github.io/tq/fr.html) · [Español](https://0tarwey.github.io/tq/es.html) · [Italiano](https://0tarwey.github.io/tq/it.html) · [Português (Brasil)](https://0tarwey.github.io/tq/br.html) · [Polski](https://0tarwey.github.io/tq/pl.html) · [Čeština](https://0tarwey.github.io/tq/cz.html) · [Русский](https://0tarwey.github.io/tq/ru.html) · [Українська](https://0tarwey.github.io/tq/uk.html) · [日本語](https://0tarwey.github.io/tq/ja.html) · [한국어](https://0tarwey.github.io/tq/ko.html) · [中文](https://0tarwey.github.io/tq/zh.html)
 
 ---
 
@@ -75,7 +75,7 @@ This is an unofficial, non-commercial fan project, not affiliated with or endors
 ---
 
 ## 中文简介
-**泰坦之旅装备资料库**是玩家自制、免费、非商业的工具，对应 PC 版《泰坦之旅：不朽之王》（含全部资料片）。网址：**https://0tarwey.github.io/tq/**
+**泰坦之旅装备资料库**是玩家自制、免费、非商业的工具，对应 PC 版《泰坦之旅：不朽之王》（含全部资料片）。网址：**https://0tarwey.github.io/tq/**（中文页：https://0tarwey.github.io/tq/zh.html）
 
 - **装备检索**：按属性排名装备、套装、镶嵌物、卷轴、药剂、钥匙，并查看词缀组合和数值范围。
 - **掉落来源**：列出每个来源的几率，包括怪物、宝箱（首领宝箱分首次击杀和再次击杀）、任务奖励和商人；可以隐藏只能拿一次的来源。
