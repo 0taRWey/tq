@@ -4,7 +4,9 @@
 版本 2.1.7（2026-11-08）
   - 模拟配装：风暴专精「风暴汹涌」改为开关技能（游戏里要先开启，开启后一直预留 150 法力，开着时被敌人攻击才有几率放出暴风；游戏里实测），开启后预留的 150 法力从可用法力里扣掉；以前被当成手动施放的主动技能，开不了，预留也没算。
   - 模拟配装：死灵专精「死亡寒意」也可以开关了。它作用在敌人身上，开着不加人物面板；不预留法力，开着时每秒消耗 1 法力（时间创伤、骨疽各再加 0.5）。
-  - 掉落来源：沙尘荒地 / 索贝克高原的那只「高贵的箱子」是沙地女王马西卡的宝箱（和她一起出现），现在写作「沙地女王马西卡的宝箱（高贵的箱子）」，以前只写「高贵的箱子」；她自己不掉遗物，遗物出自这只箱子。
+  - 掉落来源：首领身边的宝箱都写上首领的名字。以前有二十多位首领的宝箱只写箱子本身的名字（「高贵的箱子」等），其中一些还和别处同类的箱子并成一行，看不出是谁的；现在单独成行，写作「某某的宝箱（箱子名）」，几率不变。涉及沙地女王马西卡、阿拉克尼、戈耳贡族女王、阿莱斯特、波吕斐摩斯、尼亥泊克、奇美拉、巴布伦、班德瑞、妖怪、灰暗三姐妹、瑟博勒斯、赛丰、克托斯野猪、斯喀戎、金牙王、奥斯特里和纳尔、索列姆、米梅尔、辛玛拉、洛基、瓦尔哈拉殿堂的诸神、阿甘托尼奥斯国王、古之长者、提雅玛。沙地女王马西卡自己不掉遗物，遗物出自她的宝箱。
+  - 德、法、西、意、葡、波、捷、俄、乌、日、韩文页面：首领宝箱的名字以前是英文和本语言拼在一起，有的还夹着格式符号；现在写作「首领名 — 箱子名」，首领名用游戏里该语言的原文。
+  - 德、法、西、意、葡、波、捷、俄、乌文页面：游戏文字里按词性变化的形容词（例如「巨大的」蝎子）以前有时几种词形连在一起显示、或把后面的名词吞掉，现在按后面名词的词性只显示一种。
 
 版本 2.1.6（2026-11-08）
   - 模拟配装：双持投掷时两把武器的攻速改为相加（以前取平均，攻击速度和每秒出手算少了），双持近战仍取平均；两种都和游戏里人物面板实测一致。
@@ -162,7 +164,9 @@ Change log
 Version 2.1.7 (2026-11-08)
   - Build simulator: Storm Surge (Storm) is now a toggle (in game it has to be switched on and keeps 150 energy reserved while on; enemy hits may then set off the storm; tested in game); switched on, the 150 reserved energy comes off usable energy. It used to be treated as a hotbar attack that could not be switched on, so the reserve was never counted.
   - Build simulator: Death Chill Aura (Spirit) can be switched on too. It acts on enemies, so it adds nothing to the character panel; it reserves no energy and drains 1 energy a second while on (+0.5 each for Ravages of Time and Necrosis).
-  - Drop sources: the Majestic Chest in Desert Waste / Sobek Plateau is Sandqueen Masika's chest (it appears with her) and is now listed as "Sandqueen Masika's chest (Majestic Chest)" instead of just "Majestic Chest"; she drops no relics herself, the relics come from this chest.
+  - Drop sources: chests next to a boss are named after the boss. The chests of more than twenty bosses showed only the container's name ("Majestic Chest" etc.), some merged into one line with chests of the same kind elsewhere; each now has its own line as "<boss>'s chest (<container>)", with the same chances. They include Sandqueen Masika, Arachne, the Gorgon Queens, Alastor, Polyphemus, Nehebkau, Chimera, Barmanu, Bandari, Yaoguai, the Gray Sisters, Cerberus, the Skeletal Typhon, Porcus, Sciron, the Troll King, Austri and Nar, Thrym, Mimir, Sinmara, Loki, the gods of Valhöll, King Arganthonios, the Ancient One and Tiamat. Sandqueen Masika drops no relics herself; they come from her chest.
+  - German, French, Spanish, Italian, Portuguese, Polish, Czech, Russian, Ukrainian, Japanese and Korean pages: boss chest names used to mix English with the page language (some with grammar codes); they now read "<boss> — <container>", the boss name in the game's own text for that language.
+  - German, French, Spanish, Italian, Portuguese, Polish, Czech, Russian and Ukrainian pages: adjectives that change with grammatical gender (e.g. "Colossal" Scorpion) sometimes showed all their forms run together or swallowed the noun after them; they now show the one form that fits the noun.
 
 Version 2.1.6 (2026-11-08)
   - Build simulator: dual thrown weapons now add both weapons' speed (it used the average, under-reading attack speed and attacks per second); dual melee still uses the average. Both match the character sheet in game.
