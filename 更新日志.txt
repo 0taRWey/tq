@@ -1,6 +1,14 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.2.0（2026-11-09）
+  - 模拟配装：人物面板的攻击部分分成「游戏面板」和「主攻技能」两档，在攻击一栏上方切换。
+  - 游戏面板：平均伤害值和 DPS 改为和游戏人物面板的算法完全相同（游戏里实测：474 件装备单独穿戴时，平均伤害值、DPS、抗性、充能缩短、法力消耗降低等 16117 项面板数值全部对上）。面板自己的几个特点照搬：不显示武器基础伤害化作元素伤害（实战里照常转换）；「攻击伤害转化为生命值」也加进平均伤害；几率属性按 几率 × 数值 计入，几率元素伤害先乘几率再算智力加成；「X% 机率发动下列之一 / 下列全部」整组几率不到 50% 时不计，到 50% 时「之一」只计累计几率过半的那一项；空手时空手基础伤害和其他伤害分开去掉小数。
+  - 主攻技能：从已投点的主动攻击技能、身上装备赋予的攻击技能（例如尼德弓「强力猛击」、梅杰斗篷「刀刃风暴」这类攻击时几率触发的技能）和普通攻击里选一个，按它对单个目标真实打出的伤害计算：武器攻击技能带出手的武器和全身固定伤害，盾牌技能另打盾牌一下，双持技能按每只手各打一下（无忌狂击近战四下、双持投掷三下）；类武器技能（投掷、刀刃屏障等）不带武器本身的伤害；纯技能只带技能自己的伤害；技能自己和已学进阶的加成、投射物数量一起算；武器基础伤害化作元素伤害照常转换；同一种持续伤害不叠加。同时给出冷却、法力消耗、施放用时和每秒伤害：武器技能池按权重算出现几率（全部武器池技能权重之和不到 80 时按权重 %，超过时按 权重 /（总权重 + 20））；装备技能按触发几率（游戏在记录的几率上再加 0.5%）和冷却；施放用时按攻击速度或施展速度和动作时长估算，尚未实测。
+  - 人物面板：「按游戏面板折算」也作用于几率充能缩短和几率法力消耗降低（马罗博布面具、摩洛神爪、翡翠海冠状头饰、阿革诺耳的谜题、工匠的学徒长袍；游戏里实测，例如 25% 机率缩短 80% 面板显示 20%，实际施放时要么不缩短、要么按全额缩短）。充能缩短合计为负时按 0 计（哈达之怒、狄俄涅的宝石；游戏里实测哈达之怒面板显示 0、冷却不变）。
+  - 装备属性：格兰的「10% 机率发动」组里的「+100% 流血持续时间」随这组一起按几率生效，不再算作常驻属性。
+  - 名称：三件神器按正确的中文名显示：Spirit Blight「枯萎精神」、Earthen Talisman「陶制的护身符」、Raven's Shadow「大乌鸦的阴影」。游戏的中文文本把这三个名字错开了一格（PC Steam 版游戏里也显示成「老人的狂怒」「枯萎精神」「陶制的护身符」，和另一件神器「老人的狂怒」重名），这里按游戏里这三件神器配方上的名字改正。
+
 版本 2.1.10（2026-11-09）
   - 装备属性：「X% 机率发动下列之一」的属性组改为按游戏实际的选法计算（PC 和手机版程序相同，游戏里实测）：先按整组的几率判定是否发动，发动时再按每一项自己的几率加权选出一项；所有项的几率都是 0 时，固定选游戏读取顺序里的第一项。以前是把整组几率按项数平分。显示改为「整组几率 + 本项实际几率」，永远选不到的项标「本项不会被选中」，检索排序和模拟配装的期望伤害也跟着改。例如：法夫尼尔之牙「100% 机率发动 3 项之一」实际每下都是穿刺伤害，火焰和毒素永远不会出现；波吕斐摩斯之诺德的蚀肉三项几率都是 0 的版本只会出现额外物理伤害；恶颜之盾 50% 里石化占 2/7、减速占 5/7；技能风暴之手按 3:2 分给冰冷和闪电。装备上的恐惧、嘲弄、僵硬和持续物理伤害游戏不读取，也不算进组里。
   - 装备属性 / 模拟配装：即时毒素伤害分成两种算。装备、词缀、圣物、符咒追加的即时毒素（例如凌丹的考拉冲击、法夫尼尔之牙、美杜莎的痛苦）只吃「+% 毒素伤害」和「+% 所有伤害」，不吃敏捷；只有武器底材本身的即时毒素（例如神之珍珠法杖）还会再乘以（1 + 敏捷 / 500）。游戏里实测：凌丹的追加即时毒素在敏捷 300 和 5100 时每下都是 230；神之珍珠法杖的底材毒素在敏捷 300 时 570–603，5100 时 3981–4162。以前两种都乘了敏捷，算高了追加毒素。
@@ -191,6 +199,14 @@
 
 ----
 Change log
+
+Version 2.2.0 (2026-11-09)
+  - Build simulator: the offense part of the character sheet has two views, "Game sheet" and "Main attack", switched above it.
+  - Game sheet: average damage and DPS are now computed exactly as the game's character sheet does (tested in game: with each of 474 items worn alone, all 16,117 sheet values -- average damage, DPS, resistances, recharge and energy cost reduction and more -- match). The sheet's own quirks are kept: weapon-to-elemental conversion is not shown (real hits still convert); "attack damage converted to health" is added to the average; chance attributes count as chance × value, a chance elemental damage is multiplied by its chance before the Intelligence formula; an "X% chance of one of / all of" group is not counted below 50%, and at 50% or more only the member where the running chance passes half counts; unarmed, the bare-hand base and the rest lose their decimals separately.
+  - Main attack: pick one of your learned attack skills, an attack skill your gear gives (procs such as Nidbow "Power Strike" or the Mantle of the Medjai's "Blade Storm") or the normal attack, computed as it really hits one target: weapon attack skills carry the striking weapon and all flat damage, shield skills also strike with the shield, dual-wield skills strike once per hand (Reckless Offense four times melee, three times dual thrown); weapon-like skills (Throwing Knife, Blade Barrier ...) leave out the weapon's own damage; pure skills carry only their own damage; the skill's own and its learned upgrades' bonuses and projectiles count; weapon-to-elemental conversion applies; one kind of damage over time does not stack. Cooldown, energy cost, cast time and DPS are shown: weapon pool skills by their weight (all pool weights below 80: weight %; above: weight / (total + 20)); gear skills by their trigger chance (the game adds 0.5% to the record) and cooldown; cast time estimated from attack or cast speed and the animation length, not measured yet.
+  - Character sheet: "as the game's sheet shows" also folds chance recharge reduction and chance energy cost reduction (Marbod's Mask, Claws of Molech, Tiara of the Emerald Seas, Agenor's Conundrum, Artificer' Apprentice Gown; tested in game: e.g. 25% chance of 80% shows 20%, while each cast is either not reduced or reduced in full). Total recharge reduction below 0 counts as 0 (Wrath of Hadad, Gem of Dione; tested in game: Wrath of Hadad shows 0 and the cooldown stays the same).
+  - Item attributes: Gram's "+100% bleeding duration" in its "10% chance of" group now applies with the group's chance instead of always.
+  - Names: three artifacts show their correct Chinese names (枯萎精神 Spirit Blight, 陶制的护身符 Earthen Talisman, 大乌鸦的阴影 Raven's Shadow); the game's Chinese text shifts these three by one (the PC Steam game shows them wrong too), corrected from the names on their arcane formulas.
 
 Version 2.1.10 (2026-11-09)
   - Item attributes: "X% chance of one of the following" groups now follow the game's own pick (same code on PC and mobile, tested in game): the group's chance decides whether it fires, then one entry is picked weighted by each entry's own chance; when every entry's chance is 0, the first entry in the game's load order is always taken. Previously the group chance was split evenly. Each entry now shows the group chance plus its own real chance, entries that can never be picked say so, and search sorting and the build simulator's expected damage follow. Examples: Fafnir's Teeth "100% chance of one of 3" is always pierce damage, never fire or poison; the versions of Polyphemus' Tenderizer whose three chances are all 0 only ever give bonus physical damage; Shield of the Hideous Visage splits its 50% as 2/7 petrify and 5/7 slow; the Storm Nimbus skill splits 3:2 between cold and lightning. Fear, taunt, trap and physical damage over time on equipment are not read by the game and are not group entries.
