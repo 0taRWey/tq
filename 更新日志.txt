@@ -2,7 +2,7 @@
 整理：贴吧用户_0taRWey
 
 版本 2.2.2（2026-11-10）
-  - 模拟配装：主攻技能不再列出没有生命伤害的控制、减益技能：致盲、狩猎大师、沉睡之沙、烟幕、死亡凝视、奴役、激怒挑衅、苦果。诱捕只有学了带流血伤害的进阶才列出；战争号角的进阶是按目标当前生命的百分比扣血，没法算成固定数值，也不列出。武器攻击技能（例如战风、致死打击、长矛之舞、三重打击、幻影攻击）照常列出。
+  - 模拟配装：主攻技能不再列出本身没有生命伤害的控制、减益技能：致盲、狩猎大师、诱捕、沉睡之沙、烟幕、死亡凝视、奴役、激怒挑衅、苦果、战争号角。武器攻击技能（例如战风、致死打击、长矛之舞、三重打击、幻影攻击）照常列出。
 
 版本 2.2.1（2026-11-09）
   - 模拟配装：主攻技能只列主动施放的攻击技能（包括冲击、预谋打击这类设为鼠标左键使用的蓄能技能）、装备赋予的攻击技能和普通攻击；粉碎、英勇打击、压制、齐射这类武器池技能是普通攻击时按几率改用的，不单独列出。
@@ -207,7 +207,7 @@
 Change log
 
 Version 2.2.2 (2026-11-10)
-  - Build simulator: "Main attack" no longer lists control and debuff skills that do no health damage: Flash Powder, Study Prey, Sands of Sleep, Smoke Cloud, Vision of Death, Enslave Spirit, Taunt, Consequences. Ensnare is listed only with an upgrade that adds bleeding; War Horn's upgrade takes a percentage of the target's current health, which cannot be a fixed number, so it is not listed either. Weapon attack skills (such as War Wind, Lethal Strike, Spear Dance, Ternion Attack, Phantom Strike) are listed as before.
+  - Build simulator: "Main attack" no longer lists control and debuff skills that do no health damage of their own: Flash Powder, Study Prey, Ensnare, Sands of Sleep, Smoke Cloud, Vision of Death, Enslave Spirit, Taunt, Consequences, War Horn. Weapon attack skills (such as War Wind, Lethal Strike, Spear Dance, Ternion Attack, Phantom Strike) are listed as before.
 
 Version 2.2.1 (2026-11-09)
   - Build simulator: "Main attack" lists only attack skills you cast (including charged left-click skills such as Onslaught and Calculated Strike), attack skills your gear gives and the normal attack; weapon pool skills such as Pulverize, Shield Smash, Disable and Volley, which a normal attack turns into by chance, are not listed.
