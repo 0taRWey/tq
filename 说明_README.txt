@@ -1,4 +1,4 @@
-泰坦之旅装备资料库 · 版本 2.2.1
+泰坦之旅装备资料库 · 版本 2.2.2
 整理：贴吧用户_0taRWey
 
 打开方法：用浏览器打开 index.html（中文）或 en.html（English），右上角可切换，不需要联网（联网时会多加载一种网页字体）。
@@ -27,7 +27,7 @@
   也感谢 用心做好自己、祁镇在草原望北京、轩辕梦羽、moyezn 等众多玩家的试用和反馈。
 
 ----
-Titan Quest Gear Database · version 2.2.1
+Titan Quest Gear Database · version 2.2.2
 Compiled by 贴吧用户_0taRWey
 
 Open index.html (Chinese) or en.html (English) in a browser (switch at the top right); no internet connection needed.
