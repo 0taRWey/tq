@@ -1,14 +1,16 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
-版本 2.2.7（2026-11-10）
-  - 按属性需求筛选装备：模拟配装选装备时品质旁边新加下拉框，「装备」页「范围」里新加「属性需求」，可选力量 / 敏捷 / 智力。按底材力量 / 敏捷 / 智力里需求最高的那一项分；并列最高的几项都算（例如阿瑞斯的弱点 50 力量、50 敏捷、1 智力，在力量和敏捷下都有）；没有属性需求的装备（多数戒指、项链）谁都能穿，选哪一项都列出，列表里标「无属性需求」。选装备时选过一次，换别的部位还保持。
-  - 两件 NPC 头发 / 胡子的外观记录（名字显示为 Spartan Bronze Helm 和 malenpcbeard01.dbr）以前被算作拿得到，现在和其他 NPC 外观道具一样算拿不到：它们只挂在商人和村民 NPC 身上，NPC 杀不死，也不会掉。可拿到的装备因此少 2 件。
-  - 网页版离线打开更稳：以前网页总是先等网络，网络慢或卡住时（github.io 在有些地区经常这样）会一直转圈，直到浏览器放弃才用本机存的那份，看起来就像「有时打得开、有时打不开」。现在网络 4 秒内没下完就直接打开本机存的那份，新版本在后台继续下载，下次打开时换上；第一次打开（本机还没存）照旧等网络。
+版本 2.2.8（2026-11-10）
   - 模拟配装：召唤物的 22 个进阶技能（胜利之光、地火燃烧、野火、变形术、风暴之眼、弧形电波、陷阱强化、引爆、刺痛的荨麻、抓破、生存本能、团队之力、繁茂之盾、自然之怒、森林保护、死亡新星、鬼魂壳甲、神秘气流、催眠凝视、控制心神、粉碎打击、火焰铸造）以前没有技能说明，各级只写「附带：技能名」；现在和游戏一样写出技能说明，各级写出召唤物得到的那个技能的数值（例如催眠凝视 1 级：3 秒混乱、降低 6% 抗性 3 秒；控制心神：范围内所有宠物 +5% 所有伤害、+30% 生命 / 法力恢复速度）。风暴之手补上给所有宠物的冰冷 / 闪电伤害。
   - 11 种其他语言的网页：专精和技能的说明改用该语言的游戏文字（以前全是英文）。
   - 装备和技能里「触发后施放另一个技能」的（鲁萨德的封印、巴尔的圣符、罗腾之齿、克吕墨涅的垂饰、海洋之心、普勒俄涅、卡里斯提、许布里斯的微光、忒伊亚的洞察、安蒙的荣耀、赫拉尼库斯的环绕戒指，内丹的金蟾祝福、苦果）以前只写触发几率，现在写出触发后按几级施放、施放的技能有什么效果。例如鲁萨德的封印：盈利 1 级，2% 机率召出 4 级的金蟾，约 1 秒后消失，掉 6 ~ 9 袋金币，49% 机率另掉一瓶药水，不掉装备。
   - 模拟配装：主攻技能里，进阶技能有自己的武器要求时（例如穿刺射击只认弓），当前武器不符合就只算它照样生效的部分（穿刺射击的穿透），百分比穿刺伤害不再加到拿投掷武器的射术上，并在下面注明。人物面板一直是这样算的，只有主攻技能漏了。
+
+版本 2.2.7（2026-11-10）
+  - 按属性需求筛选装备：模拟配装选装备时品质旁边新加下拉框，「装备」页「范围」里新加「属性需求」，可选力量 / 敏捷 / 智力。按底材力量 / 敏捷 / 智力里需求最高的那一项分；并列最高的几项都算（例如阿瑞斯的弱点 50 力量、50 敏捷、1 智力，在力量和敏捷下都有）；没有属性需求的装备（多数戒指、项链）谁都能穿，选哪一项都列出，列表里标「无属性需求」。选装备时选过一次，换别的部位还保持。
+  - 两件 NPC 头发 / 胡子的外观记录（名字显示为 Spartan Bronze Helm 和 malenpcbeard01.dbr）以前被算作拿得到，现在和其他 NPC 外观道具一样算拿不到：它们只挂在商人和村民 NPC 身上，NPC 杀不死，也不会掉。可拿到的装备因此少 2 件。
+  - 网页版离线打开更稳：以前网页总是先等网络，网络慢或卡住时（github.io 在有些地区经常这样）会一直转圈，直到浏览器放弃才用本机存的那份，看起来就像「有时打得开、有时打不开」。现在网络 4 秒内没下完就直接打开本机存的那份，新版本在后台继续下载，下次打开时换上；第一次打开（本机还没存）照旧等网络。
 
 版本 2.2.6（2026-11-10）
   - 模拟配装：属性点一栏加上「两栏够穿」，和「刚好够穿」一样算最少的力量 / 敏捷 / 智力点数，但武器栏 1、2 都算进去（取两栏各自需要的较大点数），切换武器栏后两栏的装备都穿得上。
@@ -234,14 +236,16 @@
 ----
 Change log
 
-Version 2.2.7 (2026-11-10)
-  - Filter items by main requirement: a new drop-down next to the quality in the build simulator's item picker, and "Main requirement" under Scope on the Equipment tab, with Strength / Dexterity / Intelligence. Items are sorted by the highest of the base's Str / Dex / Int requirements; a tie counts for each (e.g. Ares' Weakness, 50 Str / 50 Dex / 1 Int, is under both Strength and Dexterity); items without attribute requirements (most rings and amulets) can be worn by anyone and are always listed, marked "no attribute req". The picker keeps the choice for the next slot.
-  - Two NPC hair / beard look records (shown as Spartan Bronze Helm and malenpcbeard01.dbr) used to count as obtainable; like the other NPC look items they now count as not obtainable: only merchant and villager NPCs wear them, and NPCs cannot be killed. Obtainable items: 2 fewer.
-  - Steadier offline start for the web version: pages always waited for the network first, so on a slow or stalled connection (github.io often is in some regions) the page kept loading until the browser gave up before the stored copy was used. Now, if the network has not finished within 4 s, the stored copy opens at once and the new version keeps downloading in the background for next time; the very first visit (nothing stored yet) still waits for the network.
+Version 2.2.8 (2026-11-10)
   - Build simulator: the 22 summon upgrade skills (Triumph, Inner Fire, Wildfire, Metamorphosis, Eye of the Storm, Arc Discharge, Improved Firing Mechanism, Detonate, Stinging Nettle, Maul, Survival Instinct, Strength of the Pack, Overgrowth, Nature's Wrath, Sylvan Protection, Death Nova, Wraith Shell, Arcane Blast, Hypnotic Gaze, Master Mind, Shatter, Forged by Fire) had no description and only "linked: <name>" per level; they now show the game's description and, per level, the numbers of the skill the summon gets (e.g. Hypnotic Gaze level 1: 3 s Confusion, 6% reduced resistances for 3 s; Master Mind: +5% total damage, +30% health / energy regeneration to all pets in range). Storm Nimbus now lists its cold / lightning bonus to all pets.
   - Pages in the 11 other languages: mastery and skill descriptions now use that language's game text (they were all in English).
   - Skills that cast another skill when triggered (Seal of Russadir, Holy Symbol of Baal, Teeth of Lotan, Pendant of Clymene, Heart of the Ocean, Pleione, Kallistei, Shimmer of Hybris, Theia's Sight, Ammon's Magnificence, Hellanicus' Fidget Ring; Neidan's Blessing of Jin Chan and Consequences) only showed the chance; they now show the level the skill is cast at and what it does. E.g. Seal of Russadir: Profit level 1, a 2% chance to summon a level 4 golden toad that vanishes after about 1 s, dropping 6 ~ 9 bags of gold, a potion 49% of the time, no gear.
   - Build simulator: in the main attack, an upgrade with its own weapon requirement (e.g. Puncture Shot Arrows: bows only) now adds only its weapon-independent parts (Puncture Shot Arrows' pass-through) when the current weapon does not qualify, so its % pierce no longer lands on Marksmanship with a thrown weapon; a note says so. The character sheet always did this; only the main attack missed it.
+
+Version 2.2.7 (2026-11-10)
+  - Filter items by main requirement: a new drop-down next to the quality in the build simulator's item picker, and "Main requirement" under Scope on the Equipment tab, with Strength / Dexterity / Intelligence. Items are sorted by the highest of the base's Str / Dex / Int requirements; a tie counts for each (e.g. Ares' Weakness, 50 Str / 50 Dex / 1 Int, is under both Strength and Dexterity); items without attribute requirements (most rings and amulets) can be worn by anyone and are always listed, marked "no attribute req". The picker keeps the choice for the next slot.
+  - Two NPC hair / beard look records (shown as Spartan Bronze Helm and malenpcbeard01.dbr) used to count as obtainable; like the other NPC look items they now count as not obtainable: only merchant and villager NPCs wear them, and NPCs cannot be killed. Obtainable items: 2 fewer.
+  - Steadier offline start for the web version: pages always waited for the network first, so on a slow or stalled connection (github.io often is in some regions) the page kept loading until the browser gave up before the stored copy was used. Now, if the network has not finished within 4 s, the stored copy opens at once and the new version keeps downloading in the background for next time; the very first visit (nothing stored yet) still waits for the network.
 
 Version 2.2.6 (2026-11-10)
   - Build simulator: an "Enough for both sets" button next to "Just enough for gear": the fewest Str / Dex / Int points for weapon sets 1 and 2 together (the larger number each set needs), so the gear stays on after switching sets.
