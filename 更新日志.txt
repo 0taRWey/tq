@@ -1,6 +1,9 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.2.10（2026-11-10）
+  - 东方的 7 种遗物——关羽的仁慈、猴王的戏法、玉帝的平静、阎罗王的杀戮、汉默拉比法典、龙王的领域、神农的黑色药——普通难度那一档改名为「[小]」。电脑版中文把这一档也写成「[中]」，和史诗难度那一档重名；手机版（Google Play、iOS）已改为「[小]」，这里按手机版。用到它们的神秘配方（灵魂棱镜、血性狂暴、结晶的泪滴、太阳石）里的名字一起改。只影响中文页。
+
 版本 2.2.9（2026-11-10）
   - 死亡护卫、神圣狂暴，以及赋予它们的装备（轮回之神法杖、乌尔德帽、狂战士斗篷、幽灵弓、不宁之王护盾、幽灵盾牌、幽灵法杖）：技能介绍和装备详情写出持续时间怎么算（游戏里实测）。触发后，只要生命还没有回到触发线（死亡护卫 15%、神圣狂暴 40%）以上，持续时间就停着不倒数，伤害吸收等效果一直有效；生命第一次回到触发线以上才开始倒数，开始倒数后再跌回去也不会停。死亡护卫触发时先回一次生命，持续时间结束后才开始计 300 秒冷却。
   - 2.2.9 是最后一个 Android 安装包：以后不再更新 Android 版，网页版压缩包也从这一版起不再提供，请改用网站版 https://0tarwey.github.io/tq/ 。网站版会一直更新，还有 11 种其他语言的页面；打开过一次后没网也能用，手机上可以用浏览器的「添加到主屏幕」放到桌面，电脑上可以用 Edge / Chrome 的「安装此站点为应用」。使用说明里关于安卓应用和压缩包的部分已去掉。
@@ -239,6 +242,9 @@
 
 ----
 Change log
+
+Version 2.2.10 (2026-11-10)
+  - Chinese page only: the Normal tier of 7 Orient relics (Essence of Guan-Yu's Grace, of the Monkey King's Trickery, of the Jade Emperor's Serenity, of Yen-Lo-Wang's Bloodletting, of the Code of Hammurabi, of the Domain of the Dragon-Kings, of Shen-Nong's Dark Medicine) is now named "[小]" (small). The PC Chinese text gives it the same name "[中]" as the Epic tier; the mobile versions (Google Play, iOS) use "[小]", and so does this site now, including in the Mystic recipes that use them.
 
 Version 2.2.9 (2026-11-10)
   - Death Ward, Sacred Rage and the items that grant them (Staff of Kheprer, Cap of Urd, Berserker's Mantle, Bow of the Shades, Shield of the Restless King, Shield of the Shades, Staff of the Shades): the skill details and item pages now explain how the duration runs (tested in game). After it triggers, the duration does not run and the effects (damage absorption etc.) stay on until your health first goes back above the trigger line (Death Ward 15%, Sacred Rage 40%); from then on it counts down even if you drop below the line again. Death Ward restores life once when it triggers, and its 300 s cooldown starts only when the duration ends.
