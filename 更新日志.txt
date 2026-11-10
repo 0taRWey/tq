@@ -2,7 +2,7 @@
 整理：贴吧用户_0taRWey
 
 版本 2.2.3（2026-11-10）
-  - 模拟配装：主攻技能下面加「各手伤害明细」：战风、盾牌技能（武器一下、盾牌一下）分别列出每只手和盾牌那一下的伤害；双持时普通攻击这类每次只用一只手出手的，列出两只手各打一下的伤害（上面的数值按两手平均）。
+  - 模拟配装：主攻技能下面加「各手伤害明细」：战风、盾牌技能（武器一下、盾牌一下）分别列出每只手和盾牌那一下的伤害，并按出手先后标明第 1 下、第 2 下（战风先右手后左手；盾牌冲击先盾牌、后右手武器），先打的那一下附带的降低护甲、抗性等减益后一下就能吃到；双持时普通攻击这类每次只用一只手出手的（右手、左手各约一半机率，不分先后），列出两只手各打一下的伤害（上面的数值按两手平均）。
   - 模拟配装：戴着巴尔的圣符、罗腾之齿或克吕墨涅的垂饰时，主攻技能的冷却一栏写出它们的「刷新」每次触发减多少剩余冷却：巴尔的圣符每杀死 1 个敌人减 0.5 秒，+所有技能每 1 级再多减 0.5 秒（最高 10 级 5 秒，例如 +5 所有技能时减 3 秒）；罗腾之齿杀死染上瘟疫的敌人时同样计算；克吕墨涅的垂饰喝药水时 20% 机率减 10 秒。刷新只减专精技能的冷却，装备技能不受影响。
   - 燃烧法力按游戏的写法显示为百分比，例如咒语打断「24% 燃烧法力」：烧掉目标法力上限的这个百分比（剩余法力不够时烧光为止）。技能、装备、词缀、套装上的都一样，13 种语言同步（游戏里实测）。
 
@@ -212,7 +212,7 @@
 Change log
 
 Version 2.2.3 (2026-11-10)
-  - Build simulator: "Main attack" now has "Damage by hand": War Wind and shield skills (one hit with the weapon, one with the shield) list each hand's and the shield's hit; attacks that strike with one hand at a time while dual wielding (such as the normal attack) list one hit of each hand (the figures above average the two).
+  - Build simulator: "Main attack" now has "Damage by hand": War Wind and shield skills (one hit with the weapon, one with the shield) list each hand's and the shield's hit, numbered in the order they strike (War Wind right hand, then left; Shield Charge the shield, then the right-hand weapon) -- a debuff the first hit carries (lowered armor, resistances ...) already applies to the second; attacks that strike with one hand at a time while dual wielding (such as the normal attack; right or left about half the time each, no set order) list one hit of each hand (the figures above average the two).
   - Build simulator: with Holy Symbol of Baal, Teeth of Lotan or Pendant of Clymene worn, the recharge line of "Main attack" shows how much each "Refresh" takes off the remaining recharge: Holy Symbol of Baal 0.5 s per enemy killed, plus 0.5 s for each +1 to all skills (up to level 10, 5 s; e.g. 3 s with +5 to all skills); Teeth of Lotan the same when the enemy killed has Plague; Pendant of Clymene 10 s at a 20% chance when drinking a potion. Refresh only shortens mastery skills, not item skills.
   - Energy Drain shows as a percentage, as in the game, e.g. Spell Breaker "24% Energy Drain": it burns that percentage of the target's maximum energy (all that is left if it has less). The same on skills, items, affixes and sets, in all 13 languages (tested in game).
 
