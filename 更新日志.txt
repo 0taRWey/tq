@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.2.5（2026-11-10）
+  - 模拟配装：武器栏 1、2 各自记着自己的主攻技能，和游戏里每套武器各自绑定攻击技能一样，两栏可以不一样（例如第 1 栏双持近战用雷霆冲击、第 2 栏拿弓用别的技能），切换武器栏时主攻技能跟着换；还没给第 2 栏选过时沿用当前的主攻技能。
+  - 模拟配装：分享配装码也带上两栏各自的主攻技能，以及人物面板选的是「游戏面板」还是「主攻技能」（以前生成的配装码照样能导入，主攻技能按普通攻击处理）；收藏的配装同样记着两栏各自的主攻技能。
+
 版本 2.2.4（2026-11-10）
   - 模拟配装：武器栏 1 / 2，和游戏里的武器切换一样，右手、左手可以配两套；装备一栏上方点 1 或 2 切换，只有正在用的那一栏计入人物面板和主攻技能（例如第 1 栏双持近战、第 2 栏双持投掷，雷霆冲击的出手方式和说明跟着换）。另一栏的武器少给的力量、敏捷、智力（或需求降低）会让别的装备需求不够时，和游戏里一样那件仍穿着但被停用、属性不计入；切换前武器栏旁就会提示哪几件会这样。分享配装码、收藏的配装都带上两个武器栏和正在用哪一栏（以前生成的配装码照样能导入，按只有第 1 栏处理）。
   - 模拟配装：主攻技能里武器技能的说明按手上的武器分开写：近战武器（含双持近战）写出手顺序，以及先打的那一下附带的降低护甲、抗性等减益后一下就能吃到；弓、法杖、投掷武器写每一下各发出几个投射物（双持投掷写两手同一帧一起出手），有「各手伤害明细」时写在它的标题下，只出手一下时写在「每次施放」一栏。近战武器和空手是近战攻击，不发投射物。
@@ -215,6 +219,10 @@
 
 ----
 Change log
+
+Version 2.2.5 (2026-11-10)
+  - Build simulator: weapon sets 1 and 2 each keep their own main attack, as the game binds the attack skills per weapon set, so the two can differ (e.g. set 1 dual melee with Thunder Strike, set 2 a bow with another skill) and the main attack swaps with the set; a set that never had one picked keeps the current main attack.
+  - Build simulator: share codes also carry each set's main attack and whether the character sheet shows "Game sheet" or "Main attack" (older codes still import, with the normal attack as main attack); saved builds keep each set's main attack too.
 
 Version 2.2.4 (2026-11-10)
   - Build simulator: weapon sets 1 / 2, as the game's weapon swap: the right and left hands can hold two sets; click 1 or 2 above the equipment to switch. Only the set in use counts for the character sheet and the main attack (e.g. set 1 dual melee, set 2 dual thrown: Thunder Strike's hits and notes change with it). If the other set's weapons give less Strength / Dexterity / Intelligence (or requirement reduction) so that other gear falls below its requirements, that gear stays on but is disabled and its attributes stop counting, as in game; the weapon set bar lists such gear before you swap. Share codes and saved builds carry both weapon sets and which one is in use (codes made before still import, as set 1 only).
