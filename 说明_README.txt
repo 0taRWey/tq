@@ -7,7 +7,7 @@
 网站版完整打开过一次后，没网也能用。手机：用 Safari / Chrome 打开网址 → 分享或「⋮」→「添加到主屏幕」，以后点主屏幕上的「TQ 装备资料库」图标打开，全屏。
 电脑：Edge / Chrome 可以「安装此站点为应用」。
 iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，不运行脚本，属性列表会是空的。
-从 2.2.9 起不再提供网页版压缩包和 Android 安装包，请直接用网站版。
+2.2.9 是最后一个 Android 安装包；网页版压缩包从 2.2.9 起不再提供。以后请直接用网站版。
 更新内容见 更新日志.txt。
 
 数据对应 PC 版《泰坦之旅：不朽之王》（Titan Quest Anniversary Edition 2.10，含全部资料片）。
@@ -34,7 +34,7 @@ Ukrainian, Japanese, Korean; game texts in that language, interface in English).
 After one full visit it also works offline. Phones: open the address in Safari / Chrome → Share or "⋮" → Add to Home Screen; it then opens
 full screen from the home-screen icon. Computers: "Install this site as an app" in Edge / Chrome.
 File previews (iOS Files app, chat apps) do not run scripts.
-From 2.2.9 there is no zip download or Android app any more; use the website. See 更新日志.txt for the change log.
+2.2.9 is the last Android app, and from 2.2.9 there is no zip download; use the website. See 更新日志.txt for the change log.
 
 Data: Titan Quest Anniversary Edition 2.10 for PC (all expansions).
 

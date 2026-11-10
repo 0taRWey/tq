@@ -3,7 +3,7 @@
 
 版本 2.2.9（2026-11-10）
   - 死亡护卫、神圣狂暴，以及赋予它们的装备（轮回之神法杖、乌尔德帽、狂战士斗篷、幽灵弓、不宁之王护盾、幽灵盾牌、幽灵法杖）：技能介绍和装备详情写出持续时间怎么算（游戏里实测）。触发后，只要生命还没有回到触发线（死亡护卫 15%、神圣狂暴 40%）以上，持续时间就停着不倒数，伤害吸收等效果一直有效；生命第一次回到触发线以上才开始倒数，开始倒数后再跌回去也不会停。死亡护卫触发时先回一次生命，持续时间结束后才开始计 300 秒冷却。
-  - 从这个版本起不再提供网页版压缩包和 Android 安装包，请直接用网站版（https://0tarwey.github.io/tq/）。网站版打开过一次后没网也能用，手机上可以用浏览器的「添加到主屏幕」，电脑上可以用 Edge / Chrome 的「安装此站点为应用」。使用说明里关于安卓应用和压缩包的部分已去掉。
+  - 2.2.9 是最后一个 Android 安装包：以后不再更新 Android 版，网页版压缩包也从这一版起不再提供，请改用网站版 https://0tarwey.github.io/tq/ 。网站版会一直更新，还有 11 种其他语言的页面；打开过一次后没网也能用，手机上可以用浏览器的「添加到主屏幕」放到桌面，电脑上可以用 Edge / Chrome 的「安装此站点为应用」。使用说明里关于安卓应用和压缩包的部分已去掉。
 
 版本 2.2.8（2026-11-10）
   - 模拟配装：召唤物的 22 个进阶技能（胜利之光、地火燃烧、野火、变形术、风暴之眼、弧形电波、陷阱强化、引爆、刺痛的荨麻、抓破、生存本能、团队之力、繁茂之盾、自然之怒、森林保护、死亡新星、鬼魂壳甲、神秘气流、催眠凝视、控制心神、粉碎打击、火焰铸造）以前没有技能说明，各级只写「附带：技能名」；现在和游戏一样写出技能说明，各级写出召唤物得到的那个技能的数值（例如催眠凝视 1 级：3 秒混乱、降低 6% 抗性 3 秒；控制心神：范围内所有宠物 +5% 所有伤害、+30% 生命 / 法力恢复速度）。风暴之手补上给所有宠物的冰冷 / 闪电伤害。
@@ -242,7 +242,7 @@ Change log
 
 Version 2.2.9 (2026-11-10)
   - Death Ward, Sacred Rage and the items that grant them (Staff of Kheprer, Cap of Urd, Berserker's Mantle, Bow of the Shades, Shield of the Restless King, Shield of the Shades, Staff of the Shades): the skill details and item pages now explain how the duration runs (tested in game). After it triggers, the duration does not run and the effects (damage absorption etc.) stay on until your health first goes back above the trigger line (Death Ward 15%, Sacred Rage 40%); from then on it counts down even if you drop below the line again. Death Ward restores life once when it triggers, and its 300 s cooldown starts only when the duration ends.
-  - From this version there is no zip download or Android app any more; please use the website (https://0tarwey.github.io/tq/). After one visit it also works offline; on a phone use the browser's "Add to Home Screen", on a computer "Install this site as an app" in Edge / Chrome. The help text no longer mentions the Android app or the zip.
+  - 2.2.9 is the last Android app: it will not be updated any more, and from this version there is no zip download either. Please use the website https://0tarwey.github.io/tq/ , which keeps being updated and also has pages in 11 more languages. After one visit it works offline; on a phone use the browser's "Add to Home Screen", on a computer "Install this site as an app" in Edge / Chrome. The help text no longer mentions the Android app or the zip.
 
 Version 2.2.8 (2026-11-10)
   - Build simulator: the 22 summon upgrade skills (Triumph, Inner Fire, Wildfire, Metamorphosis, Eye of the Storm, Arc Discharge, Improved Firing Mechanism, Detonate, Stinging Nettle, Maul, Survival Instinct, Strength of the Pack, Overgrowth, Nature's Wrath, Sylvan Protection, Death Nova, Wraith Shell, Arcane Blast, Hypnotic Gaze, Master Mind, Shatter, Forged by Fire) had no description and only "linked: <name>" per level; they now show the game's description and, per level, the numbers of the skill the summon gets (e.g. Hypnotic Gaze level 1: 3 s Confusion, 6% reduced resistances for 3 s; Master Mind: +5% total damage, +30% health / energy regeneration to all pets in range). Storm Nimbus now lists its cold / lightning bonus to all pets.
