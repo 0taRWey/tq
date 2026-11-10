@@ -2,7 +2,7 @@
 整理：贴吧用户_0taRWey
 
 版本 2.2.4（2026-11-10）
-  - 模拟配装：武器栏 1 / 2，和游戏里的武器切换一样，右手、左手可以配两套；装备一栏上方点 1 或 2 切换，只有正在用的那一栏计入人物面板和主攻技能（例如第 1 栏双持近战、第 2 栏双持投掷，雷霆冲击的出手方式和说明跟着换）。另一栏的武器少给的力量、敏捷、智力（或需求降低）会让别的装备需求不够时，和游戏里一样那件仍穿着但被停用、属性不计入；切换前武器栏旁就会提示哪几件会这样。
+  - 模拟配装：武器栏 1 / 2，和游戏里的武器切换一样，右手、左手可以配两套；装备一栏上方点 1 或 2 切换，只有正在用的那一栏计入人物面板和主攻技能（例如第 1 栏双持近战、第 2 栏双持投掷，雷霆冲击的出手方式和说明跟着换）。另一栏的武器少给的力量、敏捷、智力（或需求降低）会让别的装备需求不够时，和游戏里一样那件仍穿着但被停用、属性不计入；切换前武器栏旁就会提示哪几件会这样。分享配装码、收藏的配装都带上两个武器栏和正在用哪一栏（以前生成的配装码照样能导入，按只有第 1 栏处理）。
   - 模拟配装：主攻技能里武器技能的说明按手上的武器分开写：近战武器（含双持近战）写出手顺序，以及先打的那一下附带的降低护甲、抗性等减益后一下就能吃到；弓、法杖、投掷武器写每一下各发出几个投射物（双持投掷写两手同一帧一起出手），有「各手伤害明细」时写在它的标题下，只出手一下时写在「每次施放」一栏。近战武器和空手是近战攻击，不发投射物。
   - 模拟配装：等级、属性点、专精条、技能点这些数字框右侧的上下箭头可以连续点击（点一下之后不用移动鼠标，接着点就能继续加减）。
 
@@ -217,7 +217,7 @@
 Change log
 
 Version 2.2.4 (2026-11-10)
-  - Build simulator: weapon sets 1 / 2, as the game's weapon swap: the right and left hands can hold two sets; click 1 or 2 above the equipment to switch. Only the set in use counts for the character sheet and the main attack (e.g. set 1 dual melee, set 2 dual thrown: Thunder Strike's hits and notes change with it). If the other set's weapons give less Strength / Dexterity / Intelligence (or requirement reduction) so that other gear falls below its requirements, that gear stays on but is disabled and its attributes stop counting, as in game; the weapon set bar lists such gear before you swap.
+  - Build simulator: weapon sets 1 / 2, as the game's weapon swap: the right and left hands can hold two sets; click 1 or 2 above the equipment to switch. Only the set in use counts for the character sheet and the main attack (e.g. set 1 dual melee, set 2 dual thrown: Thunder Strike's hits and notes change with it). If the other set's weapons give less Strength / Dexterity / Intelligence (or requirement reduction) so that other gear falls below its requirements, that gear stays on but is disabled and its attributes stop counting, as in game; the weapon set bar lists such gear before you swap. Share codes and saved builds carry both weapon sets and which one is in use (codes made before still import, as set 1 only).
   - Build simulator: the main attack's notes for weapon skills depend on the weapon in hand: melee weapons (dual melee included) give the order of the hits and that a debuff an earlier hit carries (lowered armor, resistances ...) applies to the later one; bows, staffs and thrown weapons give how many projectiles each hit fires (dual thrown: both hands on the same frame), under the "Damage by hand" heading when it is shown, else in the "Per cast" line. Melee weapons and bare hands strike in melee and fire no projectiles.
   - Build simulator: the up / down arrows of the number boxes (level, attribute points, mastery bar, skill points) can be clicked repeatedly (no need to move the mouse between clicks).
 
