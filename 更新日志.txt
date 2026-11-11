@@ -1,6 +1,13 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.3.1（2026-11-11）
+  - 模拟配装·主攻技能：装备赋予的技能，冷却不再按人物的充能缩短缩短。游戏里装备技能不受人物充能缩短影响（游戏里实测：暗影之刺的幻影攻击，带不带充能缩短装备都是 16 秒）；以前网页把它的冷却算短了，每秒伤害算高了。
+  - 模拟配装·主攻技能：加上 21 件装备赋予的武器攻击技能（战风、幻影攻击、致死打击、三重打击，例如迈密登垂饰、暗影之刺、梯厄斯忒斯的秘密、深海之杖）。这些技能自己只有百分比加成，以前被漏掉了。另有 15 件装备赋予的武器池技能（齐射、无忌狂击）计入普通攻击改用武器池技能的几率。装备赋予的技能也按它要求的武器判断能不能用。
+  - 模拟配装：负的充能缩短（哈达之怒、狄俄涅的宝石）不再抵消别的装备的充能缩短。游戏只把每件装备大于 0 的充能缩短加进人物合计（游戏里实测：哈达之怒和 9% 充能缩短的装备一起穿，面板仍是 9%）；以前网页先加总再算，可能变成 0%。
+  - 模拟配装·主攻技能：从目标头顶落下多个投射物的技能（尼德弓「强力猛击」5 个、流星雨 8 个、拉之霸权等）按全部落在目标身上计瞬间伤害，持续伤害同一来源不叠加，仍按 1 份（游戏里实测：尼德弓 6 次施放 30 个全部打中同一个目标）；以前只算 1 个。
+  - 使用说明：手机版的宇宙之杖、阿基米德齿轮、奥西里斯之柱[中]、怪物身上的外观护臂、心灵光线，改为游戏里实测的结果（Google Play 3.0.5364）。外观护臂：五种怪各杀 100 只，一件也没掉；心灵光线不拿法杖时蓄能和穿透照常，只是没有它的属性加成。
+
 版本 2.3.0（2026-11-11）
   - 模拟配装：「分享配装码」改为「分享配装」，并加上署名。第一次分享时填一个署名（最多 20 个字，比如贴吧或游戏里的名字），之后分享自动沿用，在分享页里可以修改，也可以这次不署名。署名写进配装码，别人导入、再转发时一直带着原来的署名，「收藏的配装」和快照上也会显示；它只存在这个浏览器里，不会上传到任何地方。分享页另给一段分享文字（配装名、职业、等级、难度、署名和链接），可以直接贴到贴吧或群里。旧的配装码照样能导入。
   - 模拟配装：同一件套装戒指戴两枚，只算 1 件套装部件。游戏按不同的部件计数（游戏里实测），以前网页算成 2 件，可能多开一档套装奖励。
@@ -254,6 +261,13 @@
 
 ----
 Change log
+
+Version 2.3.1 (2026-11-11)
+  - Build simulator · main skill: a skill granted by an item no longer has its recharge shortened by the character's recharge reduction. In the game item skills ignore it (tested in game: Shadowsting's Phantom Strike recharges in 16 s with or without recharge-reduction gear); the page used to make their recharge shorter and their DPS higher.
+  - Build simulator · main skill: 21 item-granted weapon attacks are now offered (War Wind, Phantom Strike, Lethal Strike, Ternion Attack, e.g. Myrmidon's Pendant, Shadowsting, Thyestes' Scheme, Deep Sea Staff). These skills only carry % bonuses and were left out before. The weapon-pool skills granted by 15 items (Volley, Reckless Offense) now count toward the chance that a normal attack turns into a weapon-pool skill. Item-granted skills also check the weapons they require.
+  - Build simulator: negative recharge reduction (Wrath of Hadad, Gem of Dione) no longer cancels another item's recharge reduction. The game adds each item's recharge reduction to the total only when it is above 0 (tested in game: Wrath of Hadad worn with a 9% item still shows 9%); the page used to add them up first and could end at 0%.
+  - Build simulator · main skill: skills that drop several projectiles onto the target (Nidbow's Power Strike 5, Meteor Rain 8, Supremacy of Ra and others) now count the instant damage of all of them; a damage-over-time effect from the same attacker does not stack and still counts once (tested in game: Nidbow, 6 casts, all 30 projectiles hit the one target). Only one was counted before.
+  - Help: on mobile, Staff of the Cosmos, Archimedes' Cogwheel, Embodiment of the Djed of Osiris, the cosmetic armbands on monsters and Psionic Beam are now described from in-game tests (Google Play 3.0.5364). Armbands: 100 kills each of five monster kinds dropped none; Psionic Beam without a staff keeps its charge and pass-through and only lacks its attribute bonuses.
 
 Version 2.3.0 (2026-11-11)
   - Build simulator: "Share code" is now "Share build" and adds a 署名 (author name). The first time you share, enter a name to credit (up to 20 characters, e.g. your forum or in-game name); later shares reuse it, you can change it on the share page, or share without one. It goes into the build code, so a build that is imported and passed on keeps its original name, and it shows in Saved builds and on snapshots. It stays in this browser and is not uploaded anywhere. The share page also gives a ready-to-post text (build name, class, level, difficulty, 署名 and the link). Older build codes still import.
