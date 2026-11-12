@@ -1,6 +1,10 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.3.6（2026-11-12）
+  - 装备和套装的属性行后面直接加标注：「下列之一」里永远不出现的条标「永远不出现」，每次固定出的标「判中后固定是这条」，不是平均选的标各自占比（例如马龙外衣 25% / 75%）；即时毒素伤害标「不吃敏捷，也不吃「+% 毒素伤害」」，神之珍珠法杖的基础即时毒素标「吃敏捷」，毒素反击标「一次打完的即时毒素」。属性下面的说明精简成一两句。
+  - 凌丹的「考拉冲击」说明重写：去掉没有出处的“玩家实测确认”和程序名。普通攻击每一下都带、「7.5% 机率自动施放」不控制它、230 即时毒素不吃敏捷，这几条标为游戏里实测；武器攻击技能、飞刀、神炮带，法术不带，标为按游戏程序判断、还没有实测。
+
 版本 2.3.5（2026-11-12）
   - 装备、遗物 / 符咒、套装的详情里加「使用说明（容易误解的地方）」。① 即时毒素：装备追加的「即时毒素伤害」不吃敏捷，也不吃「+% 毒素伤害」（那条只加持续毒）；只有神之珍珠法杖底材的「基础即时毒素伤害」吃敏捷；「毒素反击」是一次打完的即时毒素；圣甲虫戒指那条「+50% 即时毒素伤害」永远选不中；另写明武器上的和护甲首饰上的即时毒素分别随哪些攻击打出。② 「X% 机率发动下列之一」：游戏按组内各条自己的几率加权选，各条都没写几率时固定选读取顺序里的第一条。31 种装备（含套装伏羲的传说）的组里有的条永远不出现、或者不是平均选，每件都写明实际会出哪条、各占多少，例如法夫尼尔之牙永远是穿刺，丈八蛇矛判中时固定是即时毒素，马龙外衣眩晕反击 25%、毒素伤害反击 75%。不吃敏捷、法夫尼尔之牙和这条选法已游戏里实测，其余按游戏程序判断。
 
@@ -278,6 +282,10 @@
 
 ----
 Change log
+
+Version 2.3.6 (2026-11-12)
+  - Item and set attribute lines now carry a tag right after them: lines in a “one of” group that never occur are marked “never occurs”, a line that is always the one picked is marked so, and uneven picks show each line’s share (e.g. Maron's Garment 25% / 75%); Instant Poison Damage is marked “no Dexterity scaling; +% Poison Damage does not apply”, the Base Instant Poison of Pearlstaff of Shen “scales with Dexterity”, and Poison Retaliation “instant poison, dealt once”. The note under the attributes is cut down to a sentence or two.
+  - Lindane’s Koala Strike note rewritten: the unsupported “confirmed by player testing” and the internal class name are gone. Every normal attack carrying it, the 7.5% trigger not gating it, and the 230 instant poison not scaling with Dexterity are marked as tested in game; weapon attack skills, Throwing Knife and Shen Pao carrying it and spells not are marked as from the game code, not yet tested.
 
 Version 2.3.5 (2026-11-12)
   - Item, relic / charm and set details now have a “Read before use” section. 1) Instant poison: Instant Poison Damage added by gear does not scale with Dexterity and is not raised by “+% Poison Damage” (poison over time only); only the Base Instant Poison Damage of Pearlstaff of Shen scales with Dexterity; Poison Retaliation is instant poison dealt once; the “+50% Instant Poison Damage” on Scarab Ring is never picked; and which attacks carry instant poison from a weapon or from armor and jewelry. 2) “X% chance for one of the following”: the game weights each line by its own chance and, when no line has a chance, always takes the first one in the order it reads them. On 31 items (Legend of Fu Xi set included) some lines never occur or the pick is not even; each now says what actually happens and how often, e.g. Fafnir's Teeth is always pierce, Zheng Eight Snake Spear always gives its instant poison when the group triggers, Maron's Garment is 25% stun retaliation and 75% poison retaliation. The Dexterity result, Fafnir's Teeth and this pick rule are tested in game; the rest is from the game code.
