@@ -1,6 +1,9 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.3.4（2026-11-12）
+  - 模拟配装·专精技能：召唤技能的说明里加两个标签。第一个标出召唤物算不算你的宠物：算宠物的（战斗军旗、祖传号角、地心守卫、召唤风暴精灵、陷阱设置、引诱、召唤精灵狼、召唤仙女、灵魂之环、尸王召唤、召唤外界生物、召唤梦魔、梦境镜像、兵俑仆从）登记在你名下，它独自打死的怪给你经验和银币；不算宠物的（坚定方阵、石楠木环、巨碑之墙、守护之石，一次摆出一圈或一排的召唤）打死的怪只给经验、不给银币。游戏里实测：野狼独杀给经验和 8 枚银币，极乐境战士独杀给经验、0 枚银币；其余按同一种召唤方式的游戏程序判断。第二个标出装备、词缀和技能给的宠物加成能不能加到它身上，这看召唤物本身的类型：梦境镜像（怪物类）、坚定方阵（卫兵类）、石楠木环和巨碑之墙（墙体类）加不上；守护之石虽然不给银币，但它是宠物类，宠物加成照样生效；其余都生效。宠物加成这一项按游戏程序判断。
+
 版本 2.3.3（2026-11-11）
   - 模拟配装·装备栏：选前缀 / 后缀时两边互相过滤。以前在杜林强化（以及没有可得性表的掉落词缀）里，先选后缀时前缀列表没有按它过滤，会列出和它组合不了的前缀，点了以后后缀被清成「无」（例如项链的杜林强化：先选猛犸之，前缀里仍有老兵的；项链、戒指、护臂的强化表里这一对不存在）。现在先选哪一边，另一边都只列能和它组合的。
 
@@ -272,6 +275,20 @@
 
 ----
 Change log
+
+Version 2.3.4 (2026-11-12)
+  - Build simulator · mastery skills: summon skills now carry two tags. The first says whether the summon counts as your pet. Pets (Battle Standard, Ancestral Horn, Summon Core Dweller, Summon Wisp, Lay Trap, Monster Lure, Call of the Wild, Sylvan Nymph, Circle of Power, Summon Liche King, Summon Outsider, Summon Nightmare, Dream Image, Terracotta Servants) are registered as yours: monsters they kill on their own give you experience and Electrum. Non-pets (Unyielding Phalanx, Briar Ward, Menhir Wall, Guardian Stones, summons placed as a ring or a row) give experience but no Electrum for their kills. Tested in game: a wolf kill gave experience and 8 Electrum, an Elysian Soldier kill experience and 0 Electrum; the others go by the same kind of summon in the game code. The second tag says whether pet bonuses from items, affixes and skills reach the summon, which depends on the creature's own type: Dream Image (monster type), Unyielding Phalanx (guard type), Briar Ward and Menhir Wall (barriers) do not get them; Guardian Stones give no Electrum but are pet type, so pet bonuses apply; all the others get them. The pet-bonus part is from the game code.
+
+Version 2.3.3 (2026-11-11)
+  - Build simulator · gear slots: the prefix and suffix lists now filter each other. Before, with Durin's affixes (and loot affixes without the availability grid), choosing a suffix first did not narrow the prefix list, so prefixes that cannot come with it were listed and picking one cleared the suffix (e.g. Durin on an amulet: “of the Mammoth” first, “Veteran's” still listed; the amulet / ring / armband table has no such pair). Now whichever side you choose first, the other lists only what can come with it.
+
+Version 2.3.2 (2026-11-11)
+  - Build simulator · main skill: spells, including spells granted by items, now play their whole cast animation at cast speed; attack speed no longer matters. Tested in game (Google Play 3.0.5364): 19 mastery spells for both sexes at two speeds, and 46 of 47 item spells within 0.05 s of this, e.g. Ice Shard about 0.76 s at 100% cast speed; the page used to time the part after the release by attack speed, making the cast too long (about 1.1–1.3 s) and the DPS too low.
+  - Build simulator · main skill: an item skill triggered on attack (e.g. Folg's Thunderclap) now triggers as in the game: no roll during its cooldown, then on average a further wait until it succeeds. Tested in game: Folg 5.5% chance, 8 s cooldown, about 1.1 attacks per second, 12 triggers in 304.8 s, i.e. 0.039 per second; now 0.041, before 0.060. Hits of the triggered skill itself roll again; that is not counted and the notes say so.
+  - Build simulator · main skill: finale-charged skills (Calculated Strike, Psionic Touch, Huangdi's Favor) now average a cycle of normal attacks plus one finale for their DPS; the per-cast damage still shows the finale. Tested in game: Calculated Strike and Psionic Touch are 3 normal attacks + 1 finale; the page counted every attack as a finale, about twice the DPS. Psionic Beam's shorter charge is included.
+  - Build simulator · main skill: Rune Weapon's own intelligence bonus at full charge (+100% at level 10) now counts for its damage. Tested in game: intelligence 1120 becomes 2240 at full charge and the lightning damage rises with it; the page left it out and the lightning was too low (the same lightning: page 71.6, game 127.3).
+  - Build simulator · main skill: skills and gear that reduce the target's current health (Slam, Take Down, Seal of Fate, Shen Pao, Blade Barrier, and that line on gear) now show the percentage on its own line. It takes a share of the target's health at that moment and depends on its resistances, so it is not added to the per-cast or DPS figures; the notes say so. The page did not show it at all before (tested in game: all five skills take that share of the target's health).
+  - Build simulator · main skill: Eruption, Blade Barrier and Lightning Bolt hit the same target several times; the notes now say the page counts one hit and that the real number depends on distance and the target's size (tested in game, one target at close range: Eruption 94 hits in 4 casts, Blade Barrier 91).
 
 Version 2.3.1 (2026-11-11)
   - Build simulator · main skill: a skill granted by an item no longer has its recharge shortened by the character's recharge reduction. In the game item skills ignore it (tested in game: Shadowsting's Phantom Strike recharges in 16 s with or without recharge-reduction gear); the page used to make their recharge shorter and their DPS higher.
