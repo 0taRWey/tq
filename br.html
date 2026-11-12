@@ -404,6 +404,7 @@ table.pt2 tr.sum td{font-weight:700}
 #simtoast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:#123222;color:#fff;border:1px solid #3fae5f;border-radius:8px;padding:8px 14px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:9999}
 #simtoast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 #simtoast.err{background:#3a1712;border-color:#e0563b}
+#simtoast.warn{background:#3d2a08;border-color:#e09a2b}
 #skleft.bad{color:#e0563b}
 .pt .ptmax{padding:1px 7px;font-size:11.5px;min-height:0;margin-left:auto}
 .pt .ptmax:disabled{opacity:.4}
@@ -2564,9 +2565,10 @@ function ptsFit(both) {
   B.pts.str = P.str; B.pts.dex = P.dex; B.pts.int = P.int; renderSim();
   const off = BS.map(sd => sd.k).filter(k => slotItem(k) && UNMET.has(k));
   let msg = t(`力量 ${P.str}、敏捷 ${P.dex}、智力 ${P.int} 点，剩 ${avail - sum} 点未用`, `Str ${P.str}, Dex ${P.dex}, Int ${P.int}; ${avail - sum} left unused`);
+  let warn = off.length > 0;
   if (off.length) msg += t(`；仍穿不上：${off.map(nm).join('、')}（${[...skip].some(k => off.includes(k)) ? '等级不够或不能双持' : '需求超出本级全部属性点'}）`, `; still off: ${off.map(nm).join(', ')}`);
-  if (both && wsHasOther()) { const ou = wsOtherUnmet(), oth = B.ws === 2 ? 1 : 2; msg = t('两栏都按够穿算：', 'Both weapon sets: ') + msg + (ou.length ? t(`；换到第 ${oth} 栏仍穿不上：${ou.join('、')}`, `; still off after switching to set ${oth}: ${ou.join(', ')}`) : ''); }
-  toast(msg);
+  if (both && wsHasOther()) { const ou = wsOtherUnmet(), oth = B.ws === 2 ? 1 : 2; if (ou.length) warn = true; msg = t('两栏都按够穿算：', 'Both weapon sets: ') + msg + (ou.length ? t(`；换到第 ${oth} 栏仍穿不上：${ou.join('、')}`, `; still off after switching to set ${oth}: ${ou.join(', ')}`) : ''); }
+  toast(msg, warn ? 'warn' : false);
 }
 function slotPtsNeeded(k, T) {
   const s = B.slots[k], it = slotItem(k), rq = reqOf(it, [s.p, s.s].filter(a => a >= 0));
@@ -3130,7 +3132,7 @@ let toastT = 0;
 function toast(msg, err) {
   let el = document.getElementById('simtoast');
   if (!el) { el = document.createElement('div'); el.id = 'simtoast'; el.setAttribute('role', 'status'); document.body.appendChild(el); }
-  el.textContent = msg; el.className = err ? 'show err' : 'show'; clearTimeout(toastT); toastT = setTimeout(() => { el.className = ''; }, 2200);
+  el.textContent = msg; el.className = err === 'warn' ? 'show warn' : err ? 'show err' : 'show'; clearTimeout(toastT); toastT = setTimeout(() => { el.className = ''; }, err === 'warn' ? 4500 : 2200);
 }
 function renderChar() {
   const pi = pointsInfo();
