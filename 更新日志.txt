@@ -1,6 +1,9 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.3.5（2026-11-12）
+  - 装备、遗物 / 符咒、套装的详情里加「使用说明（容易误解的地方）」。① 即时毒素：装备追加的「即时毒素伤害」不吃敏捷，也不吃「+% 毒素伤害」（那条只加持续毒）；只有神之珍珠法杖底材的「基础即时毒素伤害」吃敏捷；「毒素反击」是一次打完的即时毒素；圣甲虫戒指那条「+50% 即时毒素伤害」永远选不中；另写明武器上的和护甲首饰上的即时毒素分别随哪些攻击打出。② 「X% 机率发动下列之一」：游戏按组内各条自己的几率加权选，各条都没写几率时固定选读取顺序里的第一条。31 种装备（含套装伏羲的传说）的组里有的条永远不出现、或者不是平均选，每件都写明实际会出哪条、各占多少，例如法夫尼尔之牙永远是穿刺，丈八蛇矛判中时固定是即时毒素，马龙外衣眩晕反击 25%、毒素伤害反击 75%。不吃敏捷、法夫尼尔之牙和这条选法已游戏里实测，其余按游戏程序判断。
+
 版本 2.3.4（2026-11-12）
   - 模拟配装·专精技能：召唤技能的说明里加两个标签。第一个标出召唤物算不算你的宠物：算宠物的（战斗军旗、祖传号角、地心守卫、召唤风暴精灵、陷阱设置、引诱、召唤精灵狼、召唤仙女、灵魂之环、尸王召唤、召唤外界生物、召唤梦魔、梦境镜像、兵俑仆从）登记在你名下，它独自打死的怪给你经验和银币；不算宠物的（坚定方阵、石楠木环、巨碑之墙、守护之石，一次摆出一圈或一排的召唤）打死的怪只给经验、不给银币。游戏里实测：野狼独杀给经验和 8 枚银币，极乐境战士独杀给经验、0 枚银币；其余按同一种召唤方式的游戏程序判断。第二个标出装备、词缀和技能给的宠物加成能不能加到它身上，这看召唤物本身的类型：梦境镜像（怪物类）、坚定方阵（卫兵类）、石楠木环和巨碑之墙（墙体类）加不上；守护之石虽然不给银币，但它是宠物类，宠物加成照样生效；其余都生效。宠物加成这一项按游戏程序判断。
 
@@ -275,6 +278,9 @@
 
 ----
 Change log
+
+Version 2.3.5 (2026-11-12)
+  - Item, relic / charm and set details now have a “Read before use” section. 1) Instant poison: Instant Poison Damage added by gear does not scale with Dexterity and is not raised by “+% Poison Damage” (poison over time only); only the Base Instant Poison Damage of Pearlstaff of Shen scales with Dexterity; Poison Retaliation is instant poison dealt once; the “+50% Instant Poison Damage” on Scarab Ring is never picked; and which attacks carry instant poison from a weapon or from armor and jewelry. 2) “X% chance for one of the following”: the game weights each line by its own chance and, when no line has a chance, always takes the first one in the order it reads them. On 31 items (Legend of Fu Xi set included) some lines never occur or the pick is not even; each now says what actually happens and how often, e.g. Fafnir's Teeth is always pierce, Zheng Eight Snake Spear always gives its instant poison when the group triggers, Maron's Garment is 25% stun retaliation and 75% poison retaliation. The Dexterity result, Fafnir's Teeth and this pick rule are tested in game; the rest is from the game code.
 
 Version 2.3.4 (2026-11-12)
   - Build simulator · mastery skills: summon skills now carry two tags. The first says whether the summon counts as your pet. Pets (Battle Standard, Ancestral Horn, Summon Core Dweller, Summon Wisp, Lay Trap, Monster Lure, Call of the Wild, Sylvan Nymph, Circle of Power, Summon Liche King, Summon Outsider, Summon Nightmare, Dream Image, Terracotta Servants) are registered as yours: monsters they kill on their own give you experience and Electrum. Non-pets (Unyielding Phalanx, Briar Ward, Menhir Wall, Guardian Stones, summons placed as a ring or a row) give experience but no Electrum for their kills. Tested in game: a wolf kill gave experience and 8 Electrum, an Elysian Soldier kill experience and 0 Electrum; the others go by the same kind of summon in the game code. The second tag says whether pet bonuses from items, affixes and skills reach the summon, which depends on the creature's own type: Dream Image (monster type), Unyielding Phalanx (guard type), Briar Ward and Menhir Wall (barriers) do not get them; Guardian Stones give no Electrum but are pet type, so pet bonuses apply; all the others get them. The pet-bonus part is from the game code.
