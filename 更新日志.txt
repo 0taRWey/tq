@@ -1,6 +1,9 @@
 泰坦之旅装备资料库 · 更新日志
 整理：贴吧用户_0taRWey
 
+版本 2.3.7（2026-11-12）
+  - 技能说明修正（游戏里实测）：① 内丹「苦果」命中时直接给被打中的目标加上减益，等级同本技能；原来写的「触发后施放（等级 11）」和范围不对，那个范围是「互相折磨」死后扩散用的。减抗数值不变。② 自然「气定神闲」和装备给的同类技能：原写「重置冷却时间不超过 X 秒的技能」，改为已学技能的剩余冷却各减少 X 秒，长冷却同样缩短；装备给的技能不受影响。
+
 版本 2.3.6（2026-11-12）
   - 装备和套装的属性行后面直接加标注：「下列之一」里永远不出现的条标「永远不出现」，每次固定出的标「判中后固定是这条」，不是平均选的标各自占比（例如马龙外衣 25% / 75%）；即时毒素伤害标「不吃敏捷，也不吃「+% 毒素伤害」」，神之珍珠法杖的基础即时毒素标「吃敏捷」，毒素反击标「一次打完的即时毒素」。属性下面的说明精简成一两句。
   - 凌丹的「考拉冲击」说明重写，去掉没有出处的“玩家实测确认”。
@@ -282,6 +285,9 @@
 
 ----
 Change log
+
+Version 2.3.7 (2026-11-12)
+  - Skill text corrections (tested in game): 1) Neidan’s Consequences puts its debuff straight on the target hit, at the skill’s own level; the old “Casts (level 11)” and radius were wrong — that radius belongs to Mutual Suffering’s spread on death. The resistance reductions are unchanged. 2) Nature’s Refresh and the same skill on items: the old “refreshes skills with a cooldown of up to X s” now reads that the remaining recharge of every learned skill goes down by X s, long ones included; skills granted by items are not affected.
 
 Version 2.3.6 (2026-11-12)
   - Item and set attribute lines now carry a tag right after them: lines in a “one of” group that never occur are marked “never occurs”, a line that is always the one picked is marked so, and uneven picks show each line’s share (e.g. Maron's Garment 25% / 75%); Instant Poison Damage is marked “no Dexterity scaling; +% Poison Damage does not apply”, the Base Instant Poison of Pearlstaff of Shen “scales with Dexterity”, and Poison Retaliation “instant poison, dealt once”. The note under the attributes is cut down to a sentence or two.
