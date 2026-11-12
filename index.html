@@ -4367,7 +4367,7 @@ function shotDrawer(e, blob, msg) {
   const url = URL.createObjectURL(blob);
   showDrawer(`${closeBtn()}<h3>${t('快照', 'Snapshot')} · ${esc(bName(e))}</h3><div class="note">${fmtDate(e.t)} · ${t('已收进「收藏的配装」', 'added to Saved builds')}${msg ? ' · ' + esc(msg) : ''}</div>
     <div class="row shotbtns"><button type="button" class="btn" data-shsave="${e.id}">${t('保存图片', 'Save image')}</button><button type="button" class="btn ghost" data-shshare="${e.id}">${t('分享图片', 'Share image')}</button><button type="button" class="btn ghost" data-bcopy="${e.id}">${t('复制配装码', 'Copy build code')}</button></div>
-    <p class="note" id="shmsg"></p><img class="shot" src="${url}" alt="${esc(bName(e))}">`);
+    <img class="shot" src="${url}" alt="${esc(bName(e))}">`);
 }
 function listDrawer() {
   const groups = new Map(); for (const e of BL) { if (!groups.has(e.cls)) groups.set(e.cls, []); groups.get(e.cls).push(e); }
@@ -4391,9 +4391,9 @@ async function shareFlow(b, onSet, title) {
 }
 function auDrawer(b, onSet, title, edit) {
   showDrawer(`${closeBtn()}<h3>${esc(title)}</h3><p class="note">${edit ? t('修改这套配装的署名（最多 20 个字）。', 'Change the 署名 (author name) of this build (up to 20 characters).') : t('第一次分享，请填一个署名（最多 20 个字），比如贴吧或游戏里的名字。署名会写进配装码和分享文字，表明这套配装是谁配的；以后分享自动沿用，在分享页里可以修改。署名只存在这个浏览器里，不会上传到任何地方。', 'First share: please enter a 署名, the name to credit for this build (up to 20 characters), such as your forum or in-game name. It goes into the build code and the share text; later shares reuse it, and you can change it on the share page. It stays in this browser and is not uploaded anywhere.')}</p>
-    <div class="row"><input type="text" id="auin" maxlength="${NMMAX}" autocomplete="off" value="${esc(edit ? b.au || AU : AU)}" placeholder="${esc(t('署名', 'Name'))}"><button type="button" class="btn" id="augo">${t('确定', 'OK')}</button>${edit ? '' : `<button type="button" class="btn ghost" id="auskip">${t('这次不署名', 'Share without a name')}</button>`}</div><p class="note" id="aumsg"></p>`);
+    <div class="row"><input type="text" id="auin" maxlength="${NMMAX}" autocomplete="off" value="${esc(edit ? b.au || AU : AU)}" placeholder="${esc(t('署名', 'Name'))}"><button type="button" class="btn" id="augo">${t('确定', 'OK')}</button>${edit ? '' : `<button type="button" class="btn ghost" id="auskip">${t('这次不署名', 'Share without a name')}</button>`}</div>`);
   const go = async () => {
-    const v = cleanName($('auin').value); if (!v) { $('aumsg').textContent = t('请填写署名，或点「这次不署名」。', 'Please enter a name, or share without one.'); return; }
+    const v = cleanName($('auin').value); if (!v) { alertMsg(t('请填写署名，或点「这次不署名」。', 'Please enter a name, or share without one.'), true); return; }
     if (!b.au || b.au === AU || !AU) setAU(v); b.au = v; if (onSet) onSet(); codeDrawer(await buildCode(b), title, b, onSet);
   };
   $('augo').onclick = go; $('auin').onkeydown = ev => { if (ev.key === 'Enter') { ev.preventDefault(); go(); } };
@@ -4409,19 +4409,20 @@ function codeDrawer(code, title, b, onSet) {
     <p class="note">${t('把分享文字或配装码发给别人：点链接直接打开这套配装；或者在「模拟配装」点「导入配装码」粘贴配装码，还原整套配装（装备、词缀、镶嵌物、属性点、专精技能、诅咒和任务奖励）。', 'Send the share text or the code: the link opens this build directly, or the other player pastes the code under Build simulator → Import code to get the whole build back (gear, affixes, relics, points, skills, curses and quest rewards).')}</p>
     ${b ? `<textarea class="bcode" readonly rows="3">${esc(txt)}</textarea><div class="row"><button type="button" class="btn" data-copytxt="txt">${t('复制分享文字', 'Copy share text')}</button></div>` : ''}
     <textarea class="bcode" readonly rows="5">${esc(code)}</textarea><div class="row"><button type="button" class="btn ${b ? 'ghost' : ''}" data-copytxt="code">${t('复制配装码', 'Copy code')}</button>${link ? `<button type="button" class="btn ghost" data-copytxt="link">${t('复制链接', 'Copy link')}</button>` : ''}</div>
-    ${link ? `<p class="note">${t('链接：', 'Link: ')}<span class="path">${esc(link)}</span></p>` : ''}<p class="note" id="cpmsg"></p>`);
+    ${link ? `<p class="note">${t('链接：', 'Link: ')}<span class="path">${esc(link)}</span></p>` : ''}`);
   $('drawer').onclick = ev => {
     if (b && ev.target.closest('[data-auedit]')) { auDrawer(b, onSet, title, true); return; }
     const x = ev.target.closest('[data-copytxt]'); if (!x) return; const k = x.dataset.copytxt;
-    copyText(k === 'link' ? link : k === 'txt' ? txt : code).then(ok => { $('cpmsg').textContent = ok ? t('已复制。', 'Copied.') : t('复制没成功，请长按上面的文字手动复制。', 'Copy failed; select the text above and copy it by hand.'); });
+    copyText(k === 'link' ? link : k === 'txt' ? txt : code).then(ok => ok ? alertMsg(k === 'link' ? t('已复制链接', 'Link copied') : k === 'txt' ? t('已复制分享文字', 'Share text copied') : t('已复制配装码', 'Build code copied')) : alertMsg(t('复制没成功，请长按上面的文字手动复制。', 'Copy failed; select the text above and copy it by hand.'), true));
   };
 }
 function importDrawer() {
   showDrawer(`${closeBtn()}<h3>${t('导入配装码', 'Import a build code')}</h3><p class="note">${t('粘贴配装码或分享链接。导入后替换当前配装（当前配装想留着的话先收藏）。', 'Paste a build code or share link. It replaces the current build (save the current one first if you want to keep it).')}</p>
-    <textarea class="bcode" id="bimpt" rows="5" placeholder="TQ1…"></textarea><div class="row"><button type="button" class="btn" id="bimpgo">${t('导入', 'Import')}</button></div><p class="note" id="bimpmsg"></p>`);
+    <textarea class="bcode" id="bimpt" rows="5" placeholder="TQ1…"></textarea><div class="row"><button type="button" class="btn" id="bimpgo">${t('导入', 'Import')}</button></div>`);
   $('bimpgo').onclick = async () => {
-    try { B = importName(await readCode($('bimpt').value)); saveBuild(); renderSim(); refreshSimBar(); $('drawer').hidden = true; window.scrollTo(0, 0); }
-    catch (e) { $('bimpmsg').textContent = t('配装码不对，或者这个浏览器不能解压（请换新版浏览器）。', 'That code could not be read (or this browser cannot decompress it; try a newer one).'); }
+    if (!$('bimpt').value.trim()) return alertMsg(t('请先粘贴配装码或分享链接。', 'Paste a build code or share link first.'), true);
+    try { B = importName(await readCode($('bimpt').value)); saveBuild(); renderSim(); refreshSimBar(); $('drawer').hidden = true; window.scrollTo(0, 0); alertMsg(t(`已导入配装「${cleanName(B.nm) || clsName(clsKey(B))}」`, `Build "${cleanName(B.nm) || clsName(clsKey(B))}" imported`)); }
+    catch (e) { alertMsg(t('配装码不对，或者这个浏览器不能解压（请换新版浏览器）。', 'That code could not be read (or this browser cannot decompress it; try a newer one).'), true); }
   };
 }
 let BDEL = { id: null, t: 0 };
@@ -4438,20 +4439,20 @@ async function simBarClick(ev) {
       shotDrawer(r.e, blob, [noIcons ? t('以本地文件打开时浏览器不允许把图标画进截图，这张没有图标', 'opened as a local file, the browser does not allow icons in the image, so this one has none') : '',
         kept ? '' : t('这个浏览器不能长期保存截图，只保留到关闭页面为止，请先保存图片', 'this browser cannot keep the image, only until the page is closed; save it now'),
         r.replaced ? t(`${bName(r.e)} 已满 99 个，覆盖了原来的 01`, '99 reached, the old 01 was replaced') : ''].filter(Boolean).join('；'));
-    } catch (e) { console.error(e); alertMsg(t('快照没成功：', 'Snapshot failed: ') + (e && e.message || e)); }
+    } catch (e) { console.error(e); alertMsg(t('快照没成功：', 'Snapshot failed: ') + (e && e.message || e), true); }
     finally { const nb = document.querySelector('#view-sim [data-snap]'); if (nb) { nb.disabled = false; nb.textContent = old; } }
     return;
   }
-  if (q('[data-bsave]')) { const r = addBuild(false); if (r.err) return alertMsg(r.err); refreshSimBar(); alertMsg(t(`已收藏为「${bName(r.e)}」`, `Saved as "${bName(r.e)}"`) + (r.replaced ? t('（已满 99 个，覆盖了原来的 01）', ' (99 reached, the old 01 was replaced)') : '')); return; }
+  if (q('[data-bsave]')) { const r = addBuild(false); if (r.err) return alertMsg(r.err, true); refreshSimBar(); alertMsg(t(`已收藏为「${bName(r.e)}」`, `Saved as "${bName(r.e)}"`) + (r.replaced ? t('（已满 99 个，覆盖了原来的 01）', ' (99 reached, the old 01 was replaced)') : '')); return; }
   if (q('[data-blist]')) return listDrawer();
   if (q('[data-bcode]')) return shareFlow(B, () => { saveBuild(); refreshSimBar(); }, t('分享当前配装', 'Share this build'));
   if (q('[data-bimp]')) return importDrawer();
 }
-const alertMsg = s => toast(s);
+const alertMsg = (s, err) => toast(s, err);
 async function drawerBuildClick(ev) {
   const q = s => ev.target.closest(s); let b;
   const byId = id => BL.find(e => e.id === id);
-  if ((b = q('[data-bload]'))) { const e = byId(b.dataset.bload); if (!e) return; B = unpackBuild(e.b); B.nm = e.nm || ''; saveBuild(); renderSim(); refreshSimBar(); $('drawer').hidden = true; if (CURTAB !== 'sim') showTab('sim'); window.scrollTo(0, 0); return true; }
+  if ((b = q('[data-bload]'))) { const e = byId(b.dataset.bload); if (!e) return; B = unpackBuild(e.b); B.nm = e.nm || ''; saveBuild(); renderSim(); refreshSimBar(); $('drawer').hidden = true; if (CURTAB !== 'sim') showTab('sim'); window.scrollTo(0, 0); alertMsg(t(`已载入「${bName(e)}」`, `Loaded "${bName(e)}"`)); return true; }
   if ((b = q('[data-bview]'))) { const e = byId(b.dataset.bview); const bl = e && await shotGet(e.id); if (bl) { DH.push('B:list'); NAVING = true; try { shotDrawer(e, bl, ''); } finally { NAVING = false; } } return true; }
   if ((b = q('[data-bcopy]'))) { const e = byId(b.dataset.bcopy); if (!e) return; DH.push('B:list'); NAVING = true;
     try { const bb = unpackBuild(e.b); bb.nm = e.nm || ''; await shareFlow(bb, () => { e.b.au = bb.au; blSave(); }, bName(e)); } finally { NAVING = false; } return true; }
@@ -4464,26 +4465,26 @@ async function drawerBuildClick(ev) {
   if ((b = q('[data-bdel]'))) {
     const id = b.dataset.bdel, n = Date.now();
     if (BDEL.id !== id || n - BDEL.t > 4000) { BDEL = { id, t: n }; b.textContent = t('再点一次删除', 'Tap again to delete'); return true; }
-    BL = BL.filter(e => e.id !== id); blSave(); shotDel(id); refreshSimBar(); keepDrawer(null, listDrawer); return true;
+    const de = BL.find(e => e.id === id); BL = BL.filter(e => e.id !== id); blSave(); shotDel(id); refreshSimBar(); keepDrawer(null, listDrawer); if (de) alertMsg(t(`已删除「${bName(de)}」`, `Deleted "${bName(de)}"`)); return true;
   }
-  if ((b = q('[data-shsave]'))) { const e = byId(b.dataset.shsave), bl = e && await shotGet(e.id); if (bl) { const m = await saveShot(bl, fileName(bName(e))); if ($('shmsg')) $('shmsg').textContent = m || ''; } return true; }
-  if ((b = q('[data-shshare]'))) { const e = byId(b.dataset.shshare), bl = e && await shotGet(e.id); if (bl) { const m = await shareShot(bl, fileName(bName(e)), await buildCode(unpackBuild(e.b))); if ($('shmsg')) $('shmsg').textContent = m || ''; } return true; }
+  if ((b = q('[data-shsave]'))) { const e = byId(b.dataset.shsave), bl = e && await shotGet(e.id); if (bl) { const m = await saveShot(bl, fileName(bName(e))); if (m) alertMsg(m, /没成功|Could not/.test(m)); } return true; }
+  if ((b = q('[data-shshare]'))) { const e = byId(b.dataset.shshare), bl = e && await shotGet(e.id); if (bl) { const m = await shareShot(bl, fileName(bName(e)), await buildCode(unpackBuild(e.b))); if (m) alertMsg(m, /没成功|Could not/.test(m)); } return true; }
 }
 function renameBuild(id) {
   const e = BL.find(x => x.id === id), inp = $('drawer').querySelector(`input.bname[data-bnid="${id}"]`); if (!e || !inp) return;
   const nm = cleanName(inp.value), old = { nm: e.nm, no: e.no };
   if (nm) { e.nm = uniqName(nm, e.id); e.no = 0; }
-  else if (e.nm) { const no = freeNo(e.cls); if (no > 99) { alertMsg(t('这个职业没起名的配装已经有 99 个，没有空的编号了，请起个名字。', 'This class already has 99 unnamed builds; please give this one a name.')); return; } delete e.nm; e.no = no; }
+  else if (e.nm) { const no = freeNo(e.cls); if (no > 99) { alertMsg(t('这个职业没起名的配装已经有 99 个，没有空的编号了，请起个名字。', 'This class already has 99 unnamed builds; please give this one a name.'), true); return; } delete e.nm; e.no = no; }
   e.b.nm = e.nm || '';
-  if (!blSave()) { e.nm = old.nm; e.no = old.no; if (!e.nm) delete e.nm; return alertMsg(t('浏览器存储已满，没能改名。', 'Browser storage is full; the name was not changed.')); }
-  keepDrawer(null, listDrawer);
+  if (!blSave()) { e.nm = old.nm; e.no = old.no; if (!e.nm) delete e.nm; return alertMsg(t('浏览器存储已满，没能改名。', 'Browser storage is full; the name was not changed.'), true); }
+  keepDrawer(null, listDrawer); alertMsg(t(`已改名为「${bName(e)}」`, `Renamed to "${bName(e)}"`));
 }
 $('drawer').addEventListener('keydown', ev => { const i = ev.target.closest && ev.target.closest('input.bname'); if (i && ev.key === 'Enter') { ev.preventDefault(); renameBuild(i.dataset.bnid); } });
 document.addEventListener('input', ev => { if (ev.target && ev.target.id === 'bnm') { B.nm = [...ev.target.value].slice(0, NMMAX).join(''); saveBuild(); } });
 document.addEventListener('change', ev => { if (ev.target && ev.target.id === 'bnm') { B.nm = cleanName(ev.target.value); ev.target.value = B.nm; saveBuild(); } });
 $('drawer').addEventListener('click', ev => { if (ev.target.closest('[data-bload],[data-bview],[data-bcopy],[data-bren],[data-bok],[data-bdel],[data-shsave],[data-shshare]')) { ev.preventDefault(); ev.stopPropagation(); drawerBuildClick(ev); } }, true);
 { const nv = navTo; navTo = code => { if (code === 'B:list') { listDrawer(); return; } nv(code); }; }
-{ const m = /[#&]b=([A-Za-z0-9_-]+)/.exec(location.hash); if (m) readCode(m[1]).then(b => { B = importName(b); saveBuild(); try { history.replaceState(null, '', location.href.replace(/([#&])b=[A-Za-z0-9_-]+/, '$1').replace(/[#&]$/, '')); } catch (e) {} if (CURTAB === 'sim') { renderSim(); refreshSimBar(); } }).catch(() => {}); }
+{ const m = /[#&]b=([A-Za-z0-9_-]+)/.exec(location.hash); if (m) readCode(m[1]).then(b => { B = importName(b); saveBuild(); setTimeout(() => alertMsg(t(`已打开分享的配装「${cleanName(B.nm) || clsName(clsKey(B))}」`, `Opened the shared build "${cleanName(B.nm) || clsName(clsKey(B))}"`)), 600); try { history.replaceState(null, '', location.href.replace(/([#&])b=[A-Za-z0-9_-]+/, '$1').replace(/[#&]$/, '')); } catch (e) {} if (CURTAB === 'sim') { renderSim(); refreshSimBar(); } }).catch(() => setTimeout(() => alertMsg(t('分享链接里的配装码读不出来（链接可能不完整，或者浏览器太旧）。', 'The build code in this link could not be read (the link may be cut off, or the browser is too old).'), true), 600)); }
 
 buildStatic(); renderAttrList(); renderConds();
 try { history.scrollRestoration = 'manual'; } catch (e) {}
