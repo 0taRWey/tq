@@ -1,4 +1,4 @@
-泰坦之旅装备资料库 · 版本 2.3.7
+泰坦之旅装备资料库 · 版本 2.3.8
 整理：贴吧用户_0taRWey
 
 网址：https://0tarwey.github.io/tq/ （首页是英文页，中文页是 zh.html；打开首页时按浏览器语言自动进入对应页面，右上角可切换）。
@@ -25,7 +25,7 @@ iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，
   也感谢 用心做好自己、祁镇在草原望北京、轩辕梦羽、moyezn 等众多玩家的试用和反馈。
 
 ----
-Titan Quest Gear Database · version 2.3.7
+Titan Quest Gear Database · version 2.3.8
 Compiled by 贴吧用户_0taRWey
 
 Website: https://0tarwey.github.io/tq/ (English at the root, Chinese at zh.html; the root opens the page in the browser's language; switch at the top right).
