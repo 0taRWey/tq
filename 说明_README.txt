@@ -1,10 +1,11 @@
-泰坦之旅装备资料库 · 版本 2.3.19
+泰坦之旅资料库 · 版本 3.0.0
 整理：贴吧用户_0taRWey
 
 网址：https://0tarwey.github.io/tq/ （首页是英文页，中文页是 zh.html；打开首页时按浏览器语言自动进入对应页面，右上角可切换）。
+地图：https://0tarwey.github.io/tq/map/zh.html （右上角「地图」进入；七个章节、55 个传送区域，13 种语言）。
 另有德、法、西、意、巴西葡语、波兰、捷克、俄、乌克兰、日、韩 11 种语言的页面（de.html … ko.html，文字取自游戏自带的该语言文字，界面暂用英文）。
 英文版的物品、词缀、技能、属性文字取自游戏自带英文文字。
-网站版完整打开过一次后，没网也能用。手机：用 Safari / Chrome 打开网址 → 分享或「⋮」→「添加到主屏幕」，以后点主屏幕上的「TQ 装备资料库」图标打开，全屏。
+网站版完整打开过一次后，没网也能用。手机：用 Safari / Chrome 打开网址 → 分享或「⋮」→「添加到主屏幕」，以后点主屏幕上的「TQ 资料库」图标打开，全屏。
 电脑：Edge / Chrome 可以「安装此站点为应用」。
 iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，不运行脚本，属性列表会是空的。
 2.2.9 是最后一个 Android 安装包；网页版压缩包从 2.2.9 起不再提供。以后请直接用网站版。
@@ -25,10 +26,11 @@ iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，
   也感谢 用心做好自己、祁镇在草原望北京、轩辕梦羽、moyezn 等众多玩家的试用和反馈。
 
 ----
-Titan Quest Gear Database · version 2.3.19
+Titan Quest Database · version 3.0.0
 Compiled by 贴吧用户_0taRWey
 
 Website: https://0tarwey.github.io/tq/ (English at the root, Chinese at zh.html; the root opens the page in the browser's language; switch at the top right).
+Maps: https://0tarwey.github.io/tq/map/ ("Maps" at the top right; all 7 chapters, 55 teleport areas, 13 languages).
 Pages in 11 more game languages (de.html … ko.html: German, French, Spanish, Italian, Brazilian Portuguese, Polish, Czech, Russian,
 Ukrainian, Japanese, Korean; game texts in that language, interface in English).
 After one full visit it also works offline. Phones: open the address in Safari / Chrome → Share or "⋮" → Add to Home Screen; it then opens
