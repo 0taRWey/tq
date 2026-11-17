@@ -513,6 +513,10 @@ const loadSpw=()=>SPW||(SPW=fetch('spawns.json').then(r=>r.json()).catch(()=>nul
 function spwRows(W,iv,name,ch){ const ks=W?[...new Set(String(iv).split('.').map(x=>W.i[x]).filter(x=>x!=null))]:[]; if(!ks.length) return [];   // several sources merged into one line: all their spots
   const nm=NRM(name), RL=RG[name]||Object.entries(RG).find(([x])=>NRM(x)===nm)?.[1], R=RL&&(RL.find(x=>x[0]===ch)||RL[0]), all=ks.flatMap(k=>W.k[k]);
   const M=150, r=R?all.filter(p=>p[0]===R[1]&&p[1]===R[2]&&p[2]===R[3]&&p[3]>=R[6]-M&&p[3]<=R[6]+R[8]+M&&p[4]>=R[7]-M&&p[4]<=R[7]+R[9]+M):[];
+  if(r.length>1){   // regions overlap: only the spots this region is the nearest to (as the sources name each spot's region)
+    const pts=[]; for(const [nn,L] of Object.entries(RG)) for(const x of L) if(x[1]===R[1]&&x[2]===R[2]&&x[3]===R[3]) pts.push([nn,x[4],x[5]]);
+    const own=r.filter(p=>{ let b=null,bd=1e18; for(const q of pts){ const d=(q[1]-p[3])**2+(q[2]-p[4])**2; if(d<bd){ bd=d; b=q; } } return b&&b[1]===R[4]&&b[2]===R[5]; });
+    if(own.length) return own; }
   if(r.length||!all.length) return r;
   // none where the place is drawn (the monster stands on the next area's picture): where it really spawns, its fullest picture
   const c=new Map(); all.forEach(p=>{ const id=p.slice(0,3).join(','); c.set(id,(c.get(id)||0)+1); }); const best=[...c].sort((a,b)=>b[1]-a[1])[0][0];
