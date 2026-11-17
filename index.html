@@ -1945,11 +1945,11 @@ const MAPF = 'map/' + (LG === 'en' ? 'index' : LG) + '.html';
 const MAPN = new Set(D.mapn || []), MAPQ = new Set(D.mapq || []), MAPC = D.mapc || {}, MAPA = D.mapa || {};
 const mapA = (h, txt) => `<a class="mlink" href="${MAPF}#${h}" target="tqmap" title="${t('在地图上查看', 'Show on the map')}">${txt}</a>`;
 const CHAOSP = [...new Set(Object.entries(MAPC).filter(([k, v]) => v === '永恒余烬 · 混沌地牢').map(([k]) => k.split(' · ').slice(0, 2).join(' · ')))];   // 3.0.4: merged chaos places
-function srcLoc(S) {
+function srcLoc(S, si) {
   return String(S[3]).split(/(；|; )/).map(g => { if (g === '；' || g === '; ') return esc(g);
     const i = g.lastIndexOf(' · '), head = i >= 0 ? g.slice(0, i) : '', ch = MAPC[head] || (CHAOSP.some(c => g.startsWith(c + ' · ')) ? '永恒余烬 · 混沌地牢' : '');
     const go = nm => MAPA[nm] || (MAPN.has(nm) ? nm : '');
-    const link = (p, nm) => { const t = go(nm); return t ? mapA(`go=${encodeURIComponent(t)}&a=${encodeURIComponent(ch)}&k=${S[0]}&n=${encodeURIComponent(S[1])}`, esc(p)) : esc(p); };
+    const link = (p, nm) => { const t = go(nm); return t ? mapA(`go=${encodeURIComponent(t)}&a=${encodeURIComponent(ch)}&k=${S[0]}&n=${encodeURIComponent(S[1])}${S[0] === 'm' && si != null ? '&i=' + si : ''}`, esc(p)) : esc(p); };
     const segs = g.split(' · ');
     if (ch === '永恒余烬 · 混沌地牢' && segs.length > 3) {   // chaos dungeons: 永恒余烬 · 混沌遗迹（传奇难度）
       return esc(segs[0]) + ' · ' + segs.slice(2).join(' · ').split(/(、|, )/).map(it => { if (it === '、' || it === ', ') return esc(it);
@@ -1988,7 +1988,7 @@ function srcHtml(o, title) {
   const nOnce = ds.filter(once).length;
   const L = mergeSrc((SRCT ? [...ds, ...dt] : ds).filter(e => !(SRC1 && once(e))).sort((a, b) => pv(b) - pv(a)), pv).slice(0, 20);
   const row = e => { const si = e[0], p = pv(e); const S = e.S || SRCS[si]; if (!S) return ''; const ty = STYPE[S[0]] || ['', ''];
-    return `<li><span class="stag st-${S[0]}">${esc(ty[0])}</span><b>${S[0] === 'q' && MAPQ.has(S[1]) ? mapA('q=' + encodeURIComponent(S[1]), esc(S[1])) : esc(S[1])}</b>${S[2] >= 0 ? ` <span class="tag d${S[2]}">${esc(DIFFN[S[2]])}</span>` : ''} <span class="sp">${o.dc ? t('正常获取未证实', 'unconfirmed') : pfmt(p)}</span> <span class="side">${esc(ty[1])}${e[3] !== undefined ? t('（按掉落表权重估算 ' + pfmt(e[3]) + '）', ' (loot-table weight estimate ' + pfmt(e[3]) + ')') : ''}</span>${S[3] ? `<div class="note sloc">${t('位置：', 'Where: ')}${srcLoc(S)}</div>` : ''}</li>`; };
+    return `<li><span class="stag st-${S[0]}">${esc(ty[0])}</span><b>${S[0] === 'q' && MAPQ.has(S[1]) ? mapA('q=' + encodeURIComponent(S[1]), esc(S[1])) : esc(S[1])}</b>${S[2] >= 0 ? ` <span class="tag d${S[2]}">${esc(DIFFN[S[2]])}</span>` : ''} <span class="sp">${o.dc ? t('正常获取未证实', 'unconfirmed') : pfmt(p)}</span> <span class="side">${esc(ty[1])}${e[3] !== undefined ? t('（按掉落表权重估算 ' + pfmt(e[3]) + '）', ' (loot-table weight estimate ' + pfmt(e[3]) + ')') : ''}</span>${S[3] ? `<div class="note sloc">${t('位置：', 'Where: ')}${srcLoc(S, si)}</div>` : ''}</li>`; };
   const more = L.length - 10;
   let h = `<h4>${title}</h4>`;
   if (ds.some(e => e[2] !== undefined && (SRCS[e[0]] || [''])[0] !== 's')) h += `<label class="tog srct"><input type="checkbox" data-src5="1" ${SRC5 ? 'checked' : ''}> ${t('宝箱、金币球、银币球按手机 5 倍难度算（相当于 5 人，每次开出的件数更多）', 'Chests and orbs at mobile x5 difficulty (counts as 5 players: more items per opening)')}</label>`;
