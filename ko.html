@@ -79,6 +79,7 @@ nav.macts button{border:1px solid var(--line);background:transparent;color:var(-
 nav.macts button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 #mapsec{display:none;background:var(--bg)}
 #mapsec iframe{display:block;width:100%;height:100%;border:0}
+#mapfr:not(.ok){visibility:hidden}
 html:not(.mapon) nav.macts{display:none}
 html.mapon #mapsec{display:block}
 html.mapon body>main,html.mapon #foot,html.mapon #drawer,html.mapon nav.tabs{display:none!important}
@@ -742,7 +743,7 @@ const chTxt = e => (e[9] || 1) > 1 && e[11] > 0
   ? fmtn(e[11]) + '% ' + t(`机率发动 ${e[9]} 项之一`, `chance of one of ${e[9]}`) + (e[4] < 0 ? t('（本项不会被选中）', ' (this one is never picked)') : t(`（本项 ${fmtn(e[4])}%）`, ` (this one ${fmtn(e[4])}%)`))
   : (e[9] || 1) > 1 ? fmtn(Math.round(e[4] * (e[9] || 1) * 10) / 10) + '% ' + t(`机率发动 ${e[9]} 项之一`, `chance of one of ${e[9]}`)
   : fmtn(e[4]) + '% ' + t('机率', 'chance');
-const SLOTCLEAN = s => s.split('（')[0];
+const SLOTC = new Map(), SLOTCLEAN = s => { let v = SLOTC.get(s); if (v === undefined) SLOTC.set(s, v = s.split('（')[0]); return v; };   // 3.0.4: called ~100 000 times at load
 const isArt = it => it.c === 'ItemArtifact';
 const qcls = it => isArt(it) ? 'q-Art' : 'q-' + it.q;
 const QOPTS = [['Common', '普通'], ['Rare', '特绿'], ['Epic', '蓝装'], ['Legendary', '紫装'], ['Quest', '特殊']];
@@ -1663,7 +1664,10 @@ function variantData(it) {
     const kinds = x => new Set(DSK(x).map(i => (SRCS[i] || [''])[0]).filter(Boolean));
     const ks = same.map(kinds), mine = kinds(it);
     v.extra = [...mine].filter(k => !ks.every(S => S.has(k)));
-    const shopN = x => { if (x._shopN !== undefined) return x._shopN; if (!x.zc && x.zr) x.zc = unRle(x.zr); let n = 0; for (const ch of x.zc || '') if (routeBits(ch) & 4) n++; return (x._shopN = n + (x.xb || []).length); };
+    const shopN = x => { if (x._shopN !== undefined) return x._shopN; let n = 0;   // 3.0.4: counted on the packed string, not unpacked first
+      if (x.zc) { for (const ch of x.zc) if (routeBits(ch) & 4) n++; }
+      else if (x.zr) { const r = x.zr; for (let i = 0; i < r.length;) { const ch = ZL[r[i++]]; let k = ''; while (i < r.length && r[i] >= '0' && r[i] <= '9') k += r[i++]; if (routeBits(ch) & 4) n += k ? +k : 1; } }
+      return (x._shopN = n + (x.xb || []).length); };
     const ns = same.map(shopN);
     if (Math.min(...ns) !== Math.max(...ns)) v.shop = [shopN(it), Math.min(...ns), Math.max(...ns)];
   }
@@ -4665,6 +4669,12 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
 (() => { const $ = id => document.getElementById(id), H = document.documentElement;
   const sec = $('sec'), box = $('mapsec'), fr = $('mapfr'), acts = $('mapacts'), hdr = document.querySelector('body>header');
   if (!sec || !box || !fr || !acts || !hdr || typeof MAPF !== 'string') return;
+  // the map page's version in its address: a stored older copy (the offline copy, the browser cache) is never put in the frame
+  const MSRC = MAPF + '?v=0131782bb2'; let retried = 0;
+  // a phone still run by the previous offline copy (it ignored the version) is retried once the new one has taken over
+  const SW = navigator.serviceWorker; let swNew = false; try { if (SW) SW.addEventListener('controllerchange', () => { swNew = true; }); } catch (e) {}
+  const afterSw = go => { if (!SW || !SW.controller || swNew) return go(); let done = false; const f = () => { if (!done) { done = true; go(); } };
+    SW.addEventListener('controllerchange', f); setTimeout(f, 6000); try { SW.getRegistration().then(r => r && r.update()).catch(() => {}); } catch (e) {} };
   let on = false, inner = '', gearHash = '';
   const doc = () => { try { return fr.contentDocument; } catch (e) { return null; } };
   const isMap = h => /^#map(\/|$)/.test(h);
@@ -4675,12 +4685,12 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   const syncActs = () => { const d = doc(), bs = d ? d.querySelectorAll('#acts button') : [];
     acts.querySelectorAll('button').forEach((b, i) => b.setAttribute('aria-pressed', String(!!bs[i] && bs[i].getAttribute('aria-pressed') === 'true'))); };
   const url = () => location.pathname + location.search + '#map' + (inner ? '/' + inner : '');
-  window.tqMapState = h => { inner = String(h || '').replace(/^#/, ''); if (on) history.replaceState(history.state, '', url()); syncActs(); };
+  window.tqMapState = h => { fr.classList.add('ok'); inner = String(h || '').replace(/^#/, ''); if (on) history.replaceState(history.state, '', url()); syncActs(); };
   const goInner = h => { const d = doc();
-    if (!fr.getAttribute('src') || !d) { fr.src = MAPF + (h ? '#' + h : ''); return; }
+    if (!fr.getAttribute('src') || !d) { fr.src = MSRC + (h ? '#' + h : ''); return; }
     const i = [...acts.querySelectorAll('button')].findIndex(b => b.dataset.k === h);
     if (i >= 0) { const b = d.querySelector('#acts button[data-a="' + i + '"]'); if (b) { b.click(); return; } }
-    try { fr.contentWindow.location.replace('#' + h); } catch (e) { fr.src = MAPF + '#' + h; } };
+    try { fr.contentWindow.location.replace('#' + h); } catch (e) { fr.src = MSRC + '#' + h; } };
   function show(map, h, push) {
     if (map) {
       if (!on) { gearHash = isMap(location.hash) ? '' : location.hash; scrollTo(0, 0); }
@@ -4706,7 +4716,10 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   // another language keeps the section open
   document.addEventListener('change', e => { if (on && e.target && e.target.id === 'lang') try { sessionStorage.setItem('tq-map', inner); } catch (x) {} }, true);
   addEventListener('popstate', () => { if (isMap(location.hash)) show(true, innerOf(location.hash), false); else if (on) show(false, null, false); });
-  fr.addEventListener('load', () => { syncPlat(); try { window.tqMapState(fr.contentWindow.location.hash); } catch (e) { syncActs(); } fit(); });
+  fr.addEventListener('load', () => { const d = doc();
+    // not this version's map page (an old stored copy): fetched again from the network (twice at most)
+    if (d && d.documentElement && !d.documentElement.classList.contains('embed')) { fr.classList.remove('ok'); if (retried < 2) { retried++; afterSw(() => { fr.src = MAPF + '?v=' + Date.now() + (inner ? '#' + inner : ''); }); } return; }
+    fr.classList.add('ok'); syncPlat(); try { window.tqMapState(fr.contentWindow.location.hash); } catch (e) { syncActs(); } fit(); });
   new MutationObserver(syncPlat).observe($('plat') || document.body, { subtree: true, attributes: true, attributeFilter: ['aria-pressed'] });
   addEventListener('resize', fit); if (window.ResizeObserver) new ResizeObserver(fit).observe(hdr);
   let ss = null; try { ss = sessionStorage.getItem('tq-map'); sessionStorage.removeItem('tq-map'); } catch (e) {}

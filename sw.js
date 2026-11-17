@@ -23,9 +23,9 @@ self.addEventListener('fetch', e => {
   if (FRESH(r)) {
     const net = caches.open(CACHE).then(c => fetch(r, { cache: 'no-cache' }).then(res => !res.ok ? res : res.blob().then(b => {
       const out = new Response(b, { status: 200, headers: { 'Content-Type': res.headers.get('Content-Type') || 'text/html; charset=utf-8' } });
-      return c.put(r, out.clone()).then(() => out, () => out); })));
+      return c.put(r, out.clone()).then(() => { const u = new URL(r.url); if (u.searchParams.has('v')) c.keys().then(ks => ks.forEach(k => { const x = new URL(k.url); if (x.pathname === u.pathname && x.search !== u.search) c.delete(k); })); return out; }, () => out); })));
     e.waitUntil(net.catch(() => {}));
-    e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: true }).then(hit => hit || (r.mode === 'navigate' && r.destination === 'document' ? c.match(PG) : undefined))).then(hit => {
+    e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: !new URL(r.url).searchParams.has('v') }).then(hit => hit || (r.mode === 'navigate' && r.destination === 'document' ? c.match(PG) : undefined))).then(hit => {
       if (!hit) return net.catch(() => Response.error());
       return Promise.race([net.catch(() => hit), new Promise(ok => setTimeout(() => ok(hit), NET_WAIT))]);
     }));
