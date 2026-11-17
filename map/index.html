@@ -412,8 +412,7 @@ function renderLegend(c){
    +NMC.map((x,t)=>{const n=c.nm.filter(m=>m[0]===t).length; const k=NMK[t]; return n?`<button aria-pressed="${on[k]}" data-x="${k}"><i style="background:${x[2]}"></i>${x[0]} ${n}</button>`:'';}).join('')
    +((n=>n?`<button aria-pressed="${on.ent}" data-x="ent"><i style="background:var(--bronze);border-radius:2px"></i>${U.ent} ${n}</button>`:'')(c.en.filter(e=>!String(e[5]||'').startsWith('b')).length))
    /* doors to the neighbouring maps: always shown, no switch */
-   +(c.lb.length?`<button aria-pressed="${on.lbl}" data-x="lbl"><i style="background:#f6ead2"></i>${U.lbl}</button>`:'')
-   +`<span class="lgst">${U.lgst}</span>`;
+   +(c.lb.length?`<button aria-pressed="${on.lbl}" data-x="lbl"><i style="background:#f6ead2"></i>${U.lbl}</button>`:'');
 }
 
 /* quests: every main / side quest of this chapter with its steps; names link to their markers on the map */
