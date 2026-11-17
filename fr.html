@@ -4687,7 +4687,7 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   const sec = $('sec'), box = $('mapsec'), fr = $('mapfr'), acts = $('mapacts'), hdr = document.querySelector('body>header');
   if (!sec || !box || !fr || !acts || !hdr || typeof MAPF !== 'string') return;
   // the map page's version in its address: a stored older copy (the offline copy, the browser cache) is never put in the frame
-  const MSRC = MAPF + '?v=5bfb3c7d15'; let retried = 0;
+  const MSRC = MAPF + '?v=7017b8652a'; let retried = 0;
   // a phone still run by the previous offline copy (it ignored the version) is retried once the new one has taken over
   const SW = navigator.serviceWorker; let swNew = false; try { if (SW) SW.addEventListener('controllerchange', () => { swNew = true; }); } catch (e) {}
   const afterSw = go => { if (!SW || !SW.controller || swNew) return go(); let done = false; const f = () => { if (!done) { done = true; go(); } };
