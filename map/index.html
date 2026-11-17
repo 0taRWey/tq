@@ -241,11 +241,11 @@ const NMC=[[U.nmc[0],'b','#c45cff'],[U.nmc[1],'q','#ffe14a'],[U.nmc[2],'i','#ffb
 const NMK=['nb','nq','ni','nx'];
 // a boss that spawns at one of several spots, each giving another reward: the spots, drawn enlarged in a small box under the boss
 const SVK={c:[U.svk[0],'#8fd8ff'],f:[U.svk[1],'#ff7a4d'],l:[U.svk[2],'#ffe14a'],p:[U.svk[3],'#8ee06a']}, SVT=U.svt;
-function svHtml(v,hid){ const cx=v.reduce((a,p)=>a+p[0],0)/v.length, cy=v.reduce((a,p)=>a+p[1],0)/v.length, by=Math.max(...v.map(p=>p[1])), M=6, W=150, top=24, oy=top+22-Math.min(...v.map(p=>(p[1]-cy)*M));   // the box hangs below the lowest spot
+function svHtml(v,hid){ const cx=v.reduce((a,p)=>a+p[0],0)/v.length, cy=v.reduce((a,p)=>a+p[1],0)/v.length, sBot=Math.max(...v.map(p=>p[1])), M=6, W=150, top=24, oy=top+22-Math.min(...v.map(p=>(p[1]-cy)*M));   // the box hangs below the lowest spot
   const pts=v.map(p=>{ const x=(p[0]-cx)*M, y=oy+(p[1]-cy)*M, r=x>=0, [nm,col]=SVK[p[2]]; return `<circle cx="${x}" cy="${y}" r="4" fill="${col}" stroke="#000"/><text x="${r?x+8:x-8}" y="${y+4}" fill="${col}" text-anchor="${r?'start':'end'}">${nm}</text>`; }).join('');
   const H=oy+Math.max(...v.map(p=>(p[1]-cy)*M))+14-top;
   return v.map(p=>`<span class="svd" style="left:${p[0]}px;top:${p[1]}px;background:${SVK[p[2]][1]}"></span>`).join('')
-   +`<div class="svb svx" data-t="0" style="left:${cx}px;top:$Compiled by 贴吧用户_0taRWey · Titan Quest Database 3.0.0 · Titan Quest names, texts and map images © THQ Nordic; unofficial fan-made reference, free, not for commercial use.px"${hid?' hidden':''}><svg width="1" height="1"><line x1="0" y1="4" x2="0" y2="${top}" stroke="#c9a84a"/><rect x="${-W/2}" y="${top}" width="${W}" height="${H}" rx="5" fill="#140f0acc" stroke="#c9a84a"/><text x="0" y="${top+15}" fill="#e9d9b0" text-anchor="middle">${SVT}</text>${pts}</svg></div>`; }
+   +`<div class="svb svx" data-t="0" style="left:${cx}px;top:${sBot}px"${hid?' hidden':''}><svg width="1" height="1"><line x1="0" y1="4" x2="0" y2="${top}" stroke="#c9a84a"/><rect x="${-W/2}" y="${top}" width="${W}" height="${H}" rx="5" fill="#140f0acc" stroke="#c9a84a"/><text x="0" y="${top+15}" fill="#e9d9b0" text-anchor="middle">${SVT}</text>${pts}</svg></div>`; }
 const $=id=>document.getElementById(id);
 const ZK={}; DATA.forEach((a,ai)=>a.zones.forEach((z,zi)=>ZK[z.key]=[ai,zi]));
 let act=0, zone=null, comp=0;
@@ -270,7 +270,7 @@ let S={s:1,x:0,y:0};
 function apply(){ $('stage').style.transform=`translate(${S.x}px,${S.y}px) scale(${S.s})`; const k=1/S.s;
   document.querySelectorAll('.hit').forEach(m=>m.style.transform=`scale(${k})`);
   document.querySelectorAll('.svb').forEach(m=>{ m.style.transform=`scale(${k})`; m.style.visibility=S.s<0.9?'hidden':''; });
-  document.querySelectorAll('.mk').forEach(m=>m.style.transform=`scale(${Math.min(2.2,Math.max(.7,1/Math.sqrt(S.s)))})`); document.querySelectorAll('.stp').forEach(m=>m.style.transform=`scale(${k})`); document.querySelectorAll('.mkn').forEach(m=>m.style.transform=`scale(${k}) translate(10px,-50%)`);
+  const mkz=k*Math.min(1,Math.max(.5,Math.sqrt(S.s))); document.querySelectorAll('.mk').forEach(m=>m.style.transform=`scale(${mkz})`);   /* 3.0.4: the dots stay one size on screen when zoomed in, like the other marks (they used to grow with the picture) */ document.querySelectorAll('.stp').forEach(m=>m.style.transform=`scale(${k})`); document.querySelectorAll('.mkn').forEach(m=>m.style.transform=`scale(${k}) translate(10px,-50%)`);
   if(S.s!==LS) layout(); }
 /* keep text from piling up: markers stay on their spot, words look for free room above or below */
 let LS=0, LAY=[];
