@@ -25,7 +25,7 @@ self.addEventListener('fetch', e => {
       const out = new Response(b, { status: 200, headers: { 'Content-Type': res.headers.get('Content-Type') || 'text/html; charset=utf-8' } });
       return c.put(r, out.clone()).then(() => out, () => out); })));
     e.waitUntil(net.catch(() => {}));
-    e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: true }).then(hit => hit || (r.mode === 'navigate' ? c.match(PG) : undefined))).then(hit => {
+    e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: true }).then(hit => hit || (r.mode === 'navigate' && r.destination === 'document' ? c.match(PG) : undefined))).then(hit => {
       if (!hit) return net.catch(() => Response.error());
       return Promise.race([net.catch(() => hit), new Promise(ok => setTimeout(() => ok(hit), NET_WAIT))]);
     }));

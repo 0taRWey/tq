@@ -85,7 +85,7 @@ html.mapon #mapsec{display:block}
 html.mapon body>main,html.mapon #foot,html.mapon #drawer,html.mapon nav.tabs{display:none!important}
 html.mapon body{overflow:hidden}
 body{margin:0}
-@media (max-width:860px){nav.tabs .gsrch{flex:1 1 140px;min-width:0}}
+@media (max-width:860px){nav.tabs .gsrch{flex:1 1 140px;min-width:0;margin-left:8px}}
 nav.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:5px 12px;border-radius:6px;cursor:pointer;font:inherit}
 nav.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 nav.tabs #tab-sim[aria-selected="false"]{background:var(--simtab)}
@@ -711,9 +711,12 @@ const D = JSON.parse(document.getElementById('data').textContent);
   for (const it of D.items) { for (const f of F) if (f in it) it[f] = cl(P.f[f][it[f]]); if (Array.isArray(it.p)) it.p = P.pd[it.p[0]] + it.p[1]; }
   delete D.__pk;
 })(D.__pk);
-{ const uc = x => x.match(/\d+[a-z]/g).map(t => +t.slice(0, -1) / 10 ** (t.charCodeAt(t.length - 1) - 97));
-  const up = s => typeof s !== 'string' ? s : s ? s.split(',').map(e => { const [a, b] = e.split(':'); return [parseInt(a, 36), ...uc(b)]; }) : [];
-  for (const o of [...D.items, ...D.relics, ...Object.values(D.misc || {}).flat()]) { if (o.ds) o.ds = up(o.ds); if (o.dt) o.dt = up(o.dt); } }
+/* 3.0.4: drop chances are decoded when an object's details are first shown (DS), not all at load; the lists only need the
+   sources' numbers (DSK), read straight from the string */
+const DS = (() => { const uc = x => x.match(/\d+[a-z]/g).map(t => +t.slice(0, -1) / 10 ** (t.charCodeAt(t.length - 1) - 97));
+  const up = s => s ? s.split(',').map(e => { const [a, b] = e.split(':'); return [parseInt(a, 36), ...uc(b)]; }) : [];
+  return (o, k) => { const v = o[k]; return typeof v === 'string' ? (o[k] = up(v)) : (v || []); }; })();
+const DSK = o => { const v = o.ds; return typeof v === 'string' ? (v ? v.split(',').map(e => parseInt(e, 36)) : []) : (v || []).map(e => e[0]); };
 const LG = D.lang || 'zh', EN = LG !== 'zh', VER = '3.0.4';
 const ALTN = o => LG === 'en' ? '' : String((o && o.e) || ''), altDot = o => ALTN(o) ? esc(ALTN(o)) + ' · ' : '';
 const LANGS = [['zh', '中文', 'index.html', 'zh-CN'], ['en', 'English', 'en.html', 'en'], ['de', 'Deutsch', 'de.html', 'de'], ['fr', 'Français', 'fr.html', 'fr'],
@@ -1658,7 +1661,7 @@ function variantData(it) {
   const same = all.filter(x => key(x) === key(it)).sort((a, b) => a.p.localeCompare(b.p));
   const v = { rec: it.p.split('/').pop().replace(/\.dbr$/i, ''), n: same.length, k: same.indexOf(it) + 1, tier: typeof tierOf === 'function' ? tierOf(it) : 0, extra: [], shop: null };
   if (same.length > 1) {
-    const kinds = x => new Set((x.ds || []).map(e => (SRCS[e[0]] || [''])[0]).filter(Boolean));
+    const kinds = x => new Set(DSK(x).map(i => (SRCS[i] || [''])[0]).filter(Boolean));
     const ks = same.map(kinds), mine = kinds(it);
     v.extra = [...mine].filter(k => !ks.every(S => S.has(k)));
     const shopN = x => { if (x._shopN !== undefined) return x._shopN; if (!x.zc && x.zr) x.zc = unRle(x.zr); let n = 0; for (const ch of x.zc || '') if (routeBits(ch) & 4) n++; return (x._shopN = n + (x.xb || []).length); };
@@ -1936,7 +1939,7 @@ function renderMisc(tb, all) {
     box.innerHTML = `<h2>${t('钥匙', 'Keys')}</h2><p class="note">${t('按使用的章节排列。', 'In the order of the chapter where they are used.')}</p>` + groups.map(G => `<h3 class="sec">${esc(G.ch)}</h3>` + G.l.map(g => `<div class="kcard" data-kg="${MS.key.indexOf(g)}">
       ${(() => { const same = g.items.length > 1 && g.items.every(e => e.tx === g.items[0].tx); return `<div class="kitems">${g.items.map(e => `<div class="kit">${ico(e.ic, 48, 'mi')}<div><div class="nm">${esc(e.n)}</div>${e.tx && !same ? `<div class="note">${esc(e.tx)}</div>` : ''}</div></div>`).join('')}</div>${same && g.items[0].tx ? `<div class="note">${esc(g.items[0].tx)}</div>` : ''}`; })()}
       ${g.mats ? `<div class="note">${t('合成材料：', 'Ingredients: ')}</div><div class="kitems">${g.mats.map(e => `<div class="kit">${ico(e.ic, 40, 'mi')}<div><div class="nm">${esc(e.n)}</div>${e.tx ? `<div class="note">${esc(e.tx)}</div>` : ''}</div></div>`).join('')}</div>` : ''}
-      <ul class="how">${g.how.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${g.ds || g.dt ? `<button type="button" class="btn ghost kopen" data-kopen="${MS.key.indexOf(g)}">${t(`查看掉落几率（${g.dn || (g.ds || []).length} 处来源）`, `Drop chances (${g.dn || (g.ds || []).length} sources)`)}</button>` : ''}</div>`).join('')).join('');
+      <ul class="how">${g.how.map(x => `<li>${esc(x)}</li>`).join('')}</ul>${g.ds || g.dt ? `<button type="button" class="btn ghost kopen" data-kopen="${MS.key.indexOf(g)}">${t(`查看掉落几率（${g.dn || DSK(g).length} 处来源）`, `Drop chances (${g.dn || DSK(g).length} sources)`)}</button>` : ''}</div>`).join('')).join('');
   }
 }
 function gotoMisc(kind, i) {
@@ -2006,7 +2009,7 @@ function mergeSrc(L, pv) {
   return out;
 }
 function srcHtml(o, title) {
-  const ds = o.ds || [], dt = o.dt || [];
+  const ds = DS(o, 'ds'), dt = DS(o, 'dt');
   if (!ds.length && !dt.length) return `<h4>${title}</h4><p class="note">${t('没有找到掉落或获得途径。', 'No drop or purchase route found. ')}${o.dr && SRCWHY[o.dr] ? t('原因：', 'Why: ') + SRCWHY[o.dr] : ''}</p>`;
   const pv = e => SRC5 && e[2] !== undefined ? e[2] : e[1];
   const once = e => { const S = SRCS[e[0]]; return !!S && (S[0] === 'q' || (S[0] === 'c' && /首次击杀|first kill/.test(S[1]))); };
@@ -4074,7 +4077,7 @@ function pickItem(k, st) {
     const seen = new Set();
     let L = IT.map((it, i) => [it, i]).filter(([it]) => it.ob && sd.ok(it) && mainOk(it, pa) && (!qq || (ART ? it.qz === qq : qkey(it) === qq)) && (!q || it.n.toLowerCase().includes(q) || String(it.e).toLowerCase().includes(q)))
       .filter(([it, i]) => all || it.fam === undefined || it.dv === B.diff || (FAMS.get(it.fam)[B.diff] === undefined && !it.gimp))
-      .filter(([it]) => { if (it._dk === undefined) it._dk = it.n + '|' + it.q + '|' + it.il + '|' + it.L.join(';') + '|' + it.cx.join(',') + '|' + (it.zr || it.zc || '') + '|' + [...new Set((it.ds || []).map(e => (SRCS[e[0]] || [''])[0]))].sort().join(''); if (seen.has(it._dk)) return false; seen.add(it._dk); return true; });
+      .filter(([it]) => { if (it._dk === undefined) it._dk = it.n + '|' + it.q + '|' + it.il + '|' + it.L.join(';') + '|' + it.cx.join(',') + '|' + (it.zr || it.zc || '') + '|' + [...new Set(DSK(it).map(i => (SRCS[i] || [''])[0]))].sort().join(''); if (seen.has(it._dk)) return false; seen.add(it._dk); return true; });
     const match = new Map();
     if (aq2) L = L.filter(([it, i]) => { if (isArt(it)) return false; const m = pairMatches(it, aq2[0], aq2[1]); if (m.length) match.set(i, m); return m.length > 0; });
     if (aids) L = L.filter(([it, i]) => { if (isArt(it)) return false; const m = []; for (const a of aids) { const r = affixAvail(it, a); if (r) m.push([a, r]); } if (m.length) match.set(i, m); return m.length > 0; });
