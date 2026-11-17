@@ -515,7 +515,7 @@ function showSpw(rows,label){ const p0=rows[0]; showZone(p0[0],p0[1],p0[2]);
     const best=rows.map(p=>[p,rows.filter(q=>D2(p,q)<220).length]).sort((a,b)=>b[1]-a[1])[0][0], near=rows.filter(q=>D2(best,q)<320);
     rows.forEach(p=>{ const h=document.createElement('span'); h.className='hit sp'; h.style.left=p[3]+'px'; h.style.top=p[4]+'px'; h.innerHTML='<i></i>'+(p===best&&label?`<em>${esc(label)}</em>`:''); $('nms').appendChild(h); });
     apply(); const xs=near.map(p=>p[3]), ys=near.map(p=>p[4]), x0=Math.min(...xs), y0=Math.min(...ys);
-    focusBox([x0-140,y0-140,Math.max(...xs)-x0+280,Math.max(...ys)-y0+280]); pulse(best[3],best[4]); },350); }
+    focusBox([x0-140,y0-140,Math.max(...xs)-x0+280,Math.max(...ys)-y0+280]); rows.forEach(p=>pulse(p[3],p[4])); },350); }   // every spawn point flashes, as other sources' spots do
 function goPlace(name,k,n,ch,iv){
   if(k==='m'&&iv!=null&&!goPlace.rest&&!entFind(name,k,n,ch).length){
     loadSpw().then(W=>{ const rows=spwRows(W,iv,name,ch); if(rows.length) showSpw(rows,n); else { goPlace.rest=1; try{ goPlace(name,k,n,ch); } finally{ goPlace.rest=0; } } }); return true; }
