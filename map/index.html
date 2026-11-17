@@ -194,11 +194,28 @@ header nav.acts{gap:4px;flex-wrap:wrap;overflow:visible}
 header nav.acts button{font-size:14px;border:1px solid #2d3532;border-radius:6px;padding:5px 12px;color:#e3e8e5;background:transparent;font-weight:400}
 header nav.acts button[aria-pressed=true]{background:#d9a650;border-color:#d9a650;color:#1a1408;font-weight:400}
 html:not(.mob) .mobonly{display:none}
+/* 3.0.4: the header box, spacing, fonts and language box exactly as on the database's pages */
+header{margin:8px 8px 0;background:#1a1f1d;border-bottom-color:#2d3532;padding-block:10px;line-height:1.55;gap:8px}
+.uhd h1{font-weight:700}
+.uhd .hdr{min-width:0;max-width:100%}
+.uhd .hbtn{display:inline-block;line-height:inherit}
+.uhd .plat{vertical-align:middle}
+header nav.sec{font-family:"Noto Serif SC","Songti SC","SimSun",serif;margin:18px 0 8px}
+header nav.acts button{font:inherit;font-size:14px}
+.langbox{position:relative;display:inline-flex;align-items:center;flex:none;border:1px solid #2d3532;border-radius:6px;background:#121615;color:#e3e8e5;padding:3px 8px;font-size:13px;line-height:1.4;white-space:nowrap}
+.langbox::after{content:'';margin-left:6px;border:4px solid transparent;border-top-color:currentColor;border-bottom:0}
+.langbox select{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer;font-size:16px;padding:0;border:0;margin:0}
+.langbox:focus-within{outline:2px solid #d9a650;outline-offset:1px}
+.langbox .lshort{display:none}
+@media (max-width:860px){header{gap:6px;padding-block:8px}.uhd{gap:6px 12px}}
+@media (max-width:700px){header{padding-block:8px;gap:6px}header .uhd .sub{display:inline}header .uhd h1{font-size:18px}header nav.acts button{padding:5px 10px;font-size:14px}}
+@media (max-width:640px){.uhd{grid-template-columns:minmax(0,1fr)}.uhd .hdr{justify-self:start;gap:3px}.uhd .hdr .hbtn{font-size:12px;padding:3px 5px}.uhd .hdr .plat button{font-size:12px;padding:3px 7px}.langbox{font-size:12px;padding:3px 5px}.langbox::after{margin-left:4px}.langbox .lfull{display:none}.langbox .lshort{display:inline}}
+@media (max-width:350px){.uhd .hdr .hbtn,.uhd .hdr .plat button,.langbox{font-size:11px}.uhd .hdr .hbtn,.langbox{padding:3px 4px}.uhd .hdr .plat button{padding:3px 5px}}
 @media (max-width:860px){.uhd{grid-template-columns:minmax(0,1fr)}.uhd .hdr{justify-self:start}.uhd h1{font-size:18px}header nav.acts button{padding:5px 10px}}
 </style>
 </head><body>
 <header>
-  <div class="uhd"><div class="hd1"><h1><a class="home" href="../gear/">Titan Quest Database</a></h1><span class="sub">6690 obtainable items · 688 affixes · 253 relics / charms · 114 sets · 11 masteries · 245 skills · maps: 7 chapters, 55 teleport areas · 150 quests</span><span class="sub by1">Compiled by 贴吧用户_0taRWey</span></div><div class="hdr"><a class="hbtn" href="../gear/#t=help">Rules & notes</a><a class="hbtn" href="../gear/#t=log">Change log</a><div class="plat" id="plat" role="group" aria-label="Platform" title="Which platform to show: the quest reward Mimer’s Wisdom (+10 Intelligence) is mobile only; for the item and build differences see the database"><button type="button" data-plat="pc" aria-pressed="true">PC</button><button type="button" data-plat="m" aria-pressed="false">Mobile</button></div><select id="mlang" aria-label="Language"><option value="zh.html">中文</option><option value="index.html" selected>English</option><option value="de.html">Deutsch</option><option value="fr.html">Français</option><option value="es.html">Español</option><option value="it.html">Italiano</option><option value="br.html">Português (Brasil)</option><option value="pl.html">Polski</option><option value="cz.html">Čeština</option><option value="ru.html">Русский</option><option value="uk.html">Українська</option><option value="ja.html">日本語</option><option value="ko.html">한국어</option></select></div></div>
+  <div class="uhd"><div class="hd1"><h1><a class="home" href="../gear/">Titan Quest Database</a></h1><span class="sub">6690 obtainable items · 688 affixes · 253 relics / charms · 114 sets · 11 masteries · 245 skills · maps: 7 chapters, 55 teleport areas · 150 quests</span><span class="sub by1">Compiled by 贴吧用户_0taRWey</span></div><div class="hdr"><a class="hbtn" href="../gear/#t=help">Rules & notes</a><a class="hbtn" href="../gear/#t=log">Change log</a><div class="plat" id="plat" role="group" aria-label="Platform" title="Which platform to show: the quest reward Mimer’s Wisdom (+10 Intelligence) is mobile only; for the item and build differences see the database"><button type="button" data-plat="pc" aria-pressed="true">PC</button><button type="button" data-plat="m" aria-pressed="false">Mobile</button></div><span class="langbox"><span aria-hidden="true"><span class="lfull">English</span><span class="lshort">EN</span></span><select id="mlang" aria-label="Language"><option value="zh.html">中文</option><option value="index.html" selected>English</option><option value="de.html">Deutsch</option><option value="fr.html">Français</option><option value="es.html">Español</option><option value="it.html">Italiano</option><option value="br.html">Português (Brasil)</option><option value="pl.html">Polski</option><option value="cz.html">Čeština</option><option value="ru.html">Русский</option><option value="uk.html">Українська</option><option value="ja.html">日本語</option><option value="ko.html">한국어</option></select></span></div></div>
   <nav class="sec"><a href="../gear/">Gear & Masteries</a><span aria-current="page">Maps & Quests</span></nav>
   <nav class="acts" id="acts" aria-label="Chapters"></nav>
 </header>
