@@ -4687,7 +4687,7 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   const sec = $('sec'), box = $('mapsec'), fr = $('mapfr'), acts = $('mapacts'), hdr = document.querySelector('body>header');
   if (!sec || !box || !fr || !acts || !hdr || typeof MAPF !== 'string') return;
   // the map page's version in its address: a stored older copy (the offline copy, the browser cache) is never put in the frame
-  const MSRC = MAPF + '?v=faa8321013'; let retried = 0;
+  const MSRC = MAPF + '?v=b0c131947a'; let retried = 0;
   // a phone still run by the previous offline copy (it ignored the version) is retried once the new one has taken over
   const SW = navigator.serviceWorker; let swNew = false; try { if (SW) SW.addEventListener('controllerchange', () => { swNew = true; }); } catch (e) {}
   const afterSw = go => { if (!SW || !SW.controller || swNew) return go(); let done = false; const f = () => { if (!done) { done = true; go(); } };
@@ -4743,7 +4743,7 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   else if (ss != null) { show(true, ss, false); history.replaceState(history.state, '', url()); }
 })();
 </script>
-<div id="ovl" hidden><div class="ovbox" role="dialog" aria-modal="true"><div class="ovhd"><b class="ovtt"></b><nav class="ovtabs"><button type="button" data-ov="gear">装备与专精</button><button type="button" data-ov="map">地图与任务</button></nav><button type="button" class="ovx" aria-label="关闭">✕</button></div><div class="ovbd" id="ovbd"><section class="panel prose wide" id="view-maphelp" hidden><h3>地图图例</h3><p>区域名用游戏里的区域名称，和游戏里按 M 打开的地图一致。菱形图标是入口（洞穴口、楼梯、传送门、相连的通道），点它进入对应区域；几层楼拼在同一张图上时，每个门旁边写着它通往哪一层，虚线连着两头；土黄色粗线是楼梯，两头直接走得过去；紫色是首领，黄色「!」是任务人物，橙色方块是给任务关键物品的箱子，红色是任务要打败的怪物。灰色半透明的部分属于相邻的传送区域，点一下进入那张图；颜色更淡、点不进去的是不相邻、走不过去的区域。所有出入口都在游戏里（Google Play 版）逐一实测过：空心圆点是落点（从别处进来落脚的位置，不是门；这一侧没有回去的门时标“单向”）；灰色是进不去的门；红色是结局传送（进去会退出游戏）；带「条件」标签的要先满足条件才开：鼠标放在门上，或点一下「条件」，看具体条件；手机版没有的门，选「手机」时不显示。游戏里没有入口的少量废弃地块不列出。</p></section></div></div></div>
+<div id="ovl" hidden><div class="ovbox" role="dialog" aria-modal="true"><div class="ovhd"><b class="ovtt"></b><nav class="ovtabs"><button type="button" data-ov="gear">装备与专精</button><button type="button" data-ov="map">地图与任务</button></nav><button type="button" class="ovx" aria-label="关闭">✕</button></div><div class="ovbd" id="ovbd"><section class="panel prose wide" id="view-maphelp" hidden><h3>地图图例</h3><p>区域名用游戏里的区域名称，和游戏里按 M 打开的地图一致。菱形图标是入口（洞穴口、楼梯、传送门、相连的通道），点它进入对应区域；几层楼拼在同一张图上时，每个门旁边写着它通往哪一层，虚线连着两头；土黄色粗线是楼梯，两头直接走得过去；紫色是首领，黄色「!」是任务人物，橙色方块是给任务关键物品的箱子，红色是任务要打败的怪物。灰色半透明的部分属于相邻的传送区域，点一下进入那张图；颜色更淡、点不进去的是不相邻、走不过去的区域。所有出入口都在游戏里（Google Play 版）逐一实测过：空心圆点是落点（从别处进来落脚的位置，不是门；这一侧没有回去的门时标“单向”）；灰色是进不去的门；红色是结局传送（进去会退出游戏）；带「条件」标签的要先满足条件才开：鼠标放在门上，或点一下「条件」，看具体条件。游戏里没有入口的少量废弃地块不列出。</p></section></div></div></div>
 <script>
 /* 3.0.4: Rules and Change log belong to the whole page: a panel over either section (the section stays as it is) */
 (() => { const $ = id => document.getElementById(id), H = document.documentElement, EN = H.lang && !/^zh/.test(H.lang);
