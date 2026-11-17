@@ -492,15 +492,18 @@ function addHit(x,y,label,alias,kind){ const d=el=>Math.hypot(parseFloat(el.styl
     if(alias&&em&&!NRM(em.textContent).includes(NRM(alias))&&!em.querySelector('.hal')) em.insertAdjacentHTML('beforeend',`<span class="hal"> → ${esc(alias)}</span>`);
     measure(); return; }
   const h=document.createElement('span'); h.className='hit'; h.style.left=x+'px'; h.style.top=y+'px'; h.innerHTML=`<i></i>${label?`<em>${esc(label)}</em>`:''}`; $('nms').appendChild(h); apply(); }
-function showSpots(rows,label){ const by=new Map(); rows.forEach(e=>{ const id=e.slice(4,7).join(','); if(!by.has(id)) by.set(id,[]); by.get(id).push(e); });
+function showSpots(rows,label,pn,ch){ const by=new Map(); rows.forEach(e=>{ const id=e.slice(4,7).join(','); if(!by.has(id)) by.set(id,[]); by.get(id).push(e); });
   const g0=[...by.values()].sort((a,b)=>b.length-a.length)[0], g=g0.filter((e,i)=>g0.findIndex(f=>Math.hypot(f[7]-e[7],f[8]-e[8])<4)===i), e0=g[0]; /* one pin per spot */ showZone(e0[4],e0[5],e0[6]);
   setTimeout(()=>{ // a pin that stays on each spot (gone with the next area shown)
     const N=NRM(label||''), alias=e=>{ let b=''; if(e[0]===2) for(const j of e[1]){ const t=EP.n[j]; if(NRM(t).length>=2&&N.includes(NRM(t))&&t.length>b.length) b=t; } return b; };
     g.forEach((e,i)=>addHit(e[7],e[8],e[0]===3?EP.n[e[1][0]]:i?'':label,alias(e),e[0]));   // kind 3: a way in (the Senechal of Tartarus), labelled with its own name
+    regAt(pn,ch,e0[4],e0[5],e0[6]);   // the place's own name, when the map writes none there
     if(g.length===1){ qPan(e0[7],e0[8]); pulse(e0[7],e0[8]); return; }
     const xs=g.map(e=>e[7]), ys=g.map(e=>e[8]), x0=Math.min(...xs), y0=Math.min(...ys), x1=Math.max(...xs), y1=Math.max(...ys);
     focusBox([x0-120,y0-120,x1-x0+240,y1-y0+240]); g.forEach(e=>pulse(e[7],e[8])); },350); }
 // a place the map writes no name for (only its area is shown): its name stays in the middle of it until the next area is shown
+function regAt(name,ch,ai,zi,ci){ if(!name) return; const nm=NRM(name), RL=RG[name]||Object.entries(RG).find(([x])=>NRM(x)===nm)?.[1];
+  const R=RL&&(RL.find(x=>x[0]===ch&&x[1]===ai&&x[2]===zi&&x[3]===ci)||RL.find(x=>x[1]===ai&&x[2]===zi&&x[3]===ci)); if(R) regLabel(R[4],R[5],name,DATA[ai].zones[zi].comps[ci]); }
 function regLabel(x,y,name,c){ if(!name||NRM(c.n)===NRM(name)||(c.lb||[]).some(l=>NRM(l[2])===NRM(name))) return;
   const h=document.createElement('span'); h.className='hit rgl'; h.style.left=x+'px'; h.style.top=y+'px'; h.innerHTML=`<em>${esc(name)}</em>`; $('nms').appendChild(h); apply(); }
 // 3.0.4: a monster's place opens on where it spawns there (spawns.json, read the first time it is needed): every spawn point of the
@@ -510,16 +513,16 @@ const loadSpw=()=>SPW||(SPW=fetch('spawns.json').then(r=>r.json()).catch(()=>nul
 function spwRows(W,iv,name,ch){ if(!W||W.i[iv]==null) return [];
   const nm=NRM(name), RL=RG[name]||Object.entries(RG).find(([x])=>NRM(x)===nm)?.[1], R=RL&&(RL.find(x=>x[0]===ch)||RL[0]); if(!R) return [];
   const M=150; return W.k[W.i[iv]].filter(p=>p[0]===R[1]&&p[1]===R[2]&&p[2]===R[3]&&p[3]>=R[6]-M&&p[3]<=R[6]+R[8]+M&&p[4]>=R[7]-M&&p[4]<=R[7]+R[9]+M); }
-function showSpw(rows,label){ const p0=rows[0]; showZone(p0[0],p0[1],p0[2]);
+function showSpw(rows,label,pn,ch){ const p0=rows[0]; showZone(p0[0],p0[1],p0[2]);
   setTimeout(()=>{ const D2=(a,b)=>Math.hypot(a[3]-b[3],a[4]-b[4]);
     const best=rows.map(p=>[p,rows.filter(q=>D2(p,q)<220).length]).sort((a,b)=>b[1]-a[1])[0][0], near=rows.filter(q=>D2(best,q)<320);
     rows.forEach(p=>{ const h=document.createElement('span'); h.className='hit sp'; h.style.left=p[3]+'px'; h.style.top=p[4]+'px'; h.innerHTML='<i></i>'+(p===best&&label?`<em>${esc(label)}</em>`:''); $('nms').appendChild(h); });
     apply(); const xs=near.map(p=>p[3]), ys=near.map(p=>p[4]), x0=Math.min(...xs), y0=Math.min(...ys);
-    focusBox([x0-140,y0-140,Math.max(...xs)-x0+280,Math.max(...ys)-y0+280]); rows.forEach(p=>pulse(p[3],p[4])); },350); }   // every spawn point flashes, as other sources' spots do
+    focusBox([x0-140,y0-140,Math.max(...xs)-x0+280,Math.max(...ys)-y0+280]); rows.forEach(p=>pulse(p[3],p[4])); regAt(pn,ch,p0[0],p0[1],p0[2]); },350); }   // every spawn point flashes, as other sources' spots do
 function goPlace(name,k,n,ch,iv){
   if(k==='m'&&iv!=null&&!goPlace.rest&&!entFind(name,k,n,ch).length){
-    loadSpw().then(W=>{ const rows=spwRows(W,iv,name,ch); if(rows.length) showSpw(rows,n); else { goPlace.rest=1; try{ goPlace(name,k,n,ch); } finally{ goPlace.rest=0; } } }); return true; }
-  const ER=entFind(name,k,n,ch); if(ER.length){ showSpots(ER,n); return true; }
+    loadSpw().then(W=>{ const rows=spwRows(W,iv,name,ch); if(rows.length) showSpw(rows,n,name,ch); else { goPlace.rest=1; try{ goPlace(name,k,n,ch); } finally{ goPlace.rest=0; } } }); return true; }
+  const ER=entFind(name,k,n,ch); if(ER.length){ showSpots(ER,n,name,ch); return true; }
   const nm=NRM(name); let hit=null;
   const RL=RG[name]||Object.entries(RG).find(([x])=>NRM(x)===nm)?.[1], R=RL&&(RL.find(x=>x[0]===ch)||RL[0]);
   if(R) hit={ai:R[1],zi:R[2],ci:R[3],x:R[4],y:R[5],b:[R[6],R[7],Math.max(R[8],160),Math.max(R[9],160)]};
