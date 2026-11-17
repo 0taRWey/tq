@@ -94,6 +94,7 @@ main{flex:1;min-height:0;position:relative}
 .nm.m{color:#ffc4b8}
 .nm.m i{background:#ff5a3c;border-radius:50% 50% 2px 2px}
 .nm em{font-style:normal}
+.nm.hitm i{box-shadow:0 0 0 2px #000,0 0 0 5px #ffd84a,0 0 10px #ffd84a}.nm.hitm em,.nm .hal{color:#ffe680}
 .hit{position:absolute;transform-origin:0 0;pointer-events:none;z-index:3}.hit i{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;border:3px solid #ffd84a;box-shadow:0 0 0 2px #000,0 0 10px #ffd84a}
 .hit em{position:absolute;left:14px;top:-9px;white-space:nowrap;font:700 12px system-ui,sans-serif;font-style:normal;color:#ffe680;text-shadow:0 0 3px #000,0 0 3px #000}
 .svd{position:absolute;width:2.6px;height:2.6px;margin:-1.3px 0 0 -1.3px;border-radius:50%;box-shadow:0 0 0 .5px #000;pointer-events:none}
@@ -475,11 +476,19 @@ function entFind(name,k,n,ch){ if(!n||!EP.e) return [];
   let rows=k==='m'?pick(2,key=>key===N):k==='c'?pick(2,key=>N.includes(key)):[];
   if(!rows.length&&k==='c') rows=pick(0,key=>key===N||N.includes(key));
   return rows; }
-function addHit(x,y,label){ const h=document.createElement('span'); h.className='hit'; h.style.left=x+'px'; h.style.top=y+'px'; h.innerHTML=`<i></i>${label?`<em>${esc(label)}</em>`:''}`; $('nms').appendChild(h); apply(); }
+// a spot on a marker already drawn (a boss): that marker is ringed, no second label on top of it; a boss the marker's boss
+// turns into (Lyktos -> Omega Telkine) is written after its name
+function addHit(x,y,label,alias){ const d=el=>Math.hypot(parseFloat(el.style.left)-x,parseFloat(el.style.top)-y);   // the nearest marker, a boss before anyone else
+  const near=[...document.querySelectorAll('#nms .nm')].filter(el=>d(el)<=30).sort((a,b)=>(a.dataset.t!=='0')-(b.dataset.t!=='0')||d(a)-d(b))[0];
+  if(near){ near.hidden=false; near.classList.add('hitm'); const em=near.querySelector('em');
+    if(alias&&em&&!NRM(em.textContent).includes(NRM(alias))&&!em.querySelector('.hal')) em.insertAdjacentHTML('beforeend',`<span class="hal"> → ${esc(alias)}</span>`);
+    measure(); return; }
+  const h=document.createElement('span'); h.className='hit'; h.style.left=x+'px'; h.style.top=y+'px'; h.innerHTML=`<i></i>${label?`<em>${esc(label)}</em>`:''}`; $('nms').appendChild(h); apply(); }
 function showSpots(rows,label){ const by=new Map(); rows.forEach(e=>{ const id=e.slice(4,7).join(','); if(!by.has(id)) by.set(id,[]); by.get(id).push(e); });
   const g=[...by.values()].sort((a,b)=>b.length-a.length)[0], e0=g[0]; showZone(e0[4],e0[5],e0[6]);
   setTimeout(()=>{ // a pin that stays on each spot (gone with the next area shown)
-    g.forEach((e,i)=>{ const h=document.createElement('span'); h.className='hit'; h.style.left=e[7]+'px'; h.style.top=e[8]+'px'; h.innerHTML=`<i></i>${label&&!i?`<em>${esc(label)}</em>`:''}`; $('nms').appendChild(h); }); apply();
+    const N=NRM(label||''), alias=e=>{ let b=''; if(e[0]===2) for(const j of e[1]){ const t=EP.n[j]; if(NRM(t).length>=2&&N.includes(NRM(t))&&t.length>b.length) b=t; } return b; };
+    g.forEach((e,i)=>addHit(e[7],e[8],i?'':label,alias(e)));
     if(g.length===1){ qPan(e0[7],e0[8]); pulse(e0[7],e0[8]); return; }
     const xs=g.map(e=>e[7]), ys=g.map(e=>e[8]), x0=Math.min(...xs), y0=Math.min(...ys), x1=Math.max(...xs), y1=Math.max(...ys);
     focusBox([x0-120,y0-120,x1-x0+240,y1-y0+240]); g.forEach(e=>pulse(e[7],e[8])); },350); }
