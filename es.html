@@ -68,6 +68,11 @@ a.hbtn.maplink{text-decoration:none;display:inline-block;line-height:normal}
 h1{font-family:var(--f-disp);font-size:20px;margin:0;letter-spacing:.02em;text-wrap:balance}
 .sub{color:var(--muted);font-size:12.5px}
 nav.tabs{display:flex;gap:4px;flex-wrap:wrap;grid-column:1/-1}
+nav.sec{grid-column:1/-1;display:inline-flex;justify-self:start;width:max-content;border:1px solid var(--line);border-radius:999px;overflow:hidden;font-size:15px}
+nav.sec button{border:0;background:transparent;color:var(--muted);padding:5px 16px;font:inherit;font-weight:600;cursor:pointer;white-space:nowrap}
+nav.sec button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+nav.actrow a.actlink{border:1px solid var(--line);color:var(--ink);padding:5px 12px;border-radius:6px;text-decoration:none;font:inherit}
+nav.actrow a.actlink:hover{border-color:var(--accent);color:var(--accent)}
 nav.tabs button{border:1px solid var(--line);background:transparent;color:var(--ink);padding:5px 12px;border-radius:6px;cursor:pointer;font:inherit}
 nav.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
 nav.tabs #tab-sim[aria-selected="false"]{background:var(--simtab)}
@@ -569,10 +574,12 @@ h4.gs-sub .note{font-weight:normal}
   <div class="hd1"><h1 data-en="Titan Quest Database">泰坦之旅资料库</h1>
   <span class="sub" id="scope"></span>
   <span class="sub byline" data-en="Compiled by 贴吧用户_0taRWey">整理：贴吧用户_0taRWey</span></div>
-  <div class="hdr"><a class="hbtn maplink" id="mapbtn" href="map/es.html" data-en="Maps &amp; Quests">地图与任务</a><button type="button" class="hbtn" id="helpbtn" aria-pressed="false" data-en="Rules &amp; notes">规则说明</button>
+  <div class="hdr"><button type="button" class="hbtn" id="helpbtn" aria-pressed="false" data-en="Rules &amp; notes">规则说明</button>
     <button type="button" class="hbtn" id="logbtn" aria-pressed="false" data-en="Change log">更新日志</button>
     <div class="plat" id="plat" role="group" aria-label="平台 / Platform" title="按哪个平台显示和计算：装备需求公式、宇宙之杖和阿基米德齿轮的属性、奥西里斯之柱[中] 的可镶部位、模拟配装里几条技能规则，以及任务奖励米梅尔的智慧（+10 智力，只有手机版有效）；完整列表见使用说明 / Which platform to show and compute: item requirement formulas, the attributes of Staff of the Cosmos and Archimedes' Cogwheel, the slots of Embodiment of the Djed of Osiris, a few skill rules in the build simulator, and the quest reward Mimer's Wisdom (+10 Intelligence, mobile only); full list in the help"><button type="button" data-plat="pc" aria-pressed="true">PC</button><button type="button" data-plat="m" aria-pressed="false" data-en="Mobile">手机</button></div>
     <select id="lang" aria-label="语言 / Language" title="游戏文字语言 / Game text language"></select></div>
+  <nav class="sec" id="sec" aria-label="栏目 / Sections"><button type="button" data-sec="items" aria-pressed="true" data-en="Gear &amp; Masteries">装备与专精</button><button type="button" data-sec="maps" aria-pressed="false" data-en="Maps &amp; Quests">地图与任务</button></nav>
+  <nav class="tabs actrow" id="actrow" aria-label="章节 / Chapters" style="display:none"><a class="actlink maplink" href="map/es.html#greece" data-en="Greece">希腊</a><a class="actlink maplink" href="map/es.html#egypt" data-en="Egypt">埃及</a><a class="actlink maplink" href="map/es.html#orient" data-en="Orient">东方</a><a class="actlink maplink" href="map/es.html#hades" data-en="Hades">冥界</a><a class="actlink maplink" href="map/es.html#scandia" data-en="The North">北境</a><a class="actlink maplink" href="map/es.html#atlantis" data-en="Atlantis">亚特兰蒂斯</a><a class="actlink maplink" href="map/es.html#china" data-en="The East">中国</a></nav>
   <nav class="tabs" role="tablist">
     <button role="tab" aria-selected="true" data-tab="find" id="tab-find" data-en="Equipment">装备</button>
     <button role="tab" aria-selected="false" data-tab="affix" id="tab-affix" data-en="Affixes">词缀</button>
@@ -4636,5 +4643,12 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
 { let st = 'find'; try { const m = /[#&]t=([a-z]+)/.exec(location.hash); if (m && document.getElementById('tab-' + m[1]) || m && (m[1] === 'help' || m[1] === 'log')) st = m[1]; } catch (e) {} showTab(st); }
 </script>
 
+<script>
+/* 3.0.4: game items | maps & quests (the chapters open the map pages) */
+(() => { const sec = document.getElementById('sec'), tabs = document.querySelector('nav.tabs[role=tablist]'), acts = document.getElementById('actrow');
+  if (!sec || !tabs || !acts) return;
+  sec.addEventListener('click', e => { const b = e.target.closest('button[data-sec]'); if (!b) return; const m = b.dataset.sec === 'maps';
+    sec.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', String(x === b))); tabs.style.display = m ? 'none' : ''; acts.style.display = m ? '' : 'none'; }); })();
+</script>
 </body>
 </html>
