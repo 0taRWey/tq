@@ -1,5 +1,5 @@
 // 泰坦之旅资料库 3.0.4 — offline copy for "Add to Home Screen"
-const CACHE = 'tq-search-3.0.4-9e1b8617';
+const CACHE = 'tq-search-3.0.4-8678a2b0';
 // 2.0.3: the page that registers this worker passes its own file name (sw.js?p=de.html); only that page is stored up front,
 // other language pages are stored the first time they are opened
 const PAGES = ["zh.html", "index.html", "de.html", "fr.html", "es.html", "it.html", "br.html", "pl.html", "cz.html", "ru.html", "uk.html", "ja.html", "ko.html", "en.html"];
@@ -31,6 +31,9 @@ self.addEventListener('fetch', e => {
     }));
     return;
   }
-  e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: true }).then(hit => hit || fetch(r).then(res => { if (res.ok) c.put(r, res.clone()); return res; })
+  // 3.0.4: a picture whose address carries a version (map pictures: ?v=<file hash>) is matched with it, so a replaced picture is
+  // downloaded again instead of the stored old one being shown
+  const ver = new URL(r.url).searchParams.has('v');
+  e.respondWith(caches.open(CACHE).then(c => c.match(r, { ignoreSearch: !ver }).then(hit => hit || fetch(r).then(res => { if (res.ok) c.put(r, res.clone()); return res; })
     .catch(() => Response.error()))));
 });
