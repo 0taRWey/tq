@@ -1303,7 +1303,6 @@ function runFind() {
   const cats = [['all', t('全部', 'All'), ded.length]];
   for (const sl of SLOTS) { const n = ded.filter(r => SLOTCLEAN(r.it.sl) === sl).length; if (n) cats.push(['s:' + sl, cv(sl), n]); }
   cats.push(['set', t('套装', 'Sets'), sres.length]);
-  cats.push(['fav', '★ ' + t('收藏', 'Favorites'), favCount('find')]);
   if (!cats.some(c => c[0] === findCat)) findCat = 'all';
   $('rcats').innerHTML = cats.map(([k, z, n]) => `<button class="chip${k === 'set' ? ' setchip' : ''}" role="tab" aria-pressed="${k === findCat}" data-c="${esc(k)}">${esc(z)} <span class="n"${k === 'fav' ? ' data-favn="find"' : ''}>${n}</span></button>`).join('');
   $('rcats').onclick = e => { const b = e.target.closest('[data-c]'); if (!b) return; findCat = b.dataset.c; $('rcats').querySelectorAll('[data-c]').forEach(x => x.setAttribute('aria-pressed', x.dataset.c === findCat)); renderFind(); };
