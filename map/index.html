@@ -826,14 +826,18 @@ let SHW=null, SHQ=[], SHP=new Map();
 const shWorkers=S=>{ if(SHW) return SHW; SHW=[];
   try{ const src=shopModel.toString()+'\n'+shopRun.toString()+'\nlet M=null,G=null;onmessage=e=>{ const d=e.data; if(d.m){ M=shopModel(d.m); G=Int32Array.from(d.G); return; } shopRun(M,d.ci,r=>postMessage({ci:d.ci,r},[r.buffer]),32767,G); };';
     const url=URL.createObjectURL(new Blob([src],{type:'text/javascript'})), n=Math.min(8,Math.max(2,(navigator.hardwareConcurrency||4)-1));
-    for(let i=0;i<n;i++){ const w=new Worker(url); w.busy=false; w.onmessage=e=>{ const {ci,r}=e.data; SHC.set(ci,r); w.busy=false; (SHP.get(ci)||[]).forEach(f=>f(r)); SHP.delete(ci); shPump(); }; w.onerror=()=>{ w.dead=true; }; w.postMessage({m:S.m,G:S.G}); SHW.push(w); } }catch(e){ SHW=[]; }
+    for(let i=0;i<n;i++){ const w=new Worker(url); w.busy=false; w.onmessage=e=>{ const {ci,r}=e.data; SHC.set(ci,r); w.busy=false; (SHP.get(ci)||[]).forEach(f=>f(r)); SHP.delete(ci); shPump(); }; w.onerror=()=>{ w.dead=true; if(w.busy){ w.busy=false; SHQ.unshift(w.ci); } shPump(); };   /* a page that may not start workers: here instead */ w.postMessage({m:S.m,G:S.G}); SHW.push(w); } }catch(e){ SHW=[]; }
   return SHW; };
-const shPump=()=>{ for(const w of SHW||[]){ if(w.busy||w.dead||!SHQ.length) continue; const ci=SHQ.shift(); w.busy=true; w.postMessage({ci}); } };
-const shCalc=(S,ci,cb)=>{ shGroups(S); if(SHC.has(ci)) return cb(SHC.get(ci));
+const shLocal=ci=>shopRun(SHM,ci,r=>{ SHC.set(ci,r); (SHP.get(ci)||[]).forEach(f=>f(r)); SHP.delete(ci); shPump(); },2048,SHGG);
+let SHGG=null;
+const shPump=()=>{ const W=(SHW||[]).filter(w=>!w.dead);
+  if(!W.length){ while(SHQ.length){ const ci=SHQ.shift(); if(SHC.has(ci)) continue; shLocal(ci); return; } return; }
+  for(const w of W){ if(w.busy||!SHQ.length) continue; const ci=SHQ.shift(); w.busy=true; w.ci=ci; w.postMessage({ci}); } };
+const shCalc=(S,ci,cb)=>{ shGroups(S); shModel(S); SHGG=S.G; if(SHC.has(ci)) return cb(SHC.get(ci));
   if(SHP.has(ci)){ SHP.get(ci).push(cb); return; } SHP.set(ci,[cb]);
   const W=shWorkers(S).filter(w=>!w.dead);
   if(W.length){ SHQ.unshift(ci); shPump(); return; }
-  shopRun(shModel(S),ci,r=>{ SHC.set(ci,r); (SHP.get(ci)||[]).forEach(f=>f(r)); SHP.delete(ci); },2048,S.G); };   // no workers: here, in steps
+  SHQ.unshift(ci); shPump(); };   // no workers: here, in steps
 const shp=n=>{ const p=n/32767*100; return `<span title="${n} / 32767">${n>=32767?'100':p>=10?p.toFixed(1).replace(/\.0$/,''):p>=1?p.toFixed(2):p.toPrecision(2)}%</span>`; };
 const MLOC={};   // merchant record -> where his dot is
 DATA.forEach((a,ai)=>a.zones.forEach((z,zi)=>z.comps.forEach((c,ci)=>{ (c.mk||[]).forEach(m=>{ if(m[5]&&!MLOC[m[5]]) MLOC[m[5]]=[ai,zi,ci,m[1],m[2]]; }); (c.nm||[]).forEach(n=>{ if(n[5]&&!MLOC[n[5]]) MLOC[n[5]]=[ai,zi,ci,n[2],n[3]]; }); })));
