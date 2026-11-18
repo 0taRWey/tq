@@ -21,9 +21,8 @@ iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，
 致谢：
   特别感谢 紫竹红枣tk：最早提出了做这个工具的需求，才有了这份资料库。
   同时感谢 紫竹红枣tk、抓住未来 提供的数据支持，这份资料库才得以实现。
-  感谢 伊斯塔的星辰：在一个个版本更新中反复试用，提了很多细致的意见。
-  感谢 小陈烧鸡、云玩家-阿高：在不同平台上帮忙测试，各平台的版本都经过了实际检验。
-  也感谢 用心做好自己、祁镇在草原望北京、轩辕梦羽、moyezn 等众多玩家的试用和反馈。
+  感谢 伊斯塔的星辰、云玩家-阿高：在一个个版本更新中反复试用、在不同平台上帮忙测试，提了很多细致的意见，各平台的版本都经过了实际检验。
+  也感谢 用心做好自己、祁镇在草原望北京、轩辕梦羽、moyezn、幽冥天使 等众多玩家的试用和反馈。
 
 ----
 Titan Quest Database · version 3.0.5
@@ -46,6 +45,5 @@ THQ Nordic, free of charge and for reference only; no commercial use. Please kee
 Acknowledgements:
   Special thanks to 紫竹红枣tk, who first asked for a tool like this; that request started the database.
   Thanks also to 紫竹红枣tk and 抓住未来 for their data support, which made the database possible.
-  Thanks to 伊斯塔的星辰 for trying release after release and sending many careful suggestions.
-  Thanks to 小陈烧鸡 and 云玩家-阿高 for testing on different platforms, so the version for each platform has been checked in real use.
-  And thanks to 用心做好自己, 祁镇在草原望北京, 轩辕梦羽, moyezn and many other players for trying it out and reporting back.
+  Thanks to 伊斯塔的星辰 and 云玩家-阿高 for trying release after release and testing on different platforms, with many careful suggestions, so the version for each platform has been checked in real use.
+  And thanks to 用心做好自己, 祁镇在草原望北京, 轩辕梦羽, moyezn, 幽冥天使 and many other players for trying it out and reporting back.
