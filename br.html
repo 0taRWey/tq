@@ -2203,11 +2203,11 @@ $('drawer').addEventListener('click', e => {
 const FOOT = t(
   `<p><b>泰坦之旅资料库</b> · 版本 ${VER} · 整理：贴吧用户_0taRWey</p>
 <p>致谢：特别感谢 紫竹红枣tk 最早提出的需求，感谢 紫竹红枣tk、抓住未来 的数据支持，感谢 伊斯塔的星辰、小陈烧鸡、云玩家-阿高 等众多玩家的试用、测试和反馈（完整名单见「规则说明」最后的「致谢」）。</p>
-<p>数据：Steam 版《泰坦之旅：不朽之王》（Titan Quest Anniversary Edition 2.10，含不朽王座、诸神黄昏、亚特兰蒂斯、永恒余烬）的游戏数据和游戏自带文字（简体中文 / 英文）。手机版（iOS / Android）的装备数据大部分和 PC 版相同，不同的是需求公式的系数，以及宇宙之杖、阿基米德齿轮、奥西里斯之柱[中] 等少数几件；右上角开关切到「手机」就按手机版显示和计算（完整列表见使用说明「没覆盖的」一节）。</p>
+<p>数据：Steam 版《泰坦之旅：不朽之王》（Titan Quest Anniversary Edition 2.10，含不朽王座、诸神黄昏、亚特兰蒂斯、永恒余烬）的游戏数据和游戏自带文字（简体中文 / 英文）。手机版（Google Play 的 Titan Quest Ultimate 3.0.5364、Titan Quest 3.0.5365，iOS 的 Titan Quest HD 3.0.5362、Titan Quest Ultimate 3.0.5339）的装备数据大部分和 PC 版相同，不同的是需求公式的系数，以及宇宙之杖、阿基米德齿轮、奥西里斯之柱[中] 等少数几件；右上角开关切到「手机」就按手机版显示和计算（完整列表见使用说明「没覆盖的」一节）。</p>
 <p>《泰坦之旅》（Titan Quest）及其物品名称、文字和数据的版权归 THQ Nordic 所有。本页是玩家自制的非官方资料工具，与 THQ Nordic 无关；数据来自游戏文件，仅供玩家参考，不得用于商业用途。转载分享请保留署名并注明出处。</p>`,
   `<p><b>Titan Quest Database</b> · version ${VER} · compiled by 贴吧用户_0taRWey</p>
 <p>Thanks: special thanks to 紫竹红枣tk, who first asked for this tool; to 紫竹红枣tk and 抓住未来 for their data support; and to 伊斯塔的星辰, 小陈烧鸡, 云玩家-阿高 and many other players for their testing and feedback (full list under “Acknowledgements” at the end of Rules &amp; notes).</p>${LG !== 'en' ? `<p>Item, affix, skill and attribute texts are the game's own ${LGI[1]} text; the interface and the compiler's notes are in English for now (tags missing in this language fall back to English).</p>` : ''}
-<p>Data: the game data and built-in game text (English / Simplified Chinese) of Titan Quest Anniversary Edition 2.10 on Steam (PC) (with Immortal Throne, Ragnarök, Atlantis and Eternal Embers). The mobile versions (iOS / Android) share most of the equipment data with PC; the differences are the requirement-formula coefficients and a few items such as Staff of the Cosmos, Archimedes' Cogwheel and Embodiment of the Djed of Osiris. Switch to "Mobile" at the top right to show and compute everything as on mobile (full list under "Not covered" in the help).</p>
+<p>Data: the game data and built-in game text (English / Simplified Chinese) of Titan Quest Anniversary Edition 2.10 on Steam (PC) (with Immortal Throne, Ragnarök, Atlantis and Eternal Embers). The mobile versions (Titan Quest Ultimate 3.0.5364 and Titan Quest 3.0.5365 on Google Play, Titan Quest HD 3.0.5362 and Titan Quest Ultimate 3.0.5339 on iOS) share most of the equipment data with PC; the differences are the requirement-formula coefficients and a few items such as Staff of the Cosmos, Archimedes' Cogwheel and Embodiment of the Djed of Osiris. Switch to "Mobile" at the top right to show and compute everything as on mobile (full list under "Not covered" in the help).</p>
 <p>Titan Quest and its item names, texts and data are © THQ Nordic. This page is an unofficial fan-made reference tool, not affiliated with THQ Nordic. The data comes from the game files and is for players' reference only; no commercial use. When sharing, please keep the credit and the source.</p>`);
 
 const HELP = `
@@ -2332,7 +2332,7 @@ const HELP = `
 <h3>版本、署名与版权</h3>
 <ul>
 <li>版本 ${VER}。整理：贴吧用户_0taRWey。各版本改了什么，见右上角「更新日志」。</li>
-<li>数据对应 Steam 版《泰坦之旅：不朽之王》2.10（含全部资料片），以及 Google Play 版 Titan Quest Ultimate 3.0.5364；物品名、属性文字取自游戏自带的简体中文 / 英文文字。</li>
+<li>数据对应 Steam 版《泰坦之旅：不朽之王》2.10（含全部资料片），以及手机版：Google Play 的 Titan Quest Ultimate 3.0.5364、Titan Quest 3.0.5365，iOS 的 Titan Quest HD 3.0.5362、Titan Quest Ultimate 3.0.5339；物品名、属性文字取自游戏自带的简体中文 / 英文文字。</li>
 <li>《泰坦之旅》及其物品名称、文字和数据的版权归 THQ Nordic 所有。本页是玩家自制的非官方资料工具，与 THQ Nordic 无关，仅供玩家参考，不收费、不得用于商业用途。转载分享请保留署名并注明出处。</li>
 </ul>
 <h3>致谢</h3>
@@ -2466,7 +2466,7 @@ const HELP_EN = `
 <h3>Version, credit and copyright</h3>
 <ul>
 <li>Version ${VER}. Compiled by 贴吧用户_0taRWey. What changed in each version: see "Change log" at the top right.</li>
-<li>Data: Titan Quest Anniversary Edition 2.10 on Steam (PC) with all expansions, and Titan Quest Ultimate 3.0.5364 on Google Play; item names and attribute texts are the game's built-in English / Simplified Chinese text.</li>
+<li>Data: Titan Quest Anniversary Edition 2.10 on Steam (PC) with all expansions, and the mobile versions: Titan Quest Ultimate 3.0.5364 and Titan Quest 3.0.5365 on Google Play, Titan Quest HD 3.0.5362 and Titan Quest Ultimate 3.0.5339 on iOS; item names and attribute texts are the game's built-in English / Simplified Chinese text.</li>
 <li>Titan Quest and its item names, texts and data are © THQ Nordic. This page is an unofficial fan-made reference tool, not affiliated with THQ Nordic, free of charge and for players' reference only; no commercial use. When sharing, please keep the credit and the source.</li>
 </ul>
 <h3>Acknowledgements</h3>
@@ -4737,7 +4737,7 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   const sec = $('sec'), box = $('mapsec'), fr = $('mapfr'), acts = $('mapacts'), hdr = document.querySelector('body>header');
   if (!sec || !box || !fr || !acts || !hdr || typeof MAPF !== 'string') return;
   // the map page's version in its address: a stored older copy (the offline copy, the browser cache) is never put in the frame
-  const MSRC = MAPF + '?v=820240f0af'; let retried = 0;
+  const MSRC = MAPF + '?v=6687a1297a'; let retried = 0;
   // a phone still run by the previous offline copy (it ignored the version) is retried once the new one has taken over
   const SW = navigator.serviceWorker; let swNew = false; try { if (SW) SW.addEventListener('controllerchange', () => { swNew = true; }); } catch (e) {}
   const afterSw = go => { if (!SW || !SW.controller || swNew) return go(); let done = false; const f = () => { if (!done) { done = true; go(); } };
