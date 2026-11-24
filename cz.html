@@ -1011,7 +1011,7 @@ function buildStatic() {
   i18nStatic();
   const nIt = IT.filter(i => i.ob).length, nR = RL.filter(r => r.ob).length;
   scopeText();
-  $('foot').innerHTML = '<p>' + "Compiled by 贴吧用户_0taRWey · Titan Quest Database 3.0.1 · 11-24 · 6223 · Titan Quest names, texts and map images © THQ Nordic; unofficial fan-made reference, free, not for commercial use." + '</p>'; { const d = document.createElement('div'); d.innerHTML = FOOT;   /* 3.0.5: the old footer's data notes, for Rules > About */
+  $('foot').innerHTML = '<p>' + "Compiled by 贴吧用户_0taRWey · Titan Quest Database 3.0.1 · 11-24 · 5702 · Titan Quest names, texts and map images © THQ Nordic; unofficial fan-made reference, free, not for commercial use." + '</p>'; { const d = document.createElement('div'); d.innerHTML = FOOT;   /* 3.0.5: the old footer's data notes, for Rules > About */
     window.TQABOUT = `<h3>${t('数据', 'Data')}</h3>` + [...d.querySelectorAll('p')].filter(p => /^(数据：|Data:|Item, affix)/.test(p.textContent)).map(p => p.outerHTML.replace(/^<p>(数据：|Data: )/, '<p>')).join(''); }
   const st = $('stages');
   st.innerHTML = `<button class="chip" aria-pressed="true" data-s="">${t('全部', 'All')}</button>` + ST.map(s => `<button class="chip" aria-pressed="false" data-s="${s[0]}" title="${esc(s[2])}"><span class="n">${STN[s[0]]}</span>${EST(s[0])}${esc(s[1])}</button>`).join('');
@@ -5105,7 +5105,7 @@ async function shareShot(blob, name, code) {
 }
 
 function simBar() {
-  return `<div class="simbar"><label class="bnm">${t('BD名', 'Build name')} <input type="text" id="bnm" maxlength="${NMMAX}" autocomplete="off" placeholder="${esc(clsName(clsKey(B)))}" value="${esc(B.nm || '')}" title="${esc(t('像游戏里给新角色起名一样，给这套BD起个名字（最多 20 个字）；保存、快照和BD码都用这个名字。不填的话，保存进「我的BD」时叫职业名加编号，快照和BD码上写职业名。', 'Name this build, like naming a new character in the game (up to 20 characters); saved builds, snapshots and build codes use it. Left empty, a saved build is called the class name plus a number, and snapshots and build codes show the class name.'))}"></label><button type="button" class="btn" data-bsave="1" title="${esc(t('把当前BD保存进「我的BD」', 'Save the current build to My builds'))}">💾 ${t('保存', 'Save')}</button>/*SAVE325*/
+  return `<div class="simbar"><label class="bnm">${t('BD名', 'Build name')} <input type="text" id="bnm" maxlength="${NMMAX}" autocomplete="off" placeholder="${esc(clsName(clsKey(B)))}" value="${esc(B.nm || '')}" title="${esc(t('像游戏里给新角色起名一样，给这套BD起个名字（最多 20 个字）；保存、快照和BD码都用这个名字。不填的话，保存进「我的BD」时叫职业名加编号，快照和BD码上写职业名。', 'Name this build, like naming a new character in the game (up to 20 characters); saved builds, snapshots and build codes use it. Left empty, a saved build is called the class name plus a number, and snapshots and build codes show the class name.'))}"></label><button type="button" class="btn" data-bsave="1" title="${esc(t('把当前BD保存进「我的BD」', 'Save the current build to My builds'))}">💾 ${t('保存', 'Save')}</button>${''/*SAVE325*/}
     <button type="button" class="btn ghost" data-snap="1" title="${esc(t('把整个BD页截成一张图，可以保存、分享或复制BD码；不会存进「我的BD」', 'Captures the whole build page as an image to save or share, with its build code; it is not added to My builds'))}">📷 ${t('快照', 'Snapshot')}</button>
     <button type="button" class="btn ghost" data-bcode="1" title="${esc(t('给出分享文字和BD码', 'Gives a share text and a build code'))}">${t('🔗 分享', '🔗 Share')}</button>
     <span class="sbgap" aria-hidden="true"></span>
@@ -5279,7 +5279,7 @@ try { history.scrollRestoration = 'manual'; } catch (e) {}
   if (!sec || !box || !fr || !acts || !hdr || typeof MAPF !== 'string') return;
   /*WHEEL318 Safari on a Mac only: a wheel over the map that reached this page instead of the map page is handed over to it*/ if (/^((?!chrome|chromium|android|crios|fxios|edg).)*safari/i.test(navigator.userAgent) && !navigator.maxTouchPoints) box.addEventListener('wheel', e => { try { const r = fr.getBoundingClientRect(), w = fr.contentWindow; if (w && typeof w.tqWheel === 'function' && w.tqWheel(e.clientX - r.left, e.clientY - r.top, e.deltaX, e.deltaY)) e.preventDefault(); } catch (x) {} }, { passive: false, capture: true });
   // the map page's version in its address: a stored older copy (the offline copy, the browser cache) is never put in the frame
-  const MSRC = MAPF + '?v=4952978c02'; let retried = 0, ready = false, want = null;
+  const MSRC = MAPF + '?v=84d8d1032c'; let retried = 0, ready = false, want = null;
   // a phone still run by the previous offline copy (it ignored the version) is retried once the new one has taken over
   const SW = navigator.serviceWorker; let swNew = false; try { if (SW) SW.addEventListener('controllerchange', () => { swNew = true; }); } catch (e) {}
   const afterSw = go => { if (!SW || !SW.controller || swNew) return go(); let done = false; const f = () => { if (!done) { done = true; go(); } };
