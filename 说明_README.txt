@@ -1,4 +1,4 @@
-泰坦之旅资料库 · 版本 3.0.1
+泰坦之旅资料库 · 版本 3.0.2
 整理：贴吧用户_0taRWey
 
 网址：https://0tarwey.github.io/tq/ （首页是英文页，中文页是 zh.html；浏览器是中文时，打开首页自动进入中文页；右上角可切换）。
@@ -22,7 +22,7 @@ iPhone / iPad「文件」App、微信等里直接点开 .html 文件是预览，
   感谢百度贴吧-泰坦之旅吧，和紫竹红枣tk、抓住未来、伊斯塔的星辰、用心做好自己、祁镇在草原望北京、轩辕梦羽、幽冥天使、moyezn等吧友的建议和反馈。
 
 ----
-Titan Quest Database · version 3.0.1
+Titan Quest Database · version 3.0.2
 Compiled by 贴吧用户_0taRWey
 
 Website: https://0tarwey.github.io/tq/ (English at the root, Chinese at zh.html; the root opens the Chinese page when the browser is set to Chinese; switch at the top right).
